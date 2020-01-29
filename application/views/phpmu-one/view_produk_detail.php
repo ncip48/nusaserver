@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row fullbody" style="padding-top:150px;">
             <?php 
               if (trim($row['gambar'])==''){ $foto_produk = 'no-image.png'; }else{ $foto_produk = $row['gambar']; }
@@ -92,4 +92,4 @@ data-description="Product description">
 
 </div>
 </div>
-</div>
+</div> -->
