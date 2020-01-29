@@ -159,6 +159,14 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
         background: #35A9DB;
         border-radius:10px;
     }
+    .btn-fix {
+    padding: 0;
+    border: none;
+   
+    white-space: normal;
+  }
+  
+ 
   </style>
 </head>
 

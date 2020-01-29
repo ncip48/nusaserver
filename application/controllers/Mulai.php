@@ -26,32 +26,127 @@ class Mulai extends CI_Controller {
                           if ($row[id_produk] == '17'){
                             if ($kons['ph']=='0'){
                               $hargafix = $harga[1];
-                              echo "Harga Pertama Pembelian : <span style='color:green; font-size:20px'><del>Rp ".rupiah($harga[0])."</del> Rp ".rupiah($harga[1])."</span><br>";
+                              $hargasatu = "<del>Rp ".rupiah($harga[0])."</del><br><small> Rp ".rupiah($harga[1])."</small>";
                             }else{
                               $hargafix = $harga[0];
-                              echo "Harga : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>";
+                              $hargasatu = "<span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>";
                             }
-                            echo "Harga 1 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>
+                            /* echo "Harga 1 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>
                             Harga 6 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[2])."</span> ( Hemat ".rupiah((6*$harga[0])-$harga[2])." )<br>
-                            Harga 12 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[3])."</span> ( Hemat ".rupiah((12*$harga[0])-$harga[3])." )<br>";
+                            Harga 12 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[3])."</span> ( Hemat ".rupiah((12*$harga[0])-$harga[3])." )<br>"; */
+
+                            echo "
+                            <div class='container'>
+                              <div class='row'>      
+                                <div class='col-sm mx-2 px-0 my-3'>
+                                  <div class='card'>
+                                    <div class='card-body'>
+                                      <h5>1 Bulan</h5>
+                                      ".$hargasatu."
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class='col-sm mx-2 px-0 my-3'>
+                                  <div class='card'>
+                                    <div class='card-body'>
+                                      <h5>6 Bulan</h5>
+                                      Rp ".rupiah($harga[2])."<br>
+                                      <small>".rupiah($harga[2]/6)."/bulan</small>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class='col-sm mx-2 px-0 my-3'>
+                                  <div class='card'>
+                                    <div class='card-body'>
+                                      <h5>12 Bulan</h5>
+                                      Rp ".rupiah($harga[3])."<br>
+                                      <small>".rupiah($harga[3]/12)."/bulan</small>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            ";
                           }elseif($row[id_produk] == '18'){
                             if ($kons['pt']=='0'){
-                              echo "Harga Pertama Pembelian : <span style='color:green; font-size:20px'><del>Rp ".rupiah($harga[0])."</del> Rp ".rupiah($harga[1])."</span><br>";
+                              $hargafix = $harga[1];
+                              $hargasatu = "<del>Rp ".rupiah($harga[0])."</del><br><small> Rp ".rupiah($harga[1])."</small>";
                             }else{
-                              echo "Harga : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>";
+                              $hargafix = $harga[0];
+                              $hargasatu = "<span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>";
                             }
-                            echo "Harga 1 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>
-                            Harga 6 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[2])."</span> ( Hemat ".rupiah((6*$harga[0])-$harga[2])." )<br>
-                            Harga 12 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[3])."</span> ( Hemat ".rupiah((12*$harga[0])-$harga[3])." )<br>";
+                            echo "
+                            <div class='container'>
+                              <div class='row'> 
+                                <div class='col-sm mx-2 px-0 my-3'>
+                                  <div class='card'>
+                                    <div class='card-body'>
+                                      <h5>1 Bulan</h5>
+                                      ".$hargasatu."
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class='col-sm mx-2 px-0 my-3'>
+                                  <div class='card'>
+                                    <div class='card-body'>
+                                      <h5>6 Bulan</h5>
+                                      Rp ".rupiah($harga[2])."<br>
+                                      <small>".rupiah($harga[2]/6)."/bulan</small>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class='col-sm mx-2 px-0 my-3'>
+                                  <div class='card'>
+                                    <div class='card-body'>
+                                      <h5>12 Bulan</h5>
+                                      Rp ".rupiah($harga[3])."<br>
+                                      <small>".rupiah($harga[3]/12)."/bulan</small>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            ";
                           }elseif($row[id_produk] == '19'){
                             if ($kons['pb']=='0'){
-                              echo "Harga Pertama Pembelian : <span style='color:green; font-size:20px'><del>Rp ".rupiah($harga[0])."</del> Rp ".rupiah($harga[1])."</span><br>";
+                              $hargafix = $harga[1];
+                              $hargasatu = "<del>Rp ".rupiah($harga[0])."</del><br><small> Rp ".rupiah($harga[1])."</small>";
                             }else{
-                              echo "Harga : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>";
+                              $hargafix = $harga[0];
+                              $hargasatu = "<span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>";
                             }
-                            echo "Harga 1 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>
-                            Harga 6 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[2])."</span> ( Hemat ".rupiah((6*$harga[0])-$harga[2])." )<br>
-                            Harga 12 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[3])."</span> ( Hemat ".rupiah((12*$harga[0])-$harga[3])." )<br>";
+                            echo "
+                            <div class='container'>
+                              <div class='row'> 
+                                <div class='col-sm mx-2 px-0 my-3'>
+                                  <div class='card'>
+                                    <div class='card-body'>
+                                      <h5>1 Bulan</h5>
+                                      ".$hargasatu."
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class='col-sm mx-2 px-0 my-3'>
+                                  <div class='card'>
+                                    <div class='card-body'>
+                                      <h5>6 Bulan</h5>
+                                      Rp ".rupiah($harga[2])."<br>
+                                      <small>".rupiah($harga[2]/6)."/bulan</small>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class='col-sm mx-2 px-0 my-3'>
+                                  <div class='card'>
+                                    <div class='card-body'>
+                                      <h5>12 Bulan</h5>
+                                      Rp ".rupiah($harga[3])."<br>
+                                      <small>".rupiah($harga[3]/12)."/bulan</small>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            ";
                           }
     }
 
