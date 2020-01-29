@@ -68,13 +68,14 @@ class Auth extends CI_Controller {
 			$id = $this->db->insert_id();
 			$this->session->set_userdata(array('id_konsumen_temp'=>$id));
 			$rowd = $this->model_app->profile_konsumen($this->session->id_konsumen_temp)->row_array();
+			$identitas = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_array();
+				
 			$config = Array(
-				'protocol' => 'smtp',
-				'smtp_host' => 'smtp.gmail.com',
-				'smtp_port' => 587,
-				'smtp_crypto' => 'tls',
-				'smtp_user' => 'herly.cp2@gmail.com',
-				'smtp_pass' => 'mbahcip123',
+				'protocol' = 'sendmail',
+				'mailpath' => '/usr/sbin/sendmail',
+				'charset' => 'utf-8',
+				'wordwrap' => TRUE,
+				'mailtype' => 'html',
 			);
 
 			$message      = "<html><body>Hallo ".$rowd['nama_lengkap']." Silahkan Klik Link Aktivasi berikut : <a href='".base_url()."confirm/kode/".$rowd['kode_konfirmasi']."'>klik disini</a> </body></html> \n";
@@ -83,7 +84,7 @@ class Auth extends CI_Controller {
 			$this->load->library('email', $config);
 			$this->email->set_newline("\r\n");
 	
-			$this->email->from('herly.cp2@gmail.com', 'Ncip');
+			$this->email->from($identitas['email'], $identitas['nama_website']);
 			$this->email->to($email_tujuan);
 			$this->email->subject('Konfirmasi Email');
 			$this->email->set_mailtype("html");
