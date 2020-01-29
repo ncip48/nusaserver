@@ -71,7 +71,7 @@ class Auth extends CI_Controller {
 			$identitas = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_array();
 				
 			$config = Array(
-				'protocol' = 'sendmail',
+				'protocol' => 'sendmail',
 				'mailpath' => '/usr/sbin/sendmail',
 				'charset' => 'utf-8',
 				'wordwrap' => TRUE,
