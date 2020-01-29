@@ -8,7 +8,13 @@ class Confirm extends CI_Controller {
 
     public function kode(){
         $kode = $this->uri->segment(3);
-        $id = $this->session->id_konsumen_temp;
+        $iduser = $this->uri->segment(4);
+
+        if ($this->session->id_konsumen_temp == ''){
+            $id = $iduser;
+        }else{
+            $id = $this->session->id_konsumen_temp;
+        }
 
         $cek = $this->db->query("SELECT * FROM rb_konsumen where id_konsumen='$id' AND kode_konfirmasi='$kode'");
 		$row = $cek->row_array();

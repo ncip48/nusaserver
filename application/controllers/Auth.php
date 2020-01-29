@@ -78,7 +78,7 @@ class Auth extends CI_Controller {
 				'mailtype' => 'html',
 			);
 
-			$message      = "<html><body>Hallo ".$rowd['nama_lengkap']." Silahkan Klik Link Aktivasi berikut : <a href='".base_url()."confirm/kode/".$rowd['kode_konfirmasi']."'>klik disini</a> </body></html> \n";
+			$message      = "<html><body>Hallo ".$rowd['nama_lengkap']." Silahkan Klik Link Aktivasi berikut : <a href='".base_url()."confirm/kode/".$rowd['kode_konfirmasi']."/".$rowd['id_konsumen']."'>klik disini</a> </body></html> \n";
 			$email_tujuan = $rowd['email'];
 
 			$this->load->library('email', $config);
