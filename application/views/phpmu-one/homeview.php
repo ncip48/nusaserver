@@ -26,15 +26,16 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
         <div class="col-lg-8 bg-primary py-5 px-5">
           <form>
             <div class="row">
-              <div class="col-md-10 px-1">
+              <div class="col-md-9 px-1">
                 <div class="form-group">
                   <input class="form-control" id="subdomain" name="subdomain" type="text" placeholder="Nama Toko Anda" required="required" data-validation-required-message="Please enter your name.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
-              <div class="col-md-2 px-1">
+              <div class="col-md-3 px-1">
                 <div class="form-group">
                   <select class="form-control" name="domain" id="domain">
+                    <option value="">Pilih Domain</option>
                     <option value="com">.com</option>
                     <option value="net">.net</option>
                     <option value="biz">.biz</option>
