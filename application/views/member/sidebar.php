@@ -29,7 +29,7 @@
             <a href="<?= base_url() ?>members/editprofile"><span class="fa fa-user-times mr-3"></span> Edit Profile</a>
         </li>
         <li>
-            <a href="<?= base_url() ?>members/keluar"><span class="fa fa-sign-out mr-3"></span> Keluar</a>
+            <a href="<?= base_url() ?>signout"><span class="fa fa-sign-out mr-3"></span> Keluar</a>
         </li>
     </ul>
 </nav>

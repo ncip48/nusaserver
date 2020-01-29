@@ -71,6 +71,7 @@ $route = array(
     'mulai' => 'mulai',
     'daftar' => 'auth/register',
     'login' => 'auth/login',
+    'signout' => 'members/keluar',
 );
 
 $route['(:any)'] = 'ref/$1/$2';
