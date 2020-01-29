@@ -69,6 +69,8 @@ $route = array(
     'video' => 'video',
     'confirm' => 'confirm',
     'mulai' => 'mulai',
+    'daftar' => 'auth/register',
+    'login' => 'auth/login',
 );
 
 $route['(:any)'] = 'ref/$1/$2';
