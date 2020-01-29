@@ -7,7 +7,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
         <div class="col-md-6 col-xs-12">
           <h2 class="jumbotron-heading">Kelola Toko Online Anda Lebih Mudah dengan <?php echo $iden['nama_website']; ?></h2>
           <p class="jumbotron-paragraf"><?php echo $iden['nama_website']; ?> membantu Anda mengelola bisnis secara profesional dengan menyediakan laporan data penjualan secara <i>realtime</i>, manajemen stok dengan multi gudang, pengelolaan <i>database</i> pelanggan, dan memaksimalkan konversi penjualan melalui toko online Anda.</p> 
-          <p><a class="btn btn-jumbotron btn-primary btn-lg" href="<?php echo base_url(); ?>auth/register/" role="button">Gabung Yuk</a></p> 
+          <p><a class="btn btn-jumbotron btn-primary btn-lg" href="<?php echo base_url(); ?>mulai" role="button">Gabung Yuk</a></p> 
       </div>
     </div>
   </header>
@@ -174,7 +174,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
                   <ul class='fa-ul'>
                     $row[keterangan]
                   </ul>
-                  <a href='".base_url()."produk/detail/$row[produk_seo]' class='btn btn-block btn-primary text-uppercase text-dark'>Gabung Yuk</a>
+                  <a href='".base_url()."mulai' class='btn btn-block btn-primary text-uppercase text-dark'>Gabung Yuk</a>
                 </div>
               </div>
             </div>";
