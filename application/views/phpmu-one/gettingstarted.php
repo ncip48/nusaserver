@@ -3,10 +3,8 @@
     <div class='row'>
         <div class='col-md-12 mb-3 text-center'>
             <div class='row'>
-                    <div class='col-md-3 col-sm-3 mb-3'>
-    
-                    </div>
-                    <div class='col-md-6 col-sm-6 mb-3'>
+                    
+                    <div class='col-md-8 col-sm-8 mb-3'>
 
                     <?php if ($this->session->id_konsumen == ''){
                         echo "<div class='card'>
@@ -35,13 +33,60 @@
                                                 echo "<option style='width=390px;' value='".$paket['id_produk'].";".$paket['nama_produk']."'>".$paket['nama_produk']."</option>"; 
                                             }
                             echo " </select> 
-                            <div id='datapaket'></div>  
-                            <select class='form-control my-2' id='durasi' name='durasi' style='width:100%;max-width:100%;'>   
-                                            <option value='none' selected > --- Pilih Durasi --- </option>
-                                            <option value='1'> 1 Bulan </option>
-                                            <option value='6'> 6 Bulan </option>
-                                            <option value='12'> 12 Bulan </option>
-                            </select>
+                            <div id='datapaket'></div>
+                                <div class='hargapaket'>
+                                    <div class='container'>
+                                        <div class='row'>
+                                            <div class='col-sm mx-2 px-0 mt-1'>
+                                                <label class='hargakhusus'>
+                                                <input type='radio' name='product' class='card-input-element' value='1' />
+                                                <div class='card card-default card-input card'>
+                                                    <div class='card'>
+                                                    <div class='card-body'>
+                                                        <h5>1 Bulan</h5>
+                                                        <hr>
+                                                        <div class='harga1'>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </label>
+                                            </div>
+
+                                            <div class='col-sm mx-2 px-0 mt-1'>
+                                                <label class='hargakhusus'>
+                                                <input type='radio' name='product' class='card-input-element' value='6' />
+                                                <div class='card card-default card-input card'>
+                                                    <div class='card'>
+                                                    <div class='card-body'>
+                                                        <h5>6 Bulan</h5>
+                                                        <hr>
+                                                        <div class='harga6'>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </label>
+                                            </div>
+
+                                            <div class='col-sm mx-2 px-0 mt-1'>
+                                                <label class='hargakhusus'>
+                                                <input type='radio' name='product' class='card-input-element' value='12' />
+                                                <div class='card card-default card-input card'>
+                                                    <div class='card'>
+                                                    <div class='card-body'>
+                                                        <h5>12 Bulan</h5>
+                                                        <hr>
+                                                        <div class='harga12'>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             <hr>
                             <div class='card-title'><h5>Pilih Domain</h5></div>
                             <hr>
@@ -95,8 +140,12 @@
                     }
                     ?>
                     </div>
-                    <div class='col-md-3 col-sm-3 mb-3'>
-                        
+                    <div class='col-md-4 col-sm-4 mb-3'>
+                        <div class='card'>
+                            <div class='card-body'>
+                                <div class='card-title'><h5>Total</h5></div>
+                            </div>
+                        </div>
                     </div>
             </div>
         </div>
@@ -105,22 +154,14 @@
 </div>
 <script>
 $(document).ready(function() {
-    $('#durasi').change(function() {
-        var durasi = $(this).val();
-        console.log(durasi);
-    });
-
-    $('#1bulan').click(function(){
-        //var durasi = $(this).val();
-        console.log('clicked');
-    });
+    $('.hargapaket').hide();
 
 
-$('#paket').change(function() {
+    $('#paket').change(function() {
         var asd = $(this).val();
         var data = asd.split(";");
 
-        console.log(asd);
+        //console.log(asd);
 
         //console.log(ongkir[0]);
         //console.log(ongkir[1]);
@@ -130,44 +171,45 @@ $('#paket').change(function() {
         //console.log(ser);
 
         
-        /*if (ongkir[0] == 'none'){
-            $("#ongkir2").html("0");
-            $("#totalbayar").html("0");
-    
-            $("#namakurir").html("-");
-            $("#services").html("-");
-
-            $("#ongkiir").val("0");
-            $("#servicees").val("0");
-            $("#kurirr").val("0");
-            
+        if (asd == 'none'){
+            $('.hargapaket').hide();
+            $('.harga1').empty();
+            $('.harga6').empty();
+            $('.harga12').empty();
         }else{
-            
-            $("#ongkir2").html(toDuit(parseFloat(ongkir)));
-            $("#totalbayar").html(toDuit(bayar));
-    
-            $("#namakurir").html(ongkir[1]);
-            $("#services").html(ongkir[2]);
-
-            $("#ongkiir").val(parseFloat(ongkir));
-            $("#servicees").val(ongkir[3]);
-            $("#kurirr").val(ongkir[1]);
-        } */
-        
-
-        $.ajax({
+            $.ajax({
             type: 'POST',
             url: 'mulai/validasi',
             data: {
                 produk_id: data[0]
             },
             success: function(response) {
-                //var result = response["result"];
-                //console.log(response);
-                $('#datapaket').html(response);
+                $('.harga1').empty();
+                $('.harga6').empty();
+                $('.harga12').empty();
+                var hargasplit = response.split(';');
+                var harga_1_bulan = hargasplit[0];
+                var harga_6_bulan = hargasplit[1];
+                var sm_harga_6_bulan = hargasplit[2];
+                var harga_12_bulan = hargasplit[3];
+                var sm_harga_12_bulan = hargasplit[4];
+                $('.harga1').append(harga_1_bulan);
+                $('.harga6').append("Rp "+harga_6_bulan+"<br><small>Rp "+sm_harga_6_bulan+"/bulan</small>");
+                $('.harga12').append("Rp "+harga_12_bulan+"<br><small>Rp "+sm_harga_12_bulan+"/bulan</small>");
+                $('.hargapaket').fadeIn();
             }
         }); 
+        } 
+        
+
+       
         //return false;
+    });
+
+    $("input[name='product']").change(function(){
+        var durasi = $(this).val();
+        console.log(durasi);
+        // Do something interesting here
     });
 });
 </script>

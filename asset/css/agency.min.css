@@ -811,3 +811,103 @@ section.pricing {
     font-weight: 600;
     text-decoration: none;
 }
+
+body.swal2-shown > [aria-hidden="true"] {
+	filter: blur(10px);
+  }
+
+  body > * {
+	transition: 0.15s filter linear;
+  }
+
+  .isi {
+	padding-top:70px;
+  }
+  
+  @media (min-width: 992px) { 
+	.isi {
+	  padding-top:120px;
+	}
+   }
+
+  ::-webkit-scrollbar {
+	  width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {     
+	  background: #fff;    
+  }
+  
+  ::-webkit-scrollbar-thumb {
+	  background: #35A9DB;
+	  border-radius:10px;
+  }
+  .btn-fix {
+  padding: 0;
+  border: none;
+ 
+  white-space: normal;
+}
+
+
+.card-input-element {
+  display: none;
+}
+
+.card-input {
+  margin: 10px;
+  padding: 00px;
+}
+
+.card-input:hover {
+  cursor: pointer;
+}
+
+.card-input-element:checked + .card-input {
+box-shadow: 0 0 1px 1px #1a1aff;
+-webkit-transition: border .3s;
+-o-transition: border .3s;
+transition: border .3s;
+}
+
+.card-input-element:checked + .card-input::after {
+  //content: '\f00c';
+  color: #1a1aff;
+  //font-family: 'Font Awesome Free';
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free"; /* change like this */
+  font-weight: 900; /* insert this definition */
+  -webkit-animation-name: fadeInCheckbox;
+  animation-name: fadeInCheckbox;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@-webkit-keyframes fadeInCheckbox {
+from {
+  opacity: 0;
+  -webkit-transform: rotateZ(-20deg);
+}
+to {
+  opacity: 1;
+  -webkit-transform: rotateZ(0deg);
+}
+}
+
+@keyframes fadeInCheckbox {
+from {
+  opacity: 0;
+  transform: rotateZ(-20deg);
+}
+to {
+  opacity: 1;
+  transform: rotateZ(0deg);
+}
+}
+
+.hargakhusus {
+  width: 100%;
+  margin-bottom:0px;
+}

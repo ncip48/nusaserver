@@ -9,7 +9,7 @@ class Mulai extends CI_Controller {
     }
 
     public function main(){
-        $data['title'] = 'Edit Profile Anda';
+        $data['title'] = 'NusaServer';
 		$data['row'] = $this->model_app->profile_konsumen($this->session->id_konsumen)->row_array();
 		$row = $this->model_app->profile_konsumen($this->session->id_konsumen)->row_array();
         $data['produk'] = $this->model_app->view('rb_produk');
@@ -18,6 +18,7 @@ class Mulai extends CI_Controller {
     }
 
     public function validasi(){
+      if($this->input->is_ajax_request()) {
         $produk_id = $this->input->post('produk_id');
         //echo $produk_id;
         $row = $this->model_app->view_where('rb_produk',array('id_produk'=>$produk_id))->row_array();
@@ -35,38 +36,7 @@ class Mulai extends CI_Controller {
                             Harga 6 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[2])."</span> ( Hemat ".rupiah((6*$harga[0])-$harga[2])." )<br>
                             Harga 12 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[3])."</span> ( Hemat ".rupiah((12*$harga[0])-$harga[3])." )<br>"; */
 
-                            echo "
-                            <div class='container'>
-                              <div class='row'>      
-                                <div class='col-sm mx-2 px-0 my-3'>
-                                  <div class='card'>
-                                    <div class='card-body'>
-                                      <h5>1 Bulan</h5>
-                                      ".$hargasatu."
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class='col-sm mx-2 px-0 my-3'>
-                                  <div class='card'>
-                                    <div class='card-body'>
-                                      <h5>6 Bulan</h5>
-                                      Rp ".rupiah($harga[2])."<br>
-                                      <small>".rupiah($harga[2]/6)."/bulan</small>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class='col-sm mx-2 px-0 my-3'>
-                                  <div class='card'>
-                                    <div class='card-body'>
-                                      <h5>12 Bulan</h5>
-                                      Rp ".rupiah($harga[3])."<br>
-                                      <small>".rupiah($harga[3]/12)."/bulan</small>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            ";
+                            echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12);
                           }elseif($row[id_produk] == '18'){
                             if ($kons['pt']=='0'){
                               $hargafix = $harga[1];
@@ -75,38 +45,7 @@ class Mulai extends CI_Controller {
                               $hargafix = $harga[0];
                               $hargasatu = "<span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>";
                             }
-                            echo "
-                            <div class='container'>
-                              <div class='row'> 
-                                <div class='col-sm mx-2 px-0 my-3'>
-                                  <div class='card'>
-                                    <div class='card-body'>
-                                      <h5>1 Bulan</h5>
-                                      ".$hargasatu."
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class='col-sm mx-2 px-0 my-3'>
-                                  <div class='card'>
-                                    <div class='card-body'>
-                                      <h5>6 Bulan</h5>
-                                      Rp ".rupiah($harga[2])."<br>
-                                      <small>".rupiah($harga[2]/6)."/bulan</small>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class='col-sm mx-2 px-0 my-3'>
-                                  <div class='card'>
-                                    <div class='card-body'>
-                                      <h5>12 Bulan</h5>
-                                      Rp ".rupiah($harga[3])."<br>
-                                      <small>".rupiah($harga[3]/12)."/bulan</small>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            ";
+                            echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12);
                           }elseif($row[id_produk] == '19'){
                             if ($kons['pb']=='0'){
                               $hargafix = $harga[1];
@@ -115,39 +54,9 @@ class Mulai extends CI_Controller {
                               $hargafix = $harga[0];
                               $hargasatu = "<span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>";
                             }
-                            echo "
-                            <div class='container'>
-                              <div class='row'> 
-                                <div class='col-sm mx-2 px-0 my-3'>
-                                  <div class='card'>
-                                    <div class='card-body'>
-                                      <h5>1 Bulan</h5>
-                                      ".$hargasatu."
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class='col-sm mx-2 px-0 my-3'>
-                                  <div class='card'>
-                                    <div class='card-body'>
-                                      <h5>6 Bulan</h5>
-                                      Rp ".rupiah($harga[2])."<br>
-                                      <small>".rupiah($harga[2]/6)."/bulan</small>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class='col-sm mx-2 px-0 my-3'>
-                                  <div class='card'>
-                                    <div class='card-body'>
-                                      <h5>12 Bulan</h5>
-                                      Rp ".rupiah($harga[3])."<br>
-                                      <small>".rupiah($harga[3]/12)."/bulan</small>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            ";
+                            echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12);
                           }
+                        }
     }
 
 }

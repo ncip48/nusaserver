@@ -126,48 +126,8 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
 		    return false;
       });
 
-    })
+    });
 </script>
-<style>
-    body.swal2-shown > [aria-hidden="true"] {
-      filter: blur(10px);
-    }
-
-    body > * {
-      transition: 0.15s filter linear;
-    }
-
-    .isi {
-      padding-top:70px;
-    }
-    
-    @media (min-width: 992px) { 
-      .isi {
-        padding-top:120px;
-      }
-     }
-
-    ::-webkit-scrollbar {
-        width: 10px;
-    }
-    
-    ::-webkit-scrollbar-track {     
-        background: #fff;    
-    }
-    
-    ::-webkit-scrollbar-thumb {
-        background: #35A9DB;
-        border-radius:10px;
-    }
-    .btn-fix {
-    padding: 0;
-    border: none;
-   
-    white-space: normal;
-  }
-  
- 
-  </style>
 </head>
 
 <body id="page-top" class="bg-white">
