@@ -1,6 +1,6 @@
 
 
-$( document ).ready(function() {
+/* $( document ).ready(function() {
     
     var form = new FormData();
     var settings = {
@@ -19,4 +19,4 @@ $( document ).ready(function() {
     $.ajax(settings).done(function (response) {
         console.log(response);
     });
-});
+}); */

@@ -33,11 +33,11 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
 
   <link href="<?php echo base_url(); ?>asset/css/agency.min.css" rel="stylesheet">
 
-  <link href="<?php echo base_url(); ?>asset/css/bootstsrap.min.css" rel="stylesheet">
+  <!--<link href="<?php echo base_url(); ?>asset/css/bootstsrap.min.css" rel="stylesheet">
   <link href="<?php echo base_url(); ?>asset/css/stylse.css" rel="stylesheet">
   <link href="<?php echo base_url(); ?>asset/css/defasult.css" rel="stylesheet" media="screen" />
   <link href="<?php echo base_url(); ?>asset/css/nivo-slider.css" rel="stylesheet" media="screen" />
-  <!--<link rel="stylesheet" href="<?php echo base_url(); ?>/asset/admin/plugins/datatables/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>/asset/admin/plugins/datatables/dataTables.bootstrap.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>asset/admin/plugins/datepicker/datepicker3.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>asset/admin/plugins/timepicker/bootstrap-timepicker.css">
   <script type="text/javascript" src="<?php echo base_url(); ?>/asset/admin/plugins/jQuery/jquery-1.12.3.min.js"></script> -->
@@ -249,7 +249,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="<?php echo base_url(); ?>asset/js/jqusery-1.12.3.min.js"></script>
+<!--<script src="<?php echo base_url(); ?>asset/js/jqusery-1.12.3.min.js"></script>-->
 <script src="<?php echo base_url(); ?>asset/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/smoothscroll.js"></script>
@@ -263,7 +263,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
 <script src="<?php echo base_url(); ?>asset/js/jquery.nivo.slider.js"></script> 
 <script src="<?php echo base_url(); ?>asset/admin/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="<?php echo base_url(); ?>asset/admin/plugins/datatables/dataTables.bootstrap.min.js"></script>
-<script type="text/javascript"> $(window).load(function() { $('#slider').nivoSlider(); }); </script> 
+<!-- <script type="text/javascript"> $(window).load(function() { $('#slider').nivoSlider(); }); </script> -->
 <script src="<?php echo base_url() ?>asset/js/jquery.validate.js"></script>
 <script> $(document).ready(function(){ $("#formku").validate(); }); </script>
 <script> $(document).ready(function(){ $("#formkuu").validate(); }); </script>

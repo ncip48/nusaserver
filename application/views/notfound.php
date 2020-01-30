@@ -1,9 +1,7 @@
-
-<!DOCTYPE html>
 <html>
 <head>
   <title>404 Not Found</title>
-  <link href="<?php echo base_url(); ?>asset/notfound.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>asset/notfound.css" rel="stylesheet">
 </head>
 <body>
 
@@ -45,6 +43,6 @@
   
 </div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>asset/notfound.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>asset/notfound.js"></script>
 </body>
 </html>
