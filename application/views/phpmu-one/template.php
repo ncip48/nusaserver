@@ -32,6 +32,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
   <link href="<?php echo base_url(); ?>asset/css/agency.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/floating-wa.css">
 
   <!--<link href="<?php echo base_url(); ?>asset/css/bootstsrap.min.css" rel="stylesheet">
   <link href="<?php echo base_url(); ?>asset/css/stylse.css" rel="stylesheet">
@@ -243,8 +244,9 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
     </div>
   </div>
 </div>
-
+<div id="myDiv"></div>
 <?php $this->model_main->kunjungan(); ?>
+
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -259,6 +261,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
 <script src="<?php echo base_url(); ?>asset/js/cekdomain.js"></script>
 <script src="<?php echo base_url(); ?>asset/js/bank.js"></script>
 <script src="<?php echo base_url(); ?>asset/js/agency.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/floating-wa.js"></script>
 
 <script src="<?php echo base_url(); ?>asset/js/jquery.nivo.slider.js"></script> 
 <script src="<?php echo base_url(); ?>asset/admin/plugins/datatables/jquery.dataTables.min.js"></script>
@@ -269,6 +272,17 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
 <script> $(document).ready(function(){ $("#formkuu").validate(); }); </script>
 <script src="<?php echo base_url(); ?>asset/admin/plugins/datepicker/bootstrap-datepicker.js"></script>
 <script src="<?php echo base_url(); ?>asset/admin/plugins/timepicker/bootstrap-timepicker.js"></script>
+
+<script type="text/javascript">
+$('#myDiv').floatingWhatsApp({
+    phone: '6281335241314',
+    popupMessage: 'Selamat datang di Nusaserver, ada yang bisa kami bantu?',
+    showPopup: true,
+    showOnIE: true,
+    position: 'right',
+    headerTitle: 'Selamat Datang!',
+});
+</script>
 
 <script type="text/javascript">
   $('.datepicker').datepicker();

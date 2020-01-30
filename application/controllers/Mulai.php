@@ -58,4 +58,15 @@ class Mulai extends CI_Controller {
                           }
                         }
     }
+
+    public function pembayaran(){
+      if($this->input->is_ajax_request()) {
+        $bank = $this->input->post('bank');
+        $row = $this->model_app->view_where('rb_rekening',array('nama_bank'=>$bank))->row_array();
+        $data = array();
+        $data['norek'] = $row['no_rekening'];
+        $data['nama'] = $row['pemilik_rekening'];
+        $this->output->set_output(json_encode($data));
+      }
+    }
 }

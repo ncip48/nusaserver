@@ -222,6 +222,43 @@
                                 <div class='card-title'><h5>Ringkasan Order</h5></div>
                             </div>
                         </div>
+                        <div class='card my-2'>
+                            <div class='card-body'>
+                                <div class='card-title'><h5>Pembayaran</h5></div>
+                                <hr>
+                                <div class="paymentWrap">
+                                    <div class="btn-group paymentBtnGroup btn-group-justified" data-toggle="buttons">
+                                        <div class='container'>
+                                            <div class='row'>
+                                                <div class='col-sm mx-2 px-0 mt-1'>
+                                                    <label class="btn paymentMethod">
+                                                        <div class="method bri"></div>
+                                                        <input type="radio" name="payment" value='bri'> 
+                                                    </label>
+                                                </div>
+                                                <div class='col-sm mx-2 px-0 mt-1'>
+                                                    <label class="btn paymentMethod">
+                                                        <div class="method mandiri"></div>
+                                                        <input type="radio" name="payment" value='mandiri'> 
+                                                    </label>
+                                                </div>
+                                                <div class='col-sm mx-2 px-0 mt-1'>
+                                                    <label class="btn paymentMethod">
+                                                        <div class="method bca"></div>
+                                                        <input type="radio" name="payment" value='bca'> 
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>        
+                                </div>
+                                <div class='container'>
+                                    <div class='row'>
+                                        <div id='bankdetails' class='text-left'></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
             </div>
         </div>
@@ -313,6 +350,22 @@ $(document).ready(function() {
     $("input[name='tipe']").change(function(){
         var tipe = $(this).val();
         $('#tipe').val(tipe);
+    });
+
+    $("input[name='payment']").change(function(){
+        var pemb = $(this).val();
+        $.ajax({
+            type: 'POST',
+            url: 'mulai/pembayaran',
+            data: {
+                bank: pemb
+            },
+            success: function(response) {
+                var data = jQuery.parseJSON(response);
+                //console.log(data.norek);
+                $('#bankdetails').html("<h6>No Rekening : "+data.norek+"</h6><h6>Nama Pemilik : "+data.nama+"</h6>");
+            }
+        }); 
     });
 
     $('input[name="buttondomain"]').click(function(){
