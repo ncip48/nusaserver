@@ -24,10 +24,13 @@
                         </div>"; */
                         echo"
                         <div class='card'>
-                        <div class='card-body'>
-                            <div class='card-title'><h5>Pilih Paket</h5></div>
-                            <hr>
-                            <select id='paket' name='paket' style='width:100%;max-width:100%;' class='form-control my-2'>
+                        <div class='card-header bg-white'>
+                            <h5 class='mb-0'>Pilih Paket</h5>
+                        </div>
+                        <div class='card-body'>";
+                            /*<div class='card-title'><h5>Pilih Paket</h5></div>
+                            <hr>*/
+                            echo"<select id='paket' name='paket' style='width:100%;max-width:100%;' class='form-control my-2'>
                             <option value='none'  selected class='form-control'> --- Pilih Paket --- </option>";
                                              foreach($produk->result_array() as $paket){
                                                 echo "<option style='width=390px;' value='".$paket['id_produk'].";".$paket['nama_produk']."'>".$paket['nama_produk']."</option>"; 
@@ -134,11 +137,14 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
-                            <hr>
-                            <div class='card-title'><h5>Pilih Domain</h5></div>
-                            <hr>
+                            </div>
+                        </div>
+                        <div class='card mt-2'>
+                            <div class='card-header bg-white'>
+                                <h5 class='mb-0'>Pilih Domain</h5>
+                            </div>
+                            <div class='card-body'>
                                 <div class='col-lg-12 py-5 px-5'>
                                 <form>
                                 <div class='row'>
@@ -203,9 +209,12 @@
                     </div>
                     <div class='col-md-4 col-sm-4 mb-3'>
                         <div class='card'>
+                            <div class='card-header bg-white'>
+                                <h5 class='mb-0'>Ringkasan Order</h5>
+                            </div>
                             <div class='card-body'>
-                                <div class='card-title'><h5>Ringkasan Order</h5></div>
-                                <hr>
+                                <!-- <div class='card-title'><h5>Ringkasan Order</h5></div>
+                                <hr> -->
                                 <div class='container'>
                                     <div class='row'>
                                         <div class='col-sm mx-2 px-0 mt-1'>
@@ -217,9 +226,12 @@
                             </div>
                         </div>
                         <div class='card my-2'>
+                            <div class='card-header bg-white'>
+                                <h5 class='mb-0'>Pembayaran</h5>
+                            </div>
                             <div class='card-body'>
-                                <div class='card-title'><h5>Pembayaran</h5></div>
-                                <hr>
+                                <!--<div class='card-title'><h5>Pembayaran</h5></div>
+                                <hr> -->
                                 <div class="paymentWrap">
                                     <div class="btn-group paymentBtnGroup btn-group-justified" data-toggle="buttons">
                                         <div class='container'>
