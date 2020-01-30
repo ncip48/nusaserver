@@ -197,22 +197,7 @@
                                 </form>
                             </div>
                         </div>
-                        </div>
-                        
-                            <form>
-                            <input id='id_konsumen' type='hidden' value='".$this->session->id_konsumen."' \><br>
-                            <input id='id_produk' type='hidden' value='' \><br>
-                            <input id='tipe' type='hidden' value='' \><br>
-                            <input id='tgldaftar' type='hidden' value='".date('Y-m-d H:i:s')."' \><br>
-                            <input id='durasi' type='hidden' value='' \><br>
-                            <input id='harga_final' type='hidden' value='' \><br>
-                            
-                            <input id='ringkasan' type='hidden' value='' \><br>
-                            <input id='namadomain' type='hidden' value='' \><br>
-                            <input id='tld' type='hidden' value='' \><br>
-                            <input id='durasidomain' type='hidden' value='' \><br>
-                            <input id='hargadomain' type='hidden' value='' \><br>
-                            </form>";
+                        </div>";
                     }
                     ?>
                     </div>
@@ -220,6 +205,15 @@
                         <div class='card'>
                             <div class='card-body'>
                                 <div class='card-title'><h5>Ringkasan Order</h5></div>
+                                <hr>
+                                <div class='container'>
+                                    <div class='row'>
+                                        <div class='col-sm mx-2 px-0 mt-1'>
+                                            <div id='belanjapaket'></div><br>
+                                            <div id='belanjadomain'></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class='card my-2'>
@@ -259,7 +253,26 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <div class='card my-2'>
+                            <div class='card-body'>
+                                <form>
+                                <input id='id_konsumen' type='hidden' value='".$this->session->id_konsumen."' \>
+                                <input id='id_produk' type='hidden' value='' \>
+                                <input id='tipe' type='hidden' value='' \>
+                                <input id='tgldaftar' type='hidden' value='<?php echo date('Y-m-d H:i:s')?>' \>
+                                <input id='durasi' type='hidden' value='' \>
+                                <input id='harga_final' type='hidden' value='' \>
+                                
+                                <input id='ringkasan' type='hidden' value='' \>
+                                <input id='namadomain' type='hidden' value='' \>
+                                <input id='tld' type='hidden' value='' \>
+                                <input id='durasidomain' type='hidden' value='' \>
+                                <input id='hargadomain' type='hidden' value='' \>
+                                <input type="button" class="btn btn-primary btn-sm btn-block" value='BAYAR' \>
+                                </form>
+                            </div>
+                        </div>
+                </div>
             </div>
         </div>
     </div>
@@ -322,6 +335,7 @@ $(document).ready(function() {
     $("input[name='product']").change(function(){
         var durasi = $(this).val();
         var produk_id = $('#id_produk').val();
+        //var tipee = $('#tipe').val();
         //console.log(durasi);
         $('#durasi').val(durasi);
         $.ajax({
@@ -333,15 +347,20 @@ $(document).ready(function() {
             success: function(response) {
                 //console.log(response);
                 var pr = response.split(';');
+                //console.log(tipee);
                 if (durasi=='30'){
                     //console.log(pr[5]);
                     $('#harga_final').val(pr[5]);
+                    $('#belanjapaket').html("<div class='float-left'><b>"+pr[8]+"</b> </div><div class='float-right'>"+pr[5]+"</div>");
                 }else if (durasi=='183'){
-                    //console.log(pr[6]);
+                    //console.log(pr[8]);
                     $('#harga_final').val(pr[6]);
+                    $('#belanjapaket').html("<div class='float-left'><b>"+pr[8]+"</b></div><div class='float-right'>"+pr[6]+"</div>");
                 }else if (durasi=='365'){
                     //console.log(pr[7]);
                     $('#harga_final').val(pr[7]);
+                    //$('#belanjapaket').html("<div class='float-left'><b>"+pr[8]+"</b> <br><small> Hari, <div id='durasii' class='float-right'></div></small></div><div class='float-right'>"+pr[7]+"</div>");
+                    $('#belanjapaket').html("<div class='float-left'><b>"+pr[8]+"</b></div><div class='float-right'>"+pr[7]+"</div>");
                 }
             }
         }); 
@@ -349,6 +368,7 @@ $(document).ready(function() {
 
     $("input[name='tipe']").change(function(){
         var tipe = $(this).val();
+        //$('#durasii').html("no "+tipe);
         $('#tipe').val(tipe);
     });
 
@@ -376,6 +396,7 @@ $(document).ready(function() {
             $('#tld').val(domen[1]);
             $('#durasidomain').val("365");
             $('#hargadomain').val(domen[2]);
+            $('#belanjadomain').html("<div class='float-left'><b>"+domen[0]+"."+domen[1]+"</b></div><div class='float-right'>"+domen[2]+"</div>");
         }
         else if($(this).is(":not(:checked)")){
             $('#namadomain').val("");

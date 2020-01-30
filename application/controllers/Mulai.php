@@ -36,7 +36,7 @@ class Mulai extends CI_Controller {
                             Harga 6 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[2])."</span> ( Hemat ".rupiah((6*$harga[0])-$harga[2])." )<br>
                             Harga 12 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[3])."</span> ( Hemat ".rupiah((12*$harga[0])-$harga[3])." )<br>"; */
 
-                            echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12).";".$harga[1].";".$harga[2].";".$harga[3];
+                            echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12).";".$harga[1].";".$harga[2].";".$harga[3].";".$row['nama_produk'];
                           }elseif($row[id_produk] == '18'){
                             if ($kons['pt']=='0'){
                               $hargafix = $harga[1];
@@ -45,7 +45,7 @@ class Mulai extends CI_Controller {
                               $hargafix = $harga[0];
                               $hargasatu = "<span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>";
                             }
-                            echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12).";".$harga[1].";".$harga[2].";".$harga[3];
+                            echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12).";".$harga[1].";".$harga[2].";".$harga[3].";".$row['nama_produk'];
                           }elseif($row[id_produk] == '19'){
                             if ($kons['pb']=='0'){
                               $hargafix = $harga[1];
@@ -54,7 +54,7 @@ class Mulai extends CI_Controller {
                               $hargafix = $harga[0];
                               $hargasatu = "<span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>";
                             }
-                            echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12).";".$harga[1].";".$harga[2].";".$harga[3];
+                            echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12).";".$harga[1].";".$harga[2].";".$harga[3].";".$row['nama_produk'];
                           }
                         }
     }
