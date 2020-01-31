@@ -9,7 +9,7 @@
                     <?php if ($this->session->id_konsumen == ''){
                         echo "<div class='card'>
                         <div class='card-body'>
-                            <div class='card-title'><h5>Login Dahulu</h5></div>
+                            <div class='card-title'><h5> <span class='badge badge-pill badge-danger'>!</span> Login Dahulu</h5></div>
                         </div>
                         </div>";
                     }else{
@@ -25,7 +25,7 @@
                         echo"
                         <div class='card'>
                         <div class='card-header bg-white'>
-                            <h5 class='mb-0'>Pilih Paket</h5>
+                            <h5 class='mb-0'> <span class='badge badge-pill badge-primary'>1</span> Pilih Paket</h5>
                         </div>
                         <div class='card-body'>";
                             /*<div class='card-title'><h5>Pilih Paket</h5></div>
@@ -91,7 +91,7 @@
                                     </div>
                                     <hr>
                                     <div class='card-title'>
-                                        <h5>Pilih Template</h5>
+                                        <h5> <span class='badge badge-pill badge-primary'>2</span> Pilih Template</h5>
                                     </div>
                                     <hr>
 
@@ -142,7 +142,7 @@
                         </div>
                         <div class='card mt-2'>
                             <div class='card-header bg-white'>
-                                <h5 class='mb-0'>Pilih Domain</h5>
+                                <h5 class='mb-0'> <span class='badge badge-pill badge-primary'>3</span> Pilih Domain</h5>
                             </div>
                             <div class='card-body'>
                                 <div class='col-lg-12'>
@@ -286,7 +286,7 @@
                     <div class='col-md-4 col-sm-4 mb-3'>
                         <div class='card'>
                             <div class='card-header bg-white'>
-                                <h5 class='mb-0'>Ringkasan Order</h5>
+                                <h5 class='mb-0'> <span class='badge badge-pill badge-primary'>4</span> Ringkasan Order</h5>
                             </div>
                             <div class='card-body'>
                                 <!-- <div class='card-title'><h5>Ringkasan Order</h5></div>
@@ -303,7 +303,7 @@
                         </div>
                         <div class='card my-2'>
                             <div class='card-header bg-white'>
-                                <h5 class='mb-0'>Pembayaran</h5>
+                                <h5 class='mb-0'> <span class='badge badge-pill badge-primary'>5</span> Pembayaran</h5>
                             </div>
                             <div class='card-body'>
                                 <!--<div class='card-title'><h5>Pembayaran</h5></div>
@@ -584,6 +584,7 @@ $(document).ready(function() {
                     if (data.error =='0'){
                         console.log(data);
                         $('#error_log').html("Pembelian berhasil, tunggu...");
+                        alert("Daftar Pembelian:\nPaket: "+data.nama_produk+"\nHarga: "+data.hargafinal+"\n==========\nDomain: "+data.subdomain+data.tld+"\nHarga: "+data.harga_domain+"\n")
                     }else{
                         //console.log(data);
                         $('#error_log').html(data.error);

@@ -103,12 +103,13 @@ class Mulai extends CI_Controller {
 
         $bank = $this->input->post('g');
 
-        $subdomain = $this->input->post('l');
+        $pilihandomain = $this->input->post('l');
         $subdomain = $this->input->post('h');
         $tld = $this->input->post('i');
         $durasidomain = $this->input->post('j');
         $hargadomain = $this->input->post('k');
-
+        $row = $this->model_app->view_where('rb_produk',array('id_produk'=>$id_produk))->row_array;
+        $namaproduk = $row['nama_produk'];
 
         if ($id_produk=='') {
           $error[] = 'Tolong Pilih Paket';
@@ -122,6 +123,9 @@ class Mulai extends CI_Controller {
         if ($subdomain=='') {
           $error[] = 'Tolong Pilih Nama Domain';
         }
+        if ($bank=='') {
+          $error[] = 'Tolong Pilih Metode Pembayaran';
+        }
 
         if (isset($error)) {
           $data = array('error'=>"<span class='badge badge-pill badge-danger'>!</span> <small class='text-danger'>".implode("</small><br /><span class='badge badge-pill badge-danger'>!</span> <small class='text-danger'>", $error));
@@ -131,10 +135,19 @@ class Mulai extends CI_Controller {
           $data['error'] = '0';
           $data['id_konsumen'] = $id_konsumen;
           $data['id_produk'] = $id_produk;
+          
+          $data['nama_produk'] = $namaproduk;
           $data['tipe'] = $tipe;
           $data['tgldaftar'] = $tgldaftar;
           $data['durasi'] = $durasi;
           $data['hargafinal'] = $harga_final;
+
+          $data['pilihan_domain'] = $pilihandomain;
+          $data['subdomain'] = $subdomain;
+          $data['tld'] = $tld;
+          $data['tgldaftar_domain'] = $tgldaftar;
+          $data['durasi_domain'] = $durasidomain;
+          $data['harga_domain'] = $hargadomain;
           $this->output->set_output(json_encode($data));
         }
       }

@@ -92,8 +92,10 @@ $(document).ready(function() {
                         $('#loaderdomain').empty();
                     }else{
                         //console.log("DOMAIN TIDAK ADA");
+                        $("#resultdomain").fadeIn();
                         $("#domainsukses2").html("<h5 class='pb-0 mb-0'>Yah :( Domain Anda Tidak Tersedia</h4> <p> "+dom+" tidak tersedia, pilih domain lain?</p>");
                         $('#loaderdomain').empty();
+                        $("#tomboldomain").hide();
                     }
                     //console.log(result["domainAvailability"]);
                     //var result = response["result"];
@@ -136,11 +138,11 @@ $(document).ready(function() {
                     subdomain: dom
                 },
                 beforeSend: function() {
-                    $('#loaderdomain').html("<div class='text-center'><img class='img-fluid' src='"+baseurl+"asset/images/loading.gif' /></div>");
+                    $('#loaderdomain2').html("<div class='text-center'><img class='img-fluid' src='"+baseurl+"asset/images/loading.gif' /></div>");
                 },
                 success: function(response) {
                     var data = jQuery.parseJSON(response);
-                    //alert(data.pesan);
+                    console.log(data.error);
                     //var result = response["DomainInfo"]
                     if(data.error=='0'){
                         //console.log("DOMAIN ADA");
@@ -153,7 +155,10 @@ $(document).ready(function() {
                         $('#loaderdomain2').empty();
                     }else{
                         //console.log("DOMAIN TIDAK ADA");
+                        $("#resultdomain2").fadeIn();
                         $("#domainsukses3").html("<h5 class='pb-0 mb-0'>Yah :( Subdomain Anda Tidak Tersedia</h4> <p> "+dom+" tidak tersedia, pilih subdomain lain?</p>");
+                        $('#loaderdomain2').empty();
+                        $("#tomboldomain2").hide();
                     }
                     //console.log(result["domainAvailability"]);
                     //var result = response["result"];
