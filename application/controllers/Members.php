@@ -28,6 +28,10 @@ class Members extends CI_Controller {
 		$this->template->load('member/template','member/dashboard',$data);
 	}
 
+	function loader(){
+		$this->template->load('phpmu-one/template','phpmu-one/loader');
+	}
+
 	function services(){
 		cek_session_members();
 		$data['title'] = 'Paket Anda';

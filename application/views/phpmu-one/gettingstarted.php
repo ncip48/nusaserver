@@ -147,15 +147,22 @@
                             <div class='card-body'>
                                 <div class='col-lg-12'>
                                 <form>
-                                <div class='custom-control custom-radio text-left'>
-                                    <input type='radio' class='custom-control-input' id='belidomainsendiri' name='pilihandomain' value='0' />
-                                    <label class='custom-control-label' for='belidomainsendiri'><h6>Beli domain (.com, .net, .online, .biz)</h6></label>
+                                <div class='col-xs px-0 py-1'>        
+                                    <div class='custom-control custom-radio text-left'>
+                                        <div class='row'>
+                                            <input type='radio' class='custom-control-input' id='belidomainsendiri' name='pilihandomain' value='0' />
+                                            <label class='custom-control-label' for='belidomainsendiri'><h6>Beli domain (.com, .net, .online, .biz)</h6></label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class='custom-control custom-radio text-left'>
-                                    <input type='radio' class='custom-control-input' id='pakenusa' name='pilihandomain' value='1' />
-                                    <label class='custom-control-label' for='pakenusa'><h6>Gunakan subdomain nusaserver (misal tokoanda.nusaserver.com)</h6></label>
+                                <div class='col-xs px-0 py-1'>        
+                                    <div class='custom-control custom-radio text-left'>
+                                        <div class='row'>
+                                            <input type='radio' class='custom-control-input' id='pakenusa' name='pilihandomain' value='1' />
+                                            <label class='custom-control-label' for='pakenusa'><h6>Gunakan subdomain nusaserver (misal tokoanda.nusaserver.com)</h6></label>
+                                        </div>
+                                    </div>
                                 </div>
-
                                 <div class='belidomain'>
                                     <div class='row'>
                                         <div class='col-md-8 px-0 mx-0 py-1'>
@@ -294,7 +301,7 @@
                                 <div class='container'>
                                     <div class='row'>
                                         <div class='col-sm mx-2 px-0 mt-1'>
-                                            <div id='belanjapaket'></div><br>
+                                            <div id='belanjapaket'>Kosong</div><br>
                                             <div id='belanjadomain'></div>
                                         </div>
                                     </div>
