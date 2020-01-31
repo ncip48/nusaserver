@@ -147,62 +147,140 @@
                             <div class='card-body'>
                                 <div class='col-lg-12'>
                                 <form>
-                                <div class='row'>
-                                    <div class='col-md-9 px-1'>
-                                        <div class='form-group'>
-                                            <input class='form-control' id='subdomain2' name='subdomain' type='text' placeholder='Nama Toko Anda' required='required' data-validation-required-message='Please enter your name.'>
-                                            <p class='help-block text-danger'></p>
+                                <div class='custom-control custom-radio text-left'>
+                                    <input type='radio' class='custom-control-input' id='belidomainsendiri' name='pilihandomain' value='0' />
+                                    <label class='custom-control-label' for='belidomainsendiri'><h6>Beli domain (.com, .net, .online, .biz)</h6></label>
+                                </div>
+                                <div class='custom-control custom-radio text-left'>
+                                    <input type='radio' class='custom-control-input' id='pakenusa' name='pilihandomain' value='1' />
+                                    <label class='custom-control-label' for='pakenusa'><h6>Gunakan subdomain nusaserver (misal tokoanda.nusaserver.com)</h6></label>
+                                </div>
+
+                                <div class='belidomain'>
+                                    <div class='row'>
+                                        <div class='col-md-8 px-0 mx-0 py-1'>
+                                            <div class='input-group'>
+                                                <input class='form-control' id='subdomain2' name='subdomain' type='text' placeholder='Nama Toko Anda' required='required' data-validation-required-message='Please enter your name.'>
+                                                <p class='help-block text-danger'></p>
+
+                                                <div class='input-group-append'>
+                                                <select class='form-control' name='domain2' id='domain2'>
+                                                    <option value='com' selected>.com</option>
+                                                    <option value='net'>.net</option>
+                                                    <option value='biz'>.biz</option>
+                                                    <option value='online'>.online</option>
+                                                </select>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class='col-md-3 px-1'>
-                                        <div class='form-group'>
-                                            <select class='form-control' name='domain2' id='domain2'>
-                                            <option value='none'>Pilih Domain</option>
-                                            <option value='com'>.com</option>
-                                            <option value='net'>.net</option>
-                                            <option value='biz'>.biz</option>
-                                            <option value='online'>.online</option>
-                                            </select>
-                                            <p class='help-block text-danger'></p>
+                                        <div class='col-md-1 px-0 py-1'>
                                         </div>
-                                    </div>
-                                    <div class='container'>
-                                        <div class='row justify-content-center'>
-                                            <div id='loaderdomain'></div>
+                                        <div class='col-md-3 px-0 py-1'>
+                                            <div class='form-group'>
+                                                <button class='btn btn-primary btn-block' id='cekdomain'>Cek</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class='clearfix'></div>
-                                        <div class='col-md-9 px-1 text-left text-light'>
-                                            <div class='text-dark text-center' id='resultdomain'>
-                                                <label class='hargakhusus'>
-                                                        <div class='card card-default card-input card'>
-                                                            <div class='card' style='cursor: default;'>
+                                        <div class='container'>
+                                            <div class='row justify-content-center'>
+                                                <div id='loaderdomain'></div>
+                                            </div>
+                                        </div>
+                                        <div class='clearfix'></div>
+                                            <div class='col-md-8 px-0 text-left text-light'>
+                                                <div class='text-dark text-center' id='resultdomain'>
+                                                    <label class='hargakhusus'>
+                                                            <div class='card card-default card-input card mx-0 my-0 mb-1'>
+                                                                <div class='card' style='cursor: default;'>
+                                                                    <div class='card-body'>
+                                                                    <div class='text-dark text-center' id='domainsukses2'></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 px-0'>
+                                            </div>
+                                            <div class='col-md-3 px-0 text-left text-light'>
+                                                <div class='text-dark text-center' id='tomboldomain'>
+                                                    <label class='hargakhusus'>
+                                                    <input type='checkbox' name='buttondomain' class='card-input-element' value='1' />
+                                                        <div class='card card-default card-input card mx-0 my-0'>
+                                                            <div class='card bg-primary text-white'>
                                                                 <div class='card-body'>
-                                                                <div class='text-dark text-center' id='domainsukses2'></div>
+                                                                    <h5>Pilih Domain ini</h5>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                </label>
+                                                    </label>       
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class='col-md-3 px-1 text-left text-light'>
-                                            <div class='text-dark text-center' id='tomboldomain'>
-                                                <label class='hargakhusus'>
-                                                <input type='checkbox' name='buttondomain' class='card-input-element' value='1' />
-                                                    <div class='card card-default card-input card'>
-                                                        <div class='card bg-primary text-white'>
-                                                            <div class='card-body'>
-                                                                <h5>Pilih Domain ini</h5>
+                                    </form>
+                                    </div>
+
+
+                                    <div class='pakenusa'>
+                                    <div class='row'>
+                                        <div class='col-md-8 px-0 mx-0 py-1'>
+                                            <div class='input-group'>
+                                                <input class='form-control' id='subdomain3' name='subdomain3' type='text' placeholder='subdomain' required='required' data-validation-required-message='Please enter your name.'>
+                                                
+                                                <div class='input-group-append'>
+                                                  <span class='input-group-text'>.nusaserver.com</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='col-md-1 px-0 py-1'>
+                                        </div>
+                                        <div class='col-md-3 px-0 py-1'>
+                                            <div class='form-group'>
+                                                <button class='btn btn-primary btn-block' id='ceksubdomain'>Cek</button>
+                                            </div>
+                                        </div>
+
+
+                                        <div class='container'>
+                                            <div class='row justify-content-center'>
+                                                <div id='loaderdomain2'></div>
+                                            </div>
+                                        </div>
+                                        <div class='clearfix'></div>
+                                            <div class='col-md-8 px-0 text-left text-light'>
+                                                <div class='text-dark text-center' id='resultdomain2'>
+                                                    <label class='hargakhusus'>
+                                                            <div class='card card-default card-input card mx-0 my-0 mb-1'>
+                                                                <div class='card' style='cursor: default;'>
+                                                                    <div class='card-body'>
+                                                                    <div class='text-dark text-center' id='domainsukses3'></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                    </label>
+                                                </div>
+                                            </div> 
+                                            <div class='col-md-1 px-0'>
+                                            </div>
+                                            <div class='col-md-3 px-0 text-left text-light'>
+                                                <div class='text-dark text-center' id='tomboldomain2'>
+                                                    <label class='hargakhusus'>
+                                                    <input type='checkbox' name='buttondomain2' class='card-input-element' value='1' />
+                                                        <div class='card card-default card-input card mx-0 my-0'>
+                                                            <div class='card bg-primary text-white'>
+                                                                <div class='card-body'>
+                                                                    <h5>Pilih Subomain ini</h5>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </label>       
+                                                    </label>       
+                                                </div>
                                             </div>
                                         </div>
+                                    </form>
                                     </div>
-                                </form>
+
+                                </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                     <div class='col-md-4 col-sm-4 mb-3'>
@@ -274,8 +352,10 @@
                                 <input id='harga_final' name='f' type='hidden' value='' \>
                                 
                                 <input id='ringkasan' type='hidden' value='' \>
+                                <input id='ringkasan2' type='hidden' value='' \>
                                 <input id='banktype' name='g' type='hidden' value='' \>
 
+                                <input id='pilihandomain' name='l' type='hidden' value='' \>
                                 <input id='namadomain' name='h' type='hidden' value='' \>
                                 <input id='tld' name='i' type='hidden' value='' \>
                                 <input id='durasidomain' name='j' type='hidden' value='' \>
@@ -298,9 +378,14 @@
 <script>
 $(document).ready(function() {
 
+    $('.belidomain').hide();
+    $('.pakenusa').hide();
     $('.hargapaket').hide();
     $('#tomboldomain').hide();
     $('#resultdomain').hide();
+    $('#tomboldomain2').hide();
+    $('#resultdomain2').hide();
+
 
     $('#paket').change(function() {
         var asd = $(this).val();
@@ -409,6 +494,28 @@ $(document).ready(function() {
 
     });
 
+    $("input[name='pilihandomain']").change(function(){
+        var pilihan = $(this).val();
+        //$('#durasii').html("no "+tipe);
+        $('#pilihandomain').val(pilihan);
+        $("#tomboldomain").hide();
+        $("#resultdomain").hide();
+        $("#tomboldomain2").hide();
+        $("#resultdomain2").hide();
+        if (pilihan=='0'){
+            //$("#tipe1").addClass('bg-primary text-white');
+            //$("#tipe2, #tipe3").removeClass('bg-primary text-white');
+            $('.belidomain').fadeIn();
+            $('.pakenusa').hide();
+        }else if(pilihan=='1'){
+            //$("#tipe2").addClass('bg-primary text-white');
+            //$("#tipe1, #tipe3").removeClass('bg-primary text-white');
+            $('.belidomain').hide();
+            $('.pakenusa').fadeIn();
+        }
+    });
+
+
     $("input[name='payment']").change(function(){
         var pemb = $(this).val();
         $.ajax({
@@ -444,6 +551,24 @@ $(document).ready(function() {
         }
     });
 
+    $('input[name="buttondomain2"]').click(function(){
+        var tipe = $('#ringkasan2').val();
+        var domen = tipe.split(";");
+        if($(this).is(":checked")){
+            $('#namadomain').val(domen[0]);
+            $('#tld').val(domen[1]);
+            $('#durasidomain').val("365");
+            $('#hargadomain').val(domen[2]);
+            $('#belanjadomain').html("<div class='float-left'><b>"+domen[0]+domen[1]+"</b></div><div class='float-right'>"+domen[2]+"</div>");
+        }
+        else if($(this).is(":not(:checked)")){
+            $('#namadomain').val("");
+            $('#tld').val("");
+            $('#durasidomain').val("");
+            $('#hargadomain').val("");
+        }
+    });
+
     $('#beli').submit(function() {
 		    $.ajax({
 			    type: 'POST',
@@ -457,7 +582,7 @@ $(document).ready(function() {
                     //$('#panelregister').hide();
                     //$('#aksiregister').html(data);
                     if (data.error =='0'){
-                        //console.log(data);
+                        console.log(data);
                         $('#error_log').html("Pembelian berhasil, tunggu...");
                     }else{
                         //console.log(data);

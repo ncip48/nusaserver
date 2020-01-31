@@ -70,6 +70,28 @@ class Mulai extends CI_Controller {
       }
     }
 
+    public function ceksubdomain(){
+      if($this->input->is_ajax_request()) {
+        $subdomain = $this->input->post('subdomain');
+        $cek = $this->model_app->view_where('subdomain',array('nama_subdomain'=>$subdomain));
+        $row = $cek->row_array();
+        $total = $cek->num_rows();
+        
+        if ($total > 0){
+          $data = array();
+          $data['error'] = "1";
+          $data['pesan'] = "Subdomain Sudah Dipakai, Pilih Subdomain Lain";
+          $this->output->set_output(json_encode($data));
+        }else{
+          $data = array();
+          $data['error'] = "0";
+          $data['pesan'] = "Subdomain ".$subdomain." Tersedia, Pakai?";
+          $this->output->set_output(json_encode($data));
+        }
+        
+      }
+    }
+
     public function beli(){
       if($this->input->is_ajax_request()) {
         $id_konsumen = $this->input->post('a');
@@ -81,6 +103,7 @@ class Mulai extends CI_Controller {
 
         $bank = $this->input->post('g');
 
+        $subdomain = $this->input->post('l');
         $subdomain = $this->input->post('h');
         $tld = $this->input->post('i');
         $durasidomain = $this->input->post('j');
