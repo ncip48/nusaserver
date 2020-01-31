@@ -102,13 +102,16 @@ class Mulai extends CI_Controller {
         $harga_final = $this->input->post('f');
 
         $bank = $this->input->post('g');
-
+        $rek = $this->model_app->view_where('rb_rekening',array('nama_bank'=>$bank))->row_array();
+        $pemilikrek = $rek['pemilik_rekening'];
+        $norek = $rek['no_rekening'];
+        
         $pilihandomain = $this->input->post('l');
         $subdomain = $this->input->post('h');
         $tld = $this->input->post('i');
         $durasidomain = $this->input->post('j');
         $hargadomain = $this->input->post('k');
-        $row = $this->model_app->view_where('rb_produk',array('id_produk'=>$id_produk))->row_array;
+        $row = $this->model_app->view_where('rb_produk',array('id_produk'=>$id_produk))->row_array();
         $namaproduk = $row['nama_produk'];
 
         if ($id_produk=='') {
@@ -148,6 +151,10 @@ class Mulai extends CI_Controller {
           $data['tgldaftar_domain'] = $tgldaftar;
           $data['durasi_domain'] = $durasidomain;
           $data['harga_domain'] = $hargadomain;
+
+          $data['bank'] = $bank;
+          $data['namarek'] = $pemilikrek;
+          $data['norek'] = $norek;
           $this->output->set_output(json_encode($data));
         }
       }
