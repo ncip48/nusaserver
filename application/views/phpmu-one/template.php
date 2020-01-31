@@ -139,14 +139,12 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
 <body id="page-top" class="bg-white">
   <div class="preloader">
       <div class="loading">
-        
-        <a href="#" class="intro-banner-vdo-play-btn pinkBg" target="_blank">
+        <a class="intro-banner-vdo-play-btn pinkBg">
         <i class="glyphicon glyphicon-play whiteText" aria-hidden="true"></i>
         <span class="ripple pinkBg"></span>
         <span class="ripple pinkBg"></span>
         <span class="ripple pinkBg"></span>
         </a>
-
       </div>
     </div>
   <div id='aksilogout'></div>
