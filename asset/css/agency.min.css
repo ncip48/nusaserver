@@ -863,11 +863,13 @@ body.swal2-shown > [aria-hidden="true"] {
   cursor: pointer;
 }
 
+
 .card-input-element:checked + .card-input {
-box-shadow: 0 0 1px 1px #1a1aff;
--webkit-transition: border .3s;
--o-transition: border .3s;
-transition: border .3s;
+	box-shadow: 0 0 1px 1px #1a1aff;
+	-webkit-transition: border .3s;
+	-o-transition: border .3s;
+	transition: border .3s;
+
 }
 
 .card-input-element:checked + .card-input::after {

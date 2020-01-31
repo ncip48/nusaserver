@@ -44,7 +44,7 @@
                                                 <label class='hargakhusus'>
                                                 <input type='radio' name='product' class='card-input-element' value='30' />
                                                 <div class='card card-default card-input card'>
-                                                    <div class='card'>
+                                                    <div id='paket1' class='card'>
                                                     <div class='card-body'>
                                                         <h5>1 Bulan</h5>
                                                         <hr>
@@ -60,7 +60,7 @@
                                                 <label class='hargakhusus'>
                                                 <input type='radio' name='product' class='card-input-element' value='183' />
                                                 <div class='card card-default card-input card'>
-                                                    <div class='card'>
+                                                    <div id='paket2' class='card'>
                                                     <div class='card-body'>
                                                         <h5>6 Bulan</h5>
                                                         <hr>
@@ -76,7 +76,7 @@
                                                 <label class='hargakhusus'>
                                                 <input type='radio' name='product' class='card-input-element' value='365' />
                                                 <div class='card card-default card-input card'>
-                                                    <div class='card'>
+                                                    <div id='paket3' class='card'>
                                                     <div class='card-body'>
                                                         <h5>12 Bulan</h5>
                                                         <hr>
@@ -96,12 +96,12 @@
                                     <hr>
 
                                     <div class='container'>
-                                        <div class='row'>
-                                            <div class='col-sm mx-2 px-0 mt-1'>
+                                        <div class='row justify-content-center'>
+                                            <div class='col-md mx-2 px-0 mt-1'>
                                                 <label class='hargakhusus'>
                                                 <input type='radio' name='tipe' class='card-input-element' value='1' />
                                                 <div class='card card-default card-input card'>
-                                                    <div class='card'>
+                                                    <div id='tipe1' class='card'>
                                                     <div class='card-body'>
                                                         <h5>Template 1</h5>
                                                     </div>
@@ -110,11 +110,11 @@
                                                 </label>
                                             </div>
 
-                                            <div class='col-sm mx-2 px-0 mt-1'>
+                                            <div class='col-md mx-2 px-0 mt-1'>
                                                 <label class='hargakhusus'>
                                                 <input type='radio' name='tipe' class='card-input-element' value='2' />
                                                 <div class='card card-default card-input card'>
-                                                    <div class='card'>
+                                                    <div id='tipe2' class='card'>
                                                     <div class='card-body'>
                                                         <h5>Template 2</h5>
                                                     </div>
@@ -123,13 +123,13 @@
                                                 </label>
                                             </div>
 
-                                            <div class='col-sm mx-2 px-0 mt-1'>
+                                            <div class='col-md mx-2 px-0 mt-1'>
                                                 <label class='hargakhusus'>
                                                 <input type='radio' name='tipe' class='card-input-element' value='3' />
                                                 <div class='card card-default card-input card'>
-                                                    <div class='card'>
+                                                    <div id='tipe3' class='card'>
                                                     <div class='card-body'>
-                                                        <h5>Template 1</h5>
+                                                        <h5>Template 3</h5>
                                                     </div>
                                                     </div>
                                                 </div>
@@ -145,7 +145,7 @@
                                 <h5 class='mb-0'>Pilih Domain</h5>
                             </div>
                             <div class='card-body'>
-                                <div class='col-lg-12 py-5 px-5'>
+                                <div class='col-lg-12'>
                                 <form>
                                 <div class='row'>
                                     <div class='col-md-9 px-1'>
@@ -190,7 +190,7 @@
                                                 <label class='hargakhusus'>
                                                 <input type='checkbox' name='buttondomain' class='card-input-element' value='1' />
                                                     <div class='card card-default card-input card'>
-                                                        <div class='card'>
+                                                        <div class='card bg-primary text-white'>
                                                             <div class='card-body'>
                                                                 <h5>Pilih Domain ini</h5>
                                                             </div>
@@ -203,9 +203,7 @@
                                 </form>
                             </div>
                         </div>
-                        </div>";
-                    }
-                    ?>
+                        </div>
                     </div>
                     <div class='col-md-4 col-sm-4 mb-3'>
                         <div class='card'>
@@ -232,26 +230,26 @@
                             <div class='card-body'>
                                 <!--<div class='card-title'><h5>Pembayaran</h5></div>
                                 <hr> -->
-                                <div class="paymentWrap">
-                                    <div class="btn-group paymentBtnGroup btn-group-justified" data-toggle="buttons">
+                                <div class='paymentWrap'>
+                                    <div class='btn-group paymentBtnGroup btn-group-justified' data-toggle='buttons'>
                                         <div class='container'>
                                             <div class='row'>
-                                                <div class='col-sm mx-2 px-0 mt-1'>
-                                                    <label class="btn paymentMethod">
-                                                        <div class="method bri"></div>
-                                                        <input type="radio" name="payment" value='bri'> 
+                                                <div class='col-xs-2 mx-0 px-0 mt-1'>
+                                                    <label class='btn paymentMethod'>
+                                                        <div class='method bri'></div>
+                                                        <input type='radio' name='payment' value='bri'> 
                                                     </label>
                                                 </div>
-                                                <div class='col-sm mx-2 px-0 mt-1'>
-                                                    <label class="btn paymentMethod">
-                                                        <div class="method mandiri"></div>
-                                                        <input type="radio" name="payment" value='mandiri'> 
+                                                <div class='col-xs-2 ml-2 mr-2 px-0 mt-1'>
+                                                    <label class='btn paymentMethod'>
+                                                        <div class='method mandiri'></div>
+                                                        <input type='radio' name='payment' value='mandiri'> 
                                                     </label>
                                                 </div>
-                                                <div class='col-sm mx-2 px-0 mt-1'>
-                                                    <label class="btn paymentMethod">
-                                                        <div class="method bca"></div>
-                                                        <input type="radio" name="payment" value='bca'> 
+                                                <div class='col-xs-2 mx-0 px-0 mt-1'>
+                                                    <label class='btn paymentMethod'>
+                                                        <div class='method bca'></div>
+                                                        <input type='radio' name='payment' value='bca'> 
                                                     </label>
                                                 </div>
                                             </div>
@@ -267,23 +265,30 @@
                         </div>
                         <div class='card my-2'>
                             <div class='card-body'>
-                                <form>
-                                <input id='id_konsumen' type='hidden' value='".$this->session->id_konsumen."' \>
-                                <input id='id_produk' type='hidden' value='' \>
-                                <input id='tipe' type='hidden' value='' \>
-                                <input id='tgldaftar' type='hidden' value='<?php echo date('Y-m-d H:i:s')?>' \>
-                                <input id='durasi' type='hidden' value='' \>
-                                <input id='harga_final' type='hidden' value='' \>
+                                <form method='post' action='".base_url()."mulai/beli' id='beli'>
+                                <input id='id_konsumen' name='a' type='hidden' value='".$this->session->id_konsumen."' \>
+                                <input id='id_produk' name='b' type='hidden' \>
+                                <input id='tipe' name='c' type='hidden' value='' \>
+                                <input id='tgldaftar' name='d' type='hidden' value='".date('Y-m-d H:i:s')."' \>
+                                <input id='durasi' name='e' type='hidden' value='' \>
+                                <input id='harga_final' name='f' type='hidden' value='' \>
                                 
                                 <input id='ringkasan' type='hidden' value='' \>
-                                <input id='namadomain' type='hidden' value='' \>
-                                <input id='tld' type='hidden' value='' \>
-                                <input id='durasidomain' type='hidden' value='' \>
-                                <input id='hargadomain' type='hidden' value='' \>
-                                <input type="button" class="btn btn-primary btn-sm btn-block" value='BAYAR' \>
+                                <input id='banktype' name='g' type='hidden' value='' \>
+
+                                <input id='namadomain' name='h' type='hidden' value='' \>
+                                <input id='tld' name='i' type='hidden' value='' \>
+                                <input id='durasidomain' name='j' type='hidden' value='' \>
+                                <input id='hargadomain' name='k' type='hidden' value='' \>
+                                <input id='btnsubmit' type='submit' class='btn btn-primary btn-sm btn-block' value='BAYAR' \>
                                 </form>
+                                <p>
+                                <div id='error_log' class='text-left'></div>
                             </div>
                         </div>
+                        ";
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -364,15 +369,24 @@ $(document).ready(function() {
                     //console.log(pr[5]);
                     $('#harga_final').val(pr[5]);
                     $('#belanjapaket').html("<div class='float-left'><b>"+pr[8]+"</b> </div><div class='float-right'>"+pr[5]+"</div>");
+                    //ganti warna woi
+                    $("#paket1").addClass('bg-primary text-white');
+                    $("#paket2, #paket3").removeClass('bg-primary text-white');
                 }else if (durasi=='183'){
                     //console.log(pr[8]);
                     $('#harga_final').val(pr[6]);
                     $('#belanjapaket').html("<div class='float-left'><b>"+pr[8]+"</b></div><div class='float-right'>"+pr[6]+"</div>");
+                    //ganti warna woi
+                    $("#paket2").addClass('bg-primary text-white');
+                    $("#paket1, #paket3").removeClass('bg-primary text-white');
                 }else if (durasi=='365'){
                     //console.log(pr[7]);
                     $('#harga_final').val(pr[7]);
                     //$('#belanjapaket').html("<div class='float-left'><b>"+pr[8]+"</b> <br><small> Hari, <div id='durasii' class='float-right'></div></small></div><div class='float-right'>"+pr[7]+"</div>");
                     $('#belanjapaket').html("<div class='float-left'><b>"+pr[8]+"</b></div><div class='float-right'>"+pr[7]+"</div>");
+                    //ganti warna woi
+                    $("#paket3").addClass('bg-primary text-white');
+                    $("#paket1, #paket2").removeClass('bg-primary text-white');
                 }
             }
         }); 
@@ -382,6 +396,17 @@ $(document).ready(function() {
         var tipe = $(this).val();
         //$('#durasii').html("no "+tipe);
         $('#tipe').val(tipe);
+        if (tipe=='1'){
+            $("#tipe1").addClass('bg-primary text-white');
+            $("#tipe2, #tipe3").removeClass('bg-primary text-white');
+        }else if(tipe=='2'){
+            $("#tipe2").addClass('bg-primary text-white');
+            $("#tipe1, #tipe3").removeClass('bg-primary text-white');
+        }else if(tipe=='3'){
+            $("#tipe3").addClass('bg-primary text-white');
+            $("#tipe1, #tipe2").removeClass('bg-primary text-white');
+        }
+
     });
 
     $("input[name='payment']").change(function(){
@@ -396,6 +421,7 @@ $(document).ready(function() {
                 var data = jQuery.parseJSON(response);
                 //console.log(data.norek);
                 $('#bankdetails').html("<h6>No Rekening : "+data.norek+"</h6><h6>Nama Pemilik : "+data.nama+"</h6>");
+                $('#banktype').val(pemb);
             }
         }); 
     });
@@ -417,6 +443,36 @@ $(document).ready(function() {
             $('#hargadomain').val("");
         }
     });
+
+    $('#beli').submit(function() {
+		    $.ajax({
+			    type: 'POST',
+			    url: $(this).attr('action'),
+			    data: $(this).serialize(),
+                beforeSend: function(){
+                    $('#load').html("<img class='loading' src='"+baseurl+"asset/images/loading.gif' />");
+                },
+			    success: function(response) {
+                    var data = jQuery.parseJSON(response);
+                    //$('#panelregister').hide();
+                    //$('#aksiregister').html(data);
+                    if (data.error =='0'){
+                        //console.log(data);
+                        $('#error_log').html("Pembelian berhasil, tunggu...");
+                    }else{
+                        //console.log(data);
+                        $('#error_log').html(data.error);
+                    }
+			    }
+		    })
+		    return false;
+        });
+        
+    $("html").click(function(){  
+        //$('#product').prop("checked", false);
+        //$('#product').empty(); 
+        //console.log("klik")
+    });  
 
 });
 </script>

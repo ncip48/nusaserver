@@ -30,31 +30,31 @@ class Mulai extends CI_Controller {
                               //$this->output->set_output(json_encode($harga[1]));
                             }else{
                               $hargafix = $harga[0];
-                              $hargasatu = "<span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>";
+                              $hargasatu = "<span>Rp ".rupiah($harga[0])."</span><br>";
                             }
                             /* echo "Harga 1 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>
                             Harga 6 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[2])."</span> ( Hemat ".rupiah((6*$harga[0])-$harga[2])." )<br>
                             Harga 12 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[3])."</span> ( Hemat ".rupiah((12*$harga[0])-$harga[3])." )<br>"; */
 
-                            echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12).";".$harga[1].";".$harga[2].";".$harga[3].";".$row['nama_produk'];
+                            echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12).";".rupiah($hargafix).";".rupiah($harga[2]).";".rupiah($harga[3]).";".$row['nama_produk'];
                           }elseif($row[id_produk] == '18'){
                             if ($kons['pt']=='0'){
                               $hargafix = $harga[1];
                               $hargasatu = "<del>Rp ".rupiah($harga[0])."</del><br><small> Rp ".rupiah($harga[1])."</small>";
                             }else{
                               $hargafix = $harga[0];
-                              $hargasatu = "<span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>";
+                              $hargasatu = "<span>Rp ".rupiah($harga[0])."</span><br>";
                             }
-                            echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12).";".$harga[1].";".$harga[2].";".$harga[3].";".$row['nama_produk'];
+                            echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12).";".rupiah($hargafix).";".rupiah($harga[2]).";".rupiah($harga[3]).";".$row['nama_produk'];
                           }elseif($row[id_produk] == '19'){
                             if ($kons['pb']=='0'){
                               $hargafix = $harga[1];
                               $hargasatu = "<del>Rp ".rupiah($harga[0])."</del><br><small> Rp ".rupiah($harga[1])."</small>";
                             }else{
                               $hargafix = $harga[0];
-                              $hargasatu = "<span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>";
+                              $hargasatu = "<span>Rp ".rupiah($harga[0])."</span><br>";
                             }
-                            echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12).";".$harga[1].";".$harga[2].";".$harga[3].";".$row['nama_produk'];
+                            echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12).";".rupiah($hargafix).";".rupiah($harga[2]).";".rupiah($harga[3]).";".$row['nama_produk'];
                           }
                         }
     }
@@ -69,4 +69,52 @@ class Mulai extends CI_Controller {
         $this->output->set_output(json_encode($data));
       }
     }
+
+    public function beli(){
+      if($this->input->is_ajax_request()) {
+        $id_konsumen = $this->input->post('a');
+        $id_produk = $this->input->post('b');
+        $tipe = $this->input->post('c');
+        $tgldaftar = $this->input->post('d');
+        $durasi = $this->input->post('e');
+        $harga_final = $this->input->post('f');
+
+        $bank = $this->input->post('g');
+
+        $subdomain = $this->input->post('h');
+        $tld = $this->input->post('i');
+        $durasidomain = $this->input->post('j');
+        $hargadomain = $this->input->post('k');
+
+
+        if ($id_produk=='') {
+          $error[] = 'Tolong Pilih Paket';
+        }
+        if ($durasi=='') {
+          $error[] = 'Tolong Pilih Durasi Paket';
+        }
+        if ($tipe=='') {
+          $error[] = 'Tolong Pilih Tipe Produk';
+        }
+        if ($subdomain=='') {
+          $error[] = 'Tolong Pilih Nama Domain';
+        }
+
+        if (isset($error)) {
+          $data = array('error'=>"<span class='badge badge-pill badge-danger'>!</span> <small class='text-danger'>".implode("</small><br /><span class='badge badge-pill badge-danger'>!</span> <small class='text-danger'>", $error));
+          $this->output->set_output(json_encode($data));
+        }else{
+          $data = array();
+          $data['error'] = '0';
+          $data['id_konsumen'] = $id_konsumen;
+          $data['id_produk'] = $id_produk;
+          $data['tipe'] = $tipe;
+          $data['tgldaftar'] = $tgldaftar;
+          $data['durasi'] = $durasi;
+          $data['hargafinal'] = $harga_final;
+          $this->output->set_output(json_encode($data));
+        }
+      }
+    }
+
 }
