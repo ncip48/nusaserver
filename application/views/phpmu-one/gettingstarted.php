@@ -584,7 +584,7 @@ $(document).ready(function() {
                     if (data.error =='0'){
                         //console.log(data);
                         $('#error_log').html("Pembelian berhasil, tunggu...");
-                        alert("Daftar Pembelian:\nPaket: "+data.nama_produk+"\nHarga: "+data.hargafinal+"\n==========\nDomain: "+data.subdomain+data.tld+"\nHarga: "+data.harga_domain+"\n=============\nSilahkan Transfer ke rekening dibawah\nNama Bank: "+data.bank+"\nNama Pemilik: "+data.namarek+"\nNo Rekening: "+data.norek+"\n=======Terimakasih")
+                        alert("Daftar Pembelian:\nPaket: "+data.nama_produk+" ("+data.durasi+" Hari, Template no "+data.tipe+")\nHarga: "+data.hargafinal+"\n==========\nDomain: "+data.subdomain+data.tld+"\nHarga: "+data.harga_domain+"\n=============\nSilahkan Transfer ke rekening dibawah\nNama Bank: "+data.bank+"\nNama Pemilik: "+data.namarek+"\nNo Rekening: "+data.norek+"\n=======Terimakasih")
                     }else{
                         //console.log(data);
                         $('#error_log').html(data.error);
