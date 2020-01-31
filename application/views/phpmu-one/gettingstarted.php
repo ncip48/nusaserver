@@ -3,13 +3,12 @@
     <div class='row'>
         <div class='col-md-12 mb-3 text-center'>
             <div class='row'>
-                    
-                    <div class='col-md-8 col-sm-8 mb-3'>
-
                     <?php if ($this->session->id_konsumen == ''){
-                        echo "<div class='card'>
+                        echo "
+                        <div class='col-md-12 col-sm-12 mb-3'>
+                        <div class='card'>
                         <div class='card-body'>
-                            <div class='card-title'><h5> <span class='badge badge-pill badge-danger'>!</span> Login Dahulu</h5></div>
+                            <div class='card-title'><span class='badge badge-pill badge-danger'>!</span><h5>  Login Dahulu</h5></div>
                         </div>
                         </div>";
                     }else{
@@ -22,7 +21,7 @@
                             <a href='https://www.malasngoding.com/card-bootstrap-4/' class='card-link'>Lihat</a>
                         </div>
                         </div>"; */
-                        echo"
+                        echo"<div class='col-md-8 col-sm-8 mb-3'>
                         <div class='card'>
                         <div class='card-header bg-white'>
                             <h5 class='mb-0'> <span class='badge badge-pill badge-primary'>1</span> Pilih Paket</h5>
@@ -399,6 +398,8 @@ $(document).ready(function() {
     $('#paket').change(function() {
         var asd = $(this).val();
         var data = asd.split(";");
+
+        //$(".hargapaket").empty();
 
         //console.log(asd);
 
