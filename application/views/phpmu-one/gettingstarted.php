@@ -366,27 +366,27 @@ $(document).ready(function() {
                 var pr = response.split(';');
                 //console.log(tipee);
                 if (durasi=='30'){
-                    //console.log(pr[5]);
-                    $('#harga_final').val(pr[5]);
-                    $('#belanjapaket').html("<div class='float-left'><b>"+pr[8]+"</b> </div><div class='float-right'>"+pr[5]+"</div>");
                     //ganti warna woi
                     $("#paket1").addClass('bg-primary text-white');
                     $("#paket2, #paket3").removeClass('bg-primary text-white');
+                    //console.log(pr[5]);
+                    $('#harga_final').val(pr[5]);
+                    $('#belanjapaket').html("<div class='float-left'><b>"+pr[8]+"</b> </div><div class='float-right'>"+pr[5]+"</div>");
                 }else if (durasi=='183'){
-                    //console.log(pr[8]);
-                    $('#harga_final').val(pr[6]);
-                    $('#belanjapaket').html("<div class='float-left'><b>"+pr[8]+"</b></div><div class='float-right'>"+pr[6]+"</div>");
                     //ganti warna woi
                     $("#paket2").addClass('bg-primary text-white');
                     $("#paket1, #paket3").removeClass('bg-primary text-white');
+                    //console.log(pr[8]);
+                    $('#harga_final').val(pr[6]);
+                    $('#belanjapaket').html("<div class='float-left'><b>"+pr[8]+"</b></div><div class='float-right'>"+pr[6]+"</div>");
                 }else if (durasi=='365'){
+                    //ganti warna woi
+                    $("#paket3").addClass('bg-primary text-white');
+                    $("#paket1, #paket2").removeClass('bg-primary text-white');
                     //console.log(pr[7]);
                     $('#harga_final').val(pr[7]);
                     //$('#belanjapaket').html("<div class='float-left'><b>"+pr[8]+"</b> <br><small> Hari, <div id='durasii' class='float-right'></div></small></div><div class='float-right'>"+pr[7]+"</div>");
                     $('#belanjapaket').html("<div class='float-left'><b>"+pr[8]+"</b></div><div class='float-right'>"+pr[7]+"</div>");
-                    //ganti warna woi
-                    $("#paket3").addClass('bg-primary text-white');
-                    $("#paket1, #paket2").removeClass('bg-primary text-white');
                 }
             }
         }); 
