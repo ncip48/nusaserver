@@ -132,7 +132,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
 <script>
     $(document).ready(function(){
       $(".preloader").fadeOut();
-    })
+    });
     </script>
 </head>
 
