@@ -459,7 +459,7 @@ $(document).ready(function() {
                 //console.log(response);
                 var data = jQuery.parseJSON(response);
                 //var pr = response.split(';');
-                console.log(data);
+                //console.log(data);
                 if (durasi=='30'){
                     //ganti warna woi
                     $("#paket1").addClass('bg-primary text-white');
