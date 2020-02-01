@@ -142,7 +142,7 @@ $(document).ready(function() {
                 },
                 success: function(response) {
                     var data = jQuery.parseJSON(response);
-                    console.log(data.error);
+                    //console.log(data.error);
                     //var result = response["DomainInfo"]
                     if(data.error=='0'){
                         //console.log("DOMAIN ADA");

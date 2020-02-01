@@ -71,6 +71,7 @@
     }
 
 </style>
+<script>var baseurl = '<?php echo base_url() ?>';</script>
 <script type="text/javascript">
     $(document).ready(function() {
         $('#frmLogin').submit(function() {
@@ -82,6 +83,11 @@
                     var data = jQuery.parseJSON(response);
                     //console.log(data);
                     $('#aksilogin').html(data.error);
+                    if (data.result=='1'){
+                        var delay = 2000; 
+                        var url = baseurl+"members";    
+                        setTimeout(function(){ window.location = url; }, delay);
+                    }
                     //console.log(data);
                     //$('#reloading').html(data);
                     //$('#reloadcontent').hide();

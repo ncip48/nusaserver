@@ -176,17 +176,8 @@ class Auth extends CI_Controller {
 					$this->output->set_output(json_encode($data));
 				}else{
 					$this->session->set_userdata(array('id_konsumen'=>$row['id_konsumen'], 'level'=>'konsumen'));
-					echo "<script>Swal.fire({
-						icon: 'success',
-						title: 'Berhasil Login, tunggu sebentar...',
-						showConfirmButton: false,
-						timer: 3000
-					}); $(document).ready(function () {
-						// Handler for .ready() called.
-						window.setTimeout(function () {
-							location.href = '".base_url()."members/profile';
-						}, 3500);
-					});</script>";
+					$data = array('result'=>'1','error'=>"<span class='badge badge-pill badge-success'>o</span> <small class='text-white'>Berhasil Login</small>");
+					$this->output->set_output(json_encode($data));
 				}
 			}
 		}
