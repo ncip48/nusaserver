@@ -1081,3 +1081,13 @@ to {
     margin: auto;
     z-index: 1;
 }
+
+.datecard{
+	display: none;
+	font-size:13px;
+	top:-40px;
+	border-radius: 50%;
+	position: relative;
+	background-color: #ffc107;
+	padding: 10px 10px;
+}

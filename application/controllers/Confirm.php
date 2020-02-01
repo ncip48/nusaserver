@@ -8,7 +8,7 @@ class Confirm extends CI_Controller {
 
     public function kode(){
         $kode = $this->uri->segment(3);
-        $iduser = $this->uri->segment(4);
+        $iduser = decrypt_url($this->uri->segment(4));
 
         if ($this->session->id_konsumen_temp == ''){
             $id = $iduser;

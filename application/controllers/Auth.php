@@ -78,7 +78,7 @@ class Auth extends CI_Controller {
 				'mailtype' => 'html',
 			);
 
-			$message      = "<html><body>Hallo ".$rowd['nama_lengkap']." Silahkan Klik Link Aktivasi berikut : <a href='".base_url()."confirm/kode/".$rowd['kode_konfirmasi']."/".$rowd['id_konsumen']."'>klik disini</a> </body></html> \n";
+			$message      = "<html><body>Hallo ".$rowd['nama_lengkap']." Silahkan Klik Link Aktivasi berikut : <a href='".base_url()."confirm/kode/".$rowd['kode_konfirmasi']."/".encrypt_url($rowd['id_konsumen'])."'>klik disini</a> </body></html> \n";
 			$email_tujuan = $rowd['email'];
 
 			$this->load->library('email', $config);
@@ -145,42 +145,51 @@ class Auth extends CI_Controller {
 	}
 
 	public function aksilogin(){
-				$username = strip_tags($this->input->post('a'));
-				$password = hash("sha512", md5(strip_tags($this->input->post('b'))));
-				$cek = $this->db->query("SELECT * FROM rb_konsumen where username='".$this->db->escape_str($username)."' AND password='".$this->db->escape_str($password)."'");
-			    $row = $cek->row_array();
-			    $total = $cek->num_rows();
-				if ($total > 0){
-					if ($row['confirm']=='0'){
-						echo "<script>Swal.fire({
-							icon: 'error',
-							title: 'Maaf, Konfirmasi email dahulu!',
-							showConfirmButton: false,
-							timer: 3000
-						  });</script>";
-					}else{
-						$this->session->set_userdata(array('id_konsumen'=>$row['id_konsumen'], 'level'=>'konsumen'));
-						echo "<script>Swal.fire({
-							icon: 'success',
-							title: 'Berhasil Login, tunggu sebentar...',
-							showConfirmButton: false,
-							timer: 3000
-						}); $(document).ready(function () {
-							// Handler for .ready() called.
-							window.setTimeout(function () {
-								location.href = '".base_url()."members/profile';
-							}, 3500);
-						});</script>";
-					}
+		if($this->input->is_ajax_request()) {
+			$username = strip_tags($this->input->post('a'));
+			$password = hash("sha512", md5(strip_tags($this->input->post('b'))));
+			$cekusername = $this->db->query("SELECT * FROM rb_konsumen where username='".$this->db->escape_str($username)."'")->num_rows();
+			$ceklogin = $this->db->query("SELECT * FROM rb_konsumen where username='".$this->db->escape_str($username)."' AND password='".$this->db->escape_str($password)."'")->num_rows();
+			
+			$cek = $this->db->query("SELECT * FROM rb_konsumen where username='".$this->db->escape_str($username)."' AND password='".$this->db->escape_str($password)."'");
+			$row = $cek->row_array();
+			$total = $cek->num_rows();
+
+			if ($username=='') {
+				$error[] = 'Masukkan Username';
+			}
+			if ($this->input->post('b')=='') {
+				$error[] = 'Masukkan Password';
+			}
+			if ($cekusername=='0') {
+				$error[] = 'Username tidak ditemukan';
+			}
+			if ($ceklogin=='0') {
+				$error[] = 'Username/Password Salah';
+			}
+			if (isset($error)) {
+				$data = array('result'=>'0','error'=>"<span class='badge badge-pill badge-danger'>!</span> <small class='text-white'>".implode("</small><br /><span class='badge badge-pill badge-danger'>!</span> <small class='text-white'>", $error));
+				$this->output->set_output(json_encode($data));
+			}else{
+				if ($row['confirm']=='0'){
+					$data = array('result'=>'0','error'=>"<span class='badge badge-pill badge-danger'>!</span> <small class='text-white'>Mohon konfirmasi email anda</small>");
+					$this->output->set_output(json_encode($data));
 				}else{
+					$this->session->set_userdata(array('id_konsumen'=>$row['id_konsumen'], 'level'=>'konsumen'));
 					echo "<script>Swal.fire({
-						icon: 'error',
-						title: 'Maaf, Username atau password salah!',
+						icon: 'success',
+						title: 'Berhasil Login, tunggu sebentar...',
 						showConfirmButton: false,
 						timer: 3000
-					  });</script>";
+					}); $(document).ready(function () {
+						// Handler for .ready() called.
+						window.setTimeout(function () {
+							location.href = '".base_url()."members/profile';
+						}, 3500);
+					});</script>";
 				}
-		
+			}
+		}
 	}
 
 	public function confirm(){

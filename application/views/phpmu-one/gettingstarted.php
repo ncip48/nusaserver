@@ -45,6 +45,7 @@
                                                 <div class='card card-default card-input card'>
                                                     <div id='paket1' class='card'>
                                                     <div class='card-body'>
+                                                        <label class='text-light datecard text-center'>50 %</label>
                                                         <h5>1 Bulan</h5>
                                                         <hr>
                                                         <div class='harga1'>
@@ -102,7 +103,7 @@
                                                 <div class='card card-default card-input card'>
                                                     <div id='tipe1' class='card'>
                                                     <div class='card-body'>
-                                                        <h5>Template 1</h5>
+                                                        <h5 style='word-wrap: break-word;'>Template 1</h5>
                                                     </div>
                                                     </div>
                                                 </div>

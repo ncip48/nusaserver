@@ -78,11 +78,13 @@
 			    type: 'POST',
 			    url: $(this).attr('action'),
 			    data: $(this).serialize(),
-			    success: function(data) {
-            $('#aksilogin').html(data);
-            //console.log(data);
-            //$('#reloading').html(data);
-            //$('#reloadcontent').hide();
+			    success: function(response) {
+                    var data = jQuery.parseJSON(response);
+                    //console.log(data);
+                    $('#aksilogin').html(data.error);
+                    //console.log(data);
+                    //$('#reloading').html(data);
+                    //$('#reloadcontent').hide();
 			    }
 		    })
 		    return false;
@@ -109,11 +111,11 @@
                             <div class='form-group'>
                                 <a href='#' class='ForgetPwd' value='Login'>Forget Password?</a>
                             </div>
+                            <div id='aksilogin'></div>
                         </form>
                     </div>
                 </div>
             </div>
-        <div id='aksilogin'></div>
 </body>
 </html>
 

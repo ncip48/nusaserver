@@ -1,8 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Mulai extends CI_Controller {
-
-
+  
     public function index(){
         //echo random_string('alnum', 35);
         $this->main();
@@ -25,110 +24,107 @@ class Mulai extends CI_Controller {
         $hargasatu = explode(';', $row['harga_satu']);
         $hargaenam = explode(';', $row['harga_enam']);
         $hargaduabelas = explode(';', $row['harga_duabelas']);
-                          if ($row[id_produk] == '17'){
-                            if ($kons['ph']=='0'){
-                              $hargafix = $hargasatu[1];
-                              $hargafixenam = $hargaenam[1];
-                              $hargafixduabelas = $hargaduabelas[1];
-                              $one = "<del>Rp ".rupiah($hargasatu[0])."</del><br><small> Rp ".rupiah($hargasatu[1])."</small>";
-                              $six = "<del>Rp ".rupiah($hargaenam[0])."</del><br><small> Rp ".rupiah($hargaenam[1])."</small>";
-                              $twelve = "<del>Rp ".rupiah($hargaduabelas[0])."</del><br><small> Rp ".rupiah($hargaduabelas[1])."</small>";
-                              $diskon = '0';
-                              //$this->output->set_output(json_encode($harga[1]));
-                            }else{
-                              $hargafix = $hargasatu[0];
-                              $hargafixenam = $hargaenam[0];
-                              $hargafixduabelas = $hargaduabelas[0];
-                              $one = "<span>Rp ".rupiah($hargasatu[0])."</span>";
-                              $six = "<span>Rp ".rupiah($hargaenam[0])."</span>";
-                              $twelve = "<span>Rp ".rupiah($hargaduabelas[0])."</span>";
-                              $diskon = "1";
-                            }
-                            /* echo "Harga 1 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>
-                            Harga 6 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[2])."</span> ( Hemat ".rupiah((6*$harga[0])-$harga[2])." )<br>
-                            Harga 12 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[3])."</span> ( Hemat ".rupiah((12*$harga[0])-$harga[3])." )<br>"; */
-
-                            //echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12).";".rupiah($hargafix).";".rupiah($harga[2]).";".rupiah($harga[3]).";".$row['nama_produk'];
-                            $data = array();
-                            $data['nama_paket'] = $row['nama_produk'];
-                            $data['diskon'] = $diskon;
-                            $data['satu'] = $one;
-                            $data['enam'] = $six;
-                            $data['duabelas'] = $twelve;
-                            $data['satufix'] = $hargafix;
-                            $data['enamfix'] = $hargafixenam;
-                            $data['duabelasfix'] = $hargafixduabelas;
-                            $data['rpsatufix'] = rupiah($hargafix);
-                            $data['rpenamfix'] = rupiah($hargafixenam);
-                            $data['rpduabelasfix'] = rupiah($hargafixduabelas);
-                            $this->output->set_output(json_encode($data));
-
-                          }elseif($row[id_produk] == '18'){
-                            if ($kons['pt']=='0'){
-                              $hargafix = $hargasatu[1];
-                              $hargafixenam = $hargaenam[1];
-                              $hargafixduabelas = $hargaduabelas[1];
-                              $one = "<del>Rp ".rupiah($hargasatu[0])."</del><br><small> Rp ".rupiah($hargasatu[1])."</small>";
-                              $six = "<del>Rp ".rupiah($hargaenam[0])."</del><br><small> Rp ".rupiah($hargaenam[1])."</small>";
-                              $twelve = "<del>Rp ".rupiah($hargaduabelas[0])."</del><br><small> Rp ".rupiah($hargaduabelas[1])."</small>";
-                              $diskon = '0';
-                            }else{
-                              $hargafix = $hargasatu[0];
-                              $hargafixenam = $hargaenam[0];
-                              $hargafixduabelas = $hargaduabelas[0];
-                              $one = "<span>Rp ".rupiah($hargasatu[0])."</span>";
-                              $six = "<span>Rp ".rupiah($hargaenam[0])."</span>";
-                              $twelve = "<span>Rp ".rupiah($hargaduabelas[0])."</span>";
-                              $diskon = "1";
-                            }
-                            //echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12).";".rupiah($hargafix).";".rupiah($harga[2]).";".rupiah($harga[3]).";".$row['nama_produk'];
-                            $data = array();
-                            $data['nama_paket'] = $row['nama_produk'];
-                            $data['diskon'] = $diskon;
-                            $data['satu'] = $one;
-                            $data['enam'] = $six;
-                            $data['duabelas'] = $twelve;
-                            $data['satufix'] = $hargafix;
-                            $data['enamfix'] = $hargafixenam;
-                            $data['duabelasfix'] = $hargafixduabelas;
-                            $data['rpsatufix'] = rupiah($hargafix);
-                            $data['rpenamfix'] = rupiah($hargafixenam);
-                            $data['rpduabelasfix'] = rupiah($hargafixduabelas);
-                            $this->output->set_output(json_encode($data));
-                          }elseif($row[id_produk] == '19'){
-                            if ($kons['pb']=='0'){
-                              $hargafix = $hargasatu[1];
-                              $hargafixenam = $hargaenam[1];
-                              $hargafixduabelas = $hargaduabelas[1];
-                              $one = "<del>Rp ".rupiah($hargasatu[0])."</del><br><small> Rp ".rupiah($hargasatu[1])."</small>";
-                              $six = "<del>Rp ".rupiah($hargaenam[0])."</del><br><small> Rp ".rupiah($hargaenam[1])."</small>";
-                              $twelve = "<del>Rp ".rupiah($hargaduabelas[0])."</del><br><small> Rp ".rupiah($hargaduabelas[1])."</small>";
-                              $diskon = '0';
-                            }else{
-                              $hargafix = $hargasatu[0];
-                              $hargafixenam = $hargaenam[0];
-                              $hargafixduabelas = $hargaduabelas[0];
-                              $one = "<span>Rp ".rupiah($hargasatu[0])."</span>";
-                              $six = "<span>Rp ".rupiah($hargaenam[0])."</span>";
-                              $twelve = "<span>Rp ".rupiah($hargaduabelas[0])."</span>";
-                              $diskon = "1";
-                            }
-                            //echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12).";".rupiah($hargafix).";".rupiah($harga[2]).";".rupiah($harga[3]).";".$row['nama_produk'];
-                            $data = array();
-                            $data['nama_paket'] = $row['nama_produk'];
-                            $data['diskon'] = $diskon;
-                            $data['satu'] = $one;
-                            $data['enam'] = $six;
-                            $data['duabelas'] = $twelve;
-                            $data['satufix'] = $hargafix;
-                            $data['enamfix'] = $hargafixenam;
-                            $data['duabelasfix'] = $hargafixduabelas;
-                            $data['rpsatufix'] = rupiah($hargafix);
-                            $data['rpenamfix'] = rupiah($hargafixenam);
-                            $data['rpduabelasfix'] = rupiah($hargafixduabelas);
-                            $this->output->set_output(json_encode($data));
-                          }
-                        }
+        if ($row[id_produk] == '17'){
+          if ($kons['ph']=='0'){
+            $hargafix = $hargasatu[1];
+            $hargafixenam = $hargaenam[1];
+            $hargafixduabelas = $hargaduabelas[1];
+            $one = "<del>Rp ".rupiah($hargasatu[0])."</del><br><small> Rp ".rupiah($hargasatu[1])."</small>";
+            $six = "<del>Rp ".rupiah($hargaenam[0])."</del><br><small> Rp ".rupiah($hargaenam[1])."</small>";
+            $twelve = "<del>Rp ".rupiah($hargaduabelas[0])."</del><br><small> Rp ".rupiah($hargaduabelas[1])."</small>";
+            $diskon = '0';
+          }else{
+            $hargafix = $hargasatu[0];
+            $hargafixenam = $hargaenam[0];
+            $hargafixduabelas = $hargaduabelas[0];
+            $one = "<span>Rp ".rupiah($hargasatu[0])."</span>";
+            $six = "<span>Rp ".rupiah($hargaenam[0])."</span>";
+            $twelve = "<span>Rp ".rupiah($hargaduabelas[0])."</span>";
+            $diskon = "1";
+          }
+          /* echo "Harga 1 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>
+          Harga 6 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[2])."</span> ( Hemat ".rupiah((6*$harga[0])-$harga[2])." )<br>
+          Harga 12 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[3])."</span> ( Hemat ".rupiah((12*$harga[0])-$harga[3])." )<br>"; */
+          //echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12).";".rupiah($hargafix).";".rupiah($harga[2]).";".rupiah($harga[3]).";".$row['nama_produk'];
+          $data = array();
+          $data['nama_paket'] = $row['nama_produk'];
+          $data['diskon'] = $diskon;
+          $data['satu'] = $one;
+          $data['enam'] = $six;
+          $data['duabelas'] = $twelve;
+          $data['satufix'] = $hargafix;
+          $data['enamfix'] = $hargafixenam;
+          $data['duabelasfix'] = $hargafixduabelas;
+          $data['rpsatufix'] = rupiah($hargafix);
+          $data['rpenamfix'] = rupiah($hargafixenam);
+          $data['rpduabelasfix'] = rupiah($hargafixduabelas);
+          $this->output->set_output(json_encode($data));
+        }elseif($row[id_produk] == '18'){
+          if ($kons['pt']=='0'){
+            $hargafix = $hargasatu[1];
+            $hargafixenam = $hargaenam[1];
+            $hargafixduabelas = $hargaduabelas[1];
+            $one = "<del>Rp ".rupiah($hargasatu[0])."</del><br><small> Rp ".rupiah($hargasatu[1])."</small>";
+            $six = "<del>Rp ".rupiah($hargaenam[0])."</del><br><small> Rp ".rupiah($hargaenam[1])."</small>";
+            $twelve = "<del>Rp ".rupiah($hargaduabelas[0])."</del><br><small> Rp ".rupiah($hargaduabelas[1])."</small>";
+            $diskon = '0';
+          }else{
+            $hargafix = $hargasatu[0];
+            $hargafixenam = $hargaenam[0];
+            $hargafixduabelas = $hargaduabelas[0];
+            $one = "<span>Rp ".rupiah($hargasatu[0])."</span>";
+            $six = "<span>Rp ".rupiah($hargaenam[0])."</span>";
+            $twelve = "<span>Rp ".rupiah($hargaduabelas[0])."</span>";
+            $diskon = "1";
+          }
+          //echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12).";".rupiah($hargafix).";".rupiah($harga[2]).";".rupiah($harga[3]).";".$row['nama_produk'];
+          $data = array();
+          $data['nama_paket'] = $row['nama_produk'];
+          $data['diskon'] = $diskon;
+          $data['satu'] = $one;
+          $data['enam'] = $six;
+          $data['duabelas'] = $twelve;
+          $data['satufix'] = $hargafix;
+          $data['enamfix'] = $hargafixenam;
+          $data['duabelasfix'] = $hargafixduabelas;
+          $data['rpsatufix'] = rupiah($hargafix);
+          $data['rpenamfix'] = rupiah($hargafixenam);
+          $data['rpduabelasfix'] = rupiah($hargafixduabelas);
+          $this->output->set_output(json_encode($data));
+        }elseif($row[id_produk] == '19'){
+          if ($kons['pb']=='0'){
+            $hargafix = $hargasatu[1];
+              $hargafixenam = $hargaenam[1];
+              $hargafixduabelas = $hargaduabelas[1];
+              $one = "<del>Rp ".rupiah($hargasatu[0])."</del><br><small> Rp ".rupiah($hargasatu[1])."</small>";
+              $six = "<del>Rp ".rupiah($hargaenam[0])."</del><br><small> Rp ".rupiah($hargaenam[1])."</small>";
+              $twelve = "<del>Rp ".rupiah($hargaduabelas[0])."</del><br><small> Rp ".rupiah($hargaduabelas[1])."</small>";
+              $diskon = '0';
+            }else{
+              $hargafix = $hargasatu[0];
+              $hargafixenam = $hargaenam[0];
+              $hargafixduabelas = $hargaduabelas[0];
+              $one = "<span>Rp ".rupiah($hargasatu[0])."</span>";
+              $six = "<span>Rp ".rupiah($hargaenam[0])."</span>";
+              $twelve = "<span>Rp ".rupiah($hargaduabelas[0])."</span>";
+              $diskon = "1";
+            }
+            //echo $hargasatu.";".rupiah($harga[2]).";".rupiah($harga[2]/6).";".rupiah($harga[3]).";".rupiah($harga[3]/12).";".rupiah($hargafix).";".rupiah($harga[2]).";".rupiah($harga[3]).";".$row['nama_produk'];
+            $data = array();
+            $data['nama_paket'] = $row['nama_produk'];
+            $data['diskon'] = $diskon;
+            $data['satu'] = $one;
+            $data['enam'] = $six;
+            $data['duabelas'] = $twelve;
+            $data['satufix'] = $hargafix;
+            $data['enamfix'] = $hargafixenam;
+            $data['duabelasfix'] = $hargafixduabelas;
+            $data['rpsatufix'] = rupiah($hargafix);
+            $data['rpenamfix'] = rupiah($hargafixenam);
+            $data['rpduabelasfix'] = rupiah($hargafixduabelas);
+            $this->output->set_output(json_encode($data));
+        }
+      }
     }
 
     public function pembayaran(){
