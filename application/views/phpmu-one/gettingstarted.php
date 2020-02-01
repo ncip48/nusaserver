@@ -559,6 +559,7 @@ $(document).ready(function() {
             $('#tld').val("");
             $('#durasidomain').val("");
             $('#hargadomain').val("");
+            $('#belanjadomain').empty();
         }
     });
 
@@ -577,6 +578,7 @@ $(document).ready(function() {
             $('#tld').val("");
             $('#durasidomain').val("");
             $('#hargadomain').val("");
+            $('#belanjadomain').empty();
         }
     });
 
