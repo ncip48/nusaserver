@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>asset/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
     <link href="<?php echo base_url(); ?>asset/css/bootstrap-combobox.css" media="screen" rel="stylesheet" type="text/css">
     <style type="text/css"> .files{ position:absolute; z-index:2; top:0; left:0; filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; opacity:0; background-color:transparent; color:transparent; } </style>
-    <script type="text/javascript" src="<?php echo base_url(); ?>/asset/admin/plugins/jQuery/jquery-1.12.3.min.js"></script>
+    <!--<script type="text/javascript" src="<?php echo base_url(); ?>/asset/admin/plugins/jQuery/jquery-1.12.3.min.js"></script>-->
+    <script src="<?php echo base_url(); ?>asset/vendor/jquery/jquery.min.js"></script>
     <script src="<?php echo base_url(''); ?>asset/ckeditor/ckeditor.js"></script>
     <style type="text/css">
       .checkbox-scroll { border:1px solid #ccc; width:100%; height: 114px; padding-left:8px; overflow-y: scroll; }
