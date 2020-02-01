@@ -110,7 +110,7 @@ class Auth extends CI_Controller {
                                 <h3 class='register-heading'>Pendaftaran Sukses</h3>
                                 <div class='row register-form align-items-center'>
                                     <div class='col text-center'>
-                                    <h5>Silahkan cek email <i>".$rows['email']."</i> untuk konfirmasi email. Terimakasih</h5>
+                                    <h5>Silahkan cek inbox / spam email <i>".$rows['email']."</i> untuk konfirmasi email. Terimakasih</h5>
                                     </div>
                                 </div>
                             </div>";
