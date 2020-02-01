@@ -163,7 +163,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
       $no = 1;
               foreach ($record->result_array() as $row){
               if (trim($row['gambar'])==''){ $foto_produk = 'no-image.png'; }else{ $foto_produk = $row['gambar']; }
-              $harga = explode(';', $row[harga_konsumen]);
+              $harga = explode(';', $row[harga_satu]);
               echo "<div class='col-lg-4'>
               <div class='card mb-5 mb-lg-0'>
                 <div class='card-body'>

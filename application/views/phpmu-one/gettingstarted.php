@@ -397,7 +397,7 @@ $(document).ready(function() {
 
     $('#paket').change(function() {
         var asd = $(this).val();
-        var data = asd.split(";");
+        var id = asd.split(";");
 
         //$(".hargapaket").empty();
 
@@ -421,23 +421,22 @@ $(document).ready(function() {
             type: 'POST',
             url: 'mulai/validasi',
             data: {
-                produk_id: data[0]
+                produk_id: id[0]
             },
             success: function(response) {
+                var data = jQuery.parseJSON(response);
                 $('.harga1').empty();
                 $('.harga6').empty();
                 $('.harga12').empty();
-                var hargasplit = response.split(';');
-                var harga_1_bulan = hargasplit[0];
-                var harga_6_bulan = hargasplit[1];
-                var sm_harga_6_bulan = hargasplit[2];
-                var harga_12_bulan = hargasplit[3];
-                var sm_harga_12_bulan = hargasplit[4];
+                //var hargasplit = response.split(';');
+                var harga_1_bulan = data.satu;
+                var harga_6_bulan = data.enam;
+                var harga_12_bulan = data.duabelas;
                 $('.harga1').append(harga_1_bulan);
-                $('.harga6').append("Rp "+harga_6_bulan+"<br><small>Rp "+sm_harga_6_bulan+"/bulan</small>");
-                $('.harga12').append("Rp "+harga_12_bulan+"<br><small>Rp "+sm_harga_12_bulan+"/bulan</small>");
+                $('.harga6').append(harga_6_bulan);
+                $('.harga12').append(harga_12_bulan);
                 $('.hargapaket').fadeIn();
-                $('#id_produk').val(data[0]);
+                $('#id_produk').val(id[0]);
             }
         }); 
         } 
@@ -458,31 +457,32 @@ $(document).ready(function() {
             },
             success: function(response) {
                 //console.log(response);
-                var pr = response.split(';');
-                //console.log(tipee);
+                var data = jQuery.parseJSON(response);
+                //var pr = response.split(';');
+                console.log(data);
                 if (durasi=='30'){
                     //ganti warna woi
                     $("#paket1").addClass('bg-primary text-white');
                     $("#paket2, #paket3").removeClass('bg-primary text-white');
                     //console.log(pr[5]);
-                    $('#harga_final').val(pr[5]);
-                    $('#belanjapaket').html("<div class='float-left'><b>"+pr[8]+"</b> </div><div class='float-right'>"+pr[5]+"</div>");
+                    $('#harga_final').val(data.satufix);
+                    $('#belanjapaket').html("<div class='float-left'><b>"+data.nama_paket+"</b> </div><div class='float-right'>"+data.rpsatufix+"</div>");
                 }else if (durasi=='183'){
                     //ganti warna woi
                     $("#paket2").addClass('bg-primary text-white');
                     $("#paket1, #paket3").removeClass('bg-primary text-white');
                     //console.log(pr[8]);
-                    $('#harga_final').val(pr[6]);
-                    $('#belanjapaket').html("<div class='float-left'><b>"+pr[8]+"</b></div><div class='float-right'>"+pr[6]+"</div>");
+                    $('#harga_final').val(data.enamfix);
+                    $('#belanjapaket').html("<div class='float-left'><b>"+data.nama_paket+"</b> </div><div class='float-right'>"+data.rpenamfix+"</div>");
                 }else if (durasi=='365'){
                     //ganti warna woi
                     $("#paket3").addClass('bg-primary text-white');
                     $("#paket1, #paket2").removeClass('bg-primary text-white');
                     //console.log(pr[7]);
-                    $('#harga_final').val(pr[7]);
+                    $('#harga_final').val(data.duabelasfix);
+                    $('#belanjapaket').html("<div class='float-left'><b>"+data.nama_paket+"</b> </div><div class='float-right'>"+data.rpduabelasfix+"</div>");
                     //$('#belanjapaket').html("<div class='float-left'><b>"+pr[8]+"</b> <br><small> Hari, <div id='durasii' class='float-right'></div></small></div><div class='float-right'>"+pr[7]+"</div>");
-                    $('#belanjapaket').html("<div class='float-left'><b>"+pr[8]+"</b></div><div class='float-right'>"+pr[7]+"</div>");
-                }
+                } 
             }
         }); 
     });
