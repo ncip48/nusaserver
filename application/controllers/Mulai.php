@@ -1,17 +1,17 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Mulai extends CI_Controller {
-  
+
     public function index(){
         //echo random_string('alnum', 35);
         $this->main();
     }
 
     public function main(){
-        $data['title'] = 'NusaServer';
-		$data['row'] = $this->model_app->profile_konsumen($this->session->id_konsumen)->row_array();
-		$row = $this->model_app->profile_konsumen($this->session->id_konsumen)->row_array();
-        $data['produk'] = $this->model_app->view('rb_produk');
+      $data['title'] = 'NusaServer';
+		  $data['row'] = $this->model_app->profile_konsumen($this->session->id_konsumen)->row_array();
+		  $row = $this->model_app->profile_konsumen($this->session->id_konsumen)->row_array();
+      $data['produk'] = $this->model_app->view('rb_produk');
 
 		$this->template->load('phpmu-one/template','phpmu-one/gettingstarted',$data);
     }

@@ -2,6 +2,7 @@
 $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_array(); 
 ?>
 <header class="masthead">
+  <div class="jumbotron">
     <div class="container">
       <div class="intro-text">
         <div class="col-md-6 col-xs-12">
@@ -10,6 +11,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
           <p><a class="btn btn-jumbotron btn-primary btn-lg" href="<?php echo base_url(); ?>mulai" role="button">Gabung Yuk</a></p> 
       </div>
     </div>
+  </div>
   </header>
 
 <!-- cek domain -->

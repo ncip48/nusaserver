@@ -172,11 +172,7 @@ img::-moz-selection {
 header.masthead {
 	text-align: center;
 	color: rgb(0, 0, 0);
-	background-image: url(../files/Sampul.png);
-	background-repeat: no-repeat;
-	background-attachment: scroll;
-	background-position: center center;
-	background-size: cover;
+	
 }
 
 header.masthead .intro-text {
@@ -1090,4 +1086,23 @@ to {
 	position: relative;
 	background-color: #ffc107;
 	padding: 10px 10px;
+}
+
+.carousel-item {
+	height: 100vh;
+	min-height: 350px;
+	background: no-repeat center center scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  }
+  
+.jumbotron{
+	height: 100vh;
+	background-image: url(../files/Sampul.png);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center center;
+	background-size: cover;
 }
