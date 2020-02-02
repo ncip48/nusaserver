@@ -969,8 +969,8 @@ to {
 }
 
 .pinkBg {
-    background-color: #0254cf!important;
-    background-image: linear-gradient(90deg, #5855fd, #5590fd);
+    background-color: #dc3545!important;
+    background-image: linear-gradient(90deg, #f12256, #f3336c);
 }
 .intro-banner-vdo-play-btn{
     height:60px;
