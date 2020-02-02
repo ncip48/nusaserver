@@ -44,7 +44,7 @@
       $btn
       <hr>
       <h4 class='my-3'>Deskripsi Barang</h4>
-      <p>$row[keterangan]</p>
+      <p class='text-justify'>$row[keterangan]</p>
     </div>
 
   </div>

@@ -59,6 +59,8 @@ class Produk extends CI_Controller {
 		}
 	}
 
+
+
 	function detail(){
 		$query = $this->model_app->edit('rb_produk',array('id_produk'=>decrypt_url($this->uri->segment(3))));
 		if ($query->num_rows()>=1){

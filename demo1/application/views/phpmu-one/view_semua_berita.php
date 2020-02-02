@@ -1,3 +1,5 @@
+<div class='container isi'>
+    <div class='row'>
 <?php
             echo "<p class='sidebar-title'> &nbsp; $title</p><hr>";
                 $no = 1;
@@ -21,3 +23,5 @@
                     $no++;
                 }
             ?>
+    </div>
+</div>
