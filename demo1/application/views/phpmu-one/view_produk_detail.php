@@ -12,7 +12,7 @@
   }else{ 
     $blur = 'normal'; 
     $status = 'STOK ADA';
-    $btn = "<a class='btn btn-danger text-white mt-4' href='https://api.whatsapp.com/send?phone=$iden[no_wa]&text=Halo $iden[nama_website], Saya mau membeli $row[nama_produk], Apakah Masih Tersedia?'>Beli</a>"; 
+    $btn = "<a target='_BLANK' class='btn btn-danger text-white mt-4' href='https://api.whatsapp.com/send?phone=$iden[no_wa]&text=Halo $iden[nama_website], Saya mau membeli $row[nama_produk], Apakah Masih Tersedia?'>Beli</a>"; 
   }
   echo "
   <!-- Portfolio Item Row -->
