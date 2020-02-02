@@ -167,4 +167,3 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
       </div>
     </div>
   </section>
-  <?php include "footer.php"; ?>

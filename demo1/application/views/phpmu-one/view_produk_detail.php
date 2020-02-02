@@ -1,95 +1,93 @@
-<div class="container isi">
-    <div class="row">
-            <?php 
-              if (trim($row['gambar'])==''){ $foto_produk = 'no-image.png'; }else{ $foto_produk = $row['gambar']; }
-              echo "<div class='col-md-6 col-xs-12'>
-                          <h2>$row[nama_produk]</h2>";
-                          $harga = explode(';', $row[harga_konsumen]);
-                          if ($row[id_produk] == '17'){
-                            if ($kons[ph]=='0'){
-                              $hargafix = $harga[1];
-                              echo "Harga Pertama Pembelian : <span style='color:green; font-size:20px'><del>Rp ".rupiah($harga[0])."</del> Rp ".rupiah($harga[1])."</span><br>";
-                            }else{
-                              $hargafix = $harga[0];
-                              echo "Harga : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>";
-                            }
-                            echo "Harga 1 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>
-                            Harga 6 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[2])."</span> ( Hemat ".rupiah((6*$harga[0])-$harga[2])." )<br>
-                            Harga 12 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[3])."</span> ( Hemat ".rupiah((12*$harga[0])-$harga[3])." )<br>";
-                          }elseif($row[id_produk] == '18'){
-                            if ($kons[pt]=='0'){
-                              echo "Harga Pertama Pembelian : <span style='color:green; font-size:20px'><del>Rp ".rupiah($harga[0])."</del> Rp ".rupiah($harga[1])."</span><br>";
-                            }else{
-                              echo "Harga : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>";
-                            }
-                            echo "Harga 1 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>
-                            Harga 6 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[2])."</span> ( Hemat ".rupiah((6*$harga[0])-$harga[2])." )<br>
-                            Harga 12 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[3])."</span> ( Hemat ".rupiah((12*$harga[0])-$harga[3])." )<br>";
-                          }elseif($row[id_produk] == '19'){
-                            if ($kons[pb]=='0'){
-                              echo "Harga Pertama Pembelian : <span style='color:green; font-size:20px'><del>Rp ".rupiah($harga[0])."</del> Rp ".rupiah($harga[1])."</span><br>";
-                            }else{
-                              echo "Harga : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>";
-                            }
-                            echo "Harga 1 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[0])."</span><br>
-                            Harga 6 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[2])."</span> ( Hemat ".rupiah((6*$harga[0])-$harga[2])." )<br>
-                            Harga 12 Bulan : <span style='color:green; font-size:20px'>Rp ".rupiah($harga[3])."</span> ( Hemat ".rupiah((12*$harga[0])-$harga[3])." )<br>";
-                          }
-                          
-                          echo "
-                          
-                          
-                          <div class='row justify-content-md-center'>
-                            <div class='col-lg-12 py-5 px-4'>
-                            <form action='".base_url()."produk/keranjang' method='POST'>
-                            <input type='hidden' name='id_produk' value='$row[id_produk]'>
-                                <div class='row'>
-                                  <div class='col-md-8 px-1'>
-                                    <div class='form-group'>
-                                      <select name='jumlah' class='form-control' diplay:inline-block'>
-                                        <option value='' selected>--- Pilih Lama Pembelian ---</option>
-                                        <option value='1;".$hargafix."'>1 Bulan</option>
-                                        <option value='6;".$hargafix."'>6 Bulan</option>
-                                        <option value='12;".$hargafix."'>12 Bulan</option>
-                                      </select>
-                                    </div>
-                                  </div>
-                                  <div class='col-md-4 px-1'>
-                                    <div class='form-group'>
-                                      <input class='btn btn-primary' type='submit' value='Beli Sekarang'>
-                                    </div>
-                                  </div>
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                          </div>
-                          <div class='col-md-6 col-xs-12'>
-                          <h6>FITUR : </h6>
-                          <ul class='fa-ul'>
-                          $row[keterangan]<br>
-                          </ul>
-                          <div class='addthis_toolbox addthis_default_style'>
-                              <a class='addthis_button_preferred_1'></a>
-                              <a class='addthis_button_preferred_2'></a>
-                              <a class='addthis_button_preferred_3'></a>
-                              <a class='addthis_button_preferred_4'></a>
-                              <a class='addthis_button_compact'></a>
-                              <a class='addthis_counter addthis_bubble_style'></a>
-                          </div>
-                    </div>
-                    <div style='clear:both'><br></div>";
-?>
-<div class="yotpo yotpo-main-widget"
-data-product-id="SKU/Product_ID"
-data-price="Product Price"
-data-currency="Price Currency"
-data-name="Product Title"
-data-url="The url to the page where the product is (url escaped)"
-data-image-url="The product image url. Url escaped"
-data-description="Product description">
-</div>
+<!-- Page Content -->
+<div class='container isi'>
+<?php 
+  if (trim($row['gambar'])==''){ $foto_produk = 'no-image.png'; }else{ $foto_produk = $row['gambar']; }
+  $j = $this->model_app->jual_umum($row['id_produk'])->row_array();
+  $b = $this->model_app->beli_umum($row['id_produk'])->row_array();
+  $stok = $b['beli']-$j['jual'];
+  if ($stok=='0'){
+    $blur = 'blur'; 
+    $status = 'SOLD OUT';
+    $btn = "<a class='btn btn-danger text-white mt-4 btn-disabled'>Beli</a>"; 
+  }else{ 
+    $blur = 'normal'; 
+    $status = 'STOK ADA';
+    $btn = "<a class='btn btn-danger text-white mt-4' href='https://api.whatsapp.com/send?phone=$iden[no_wa]&text=Halo $iden[nama_website], Saya mau membeli $row[nama_produk], Apakah Masih Tersedia?'>Beli</a>"; 
+  }
+  echo "
+  <!-- Portfolio Item Row -->
+  <div class='row'>
+    <div class='col-md-4'>
+      <div class='page'>
+      ".$this->breadcrumb->show()."
+      </div>
+    </div>
+    <div class='col-md-8 py-1'>
+    <h3>$row[nama_produk]</h3>
+    </div>
+    <div class='col-md-4'>
+      <img class='img-fluid' style='max-height:100%;' src='".base_url()."asset/foto_produk/$foto_produk'>
+    </div>
 
-</div>
-</div>
-</div>
+    <div class='col-md-8'>
+
+      <hr>";
+      if ($row['diskon']=='0'){
+        echo "<span style='color:green; font-size:20px'>Rp ".rupiah($row['harga_konsumen'])."/".$row['satuan']."</span><br>";
+      }else{
+        echo "<span style='color:green; font-size:20px'>Rp ".rupiah($row['harga_konsumen']-$row['diskon'])."/".$row['satuan']."</span> &nbsp; 
+              <span style='color:#8a8a8a; font-size:20px'><del>".rupiah($row['harga_konsumen'])."</del></span><br>";
+      }
+      echo "
+      <h6 class='pt-3'>Ketersediaan : $status <br>
+      Stok : $stok</h6>
+      $btn
+      <hr>
+      <h4 class='my-3'>Deskripsi Barang</h4>
+      <p>$row[keterangan]</p>
+    </div>
+
+  </div>
+  <!-- /.row -->
+      <hr>
+  <!-- Related Projects Row -->
+  <h3 class='my-4'>Produk Lainnya</h3>
+
+  <div class='row text-center'>";
+  $no = 1;
+      foreach ($rows->result_array() as $row){
+        if (trim($row['gambar'])==''){ $foto_produk = 'no-image.png'; }else{ $foto_produk = $row['gambar']; }
+        $j = $this->model_app->jual_umum($row['id_produk'])->row_array();
+        $b = $this->model_app->beli_umum($row['id_produk'])->row_array();
+        $stok = $b['beli']-$j['jual'];
+        if ($stok=='0'){ $blur = 'blur'; $status = '<div class="stok">SOLD OUT</div>'; }else{ $blur = 'normal'; $status = ''; }
+        if (strlen($row['nama_produk']) > 20){ $judul = substr($row['nama_produk'],0,15).'...';  }else{ $judul = $row['nama_produk']; }
+        $isi_produk =(strip_tags($r['keterangan'])); 
+				$isi = substr($isi_produk,0,200); 
+				$isi = substr($isi_produk,0,strrpos($isi," "));  
+        $harga = explode(';', $row[harga_konsumen]);
+        
+        echo "<div class='col-md-3 my-3'>
+        <a href='".base_url()."produk/detail/".encrypt_url($row[id_produk])."'>
+        <img class='produkdepan fa-4x rounded-circle' src='".base_url()."asset/foto_produk/$foto_produk'>
+        </a>
+        <h4 class='service-heading text-dark mb-0'><a class='nav-link urlproduk' href='".base_url()."produk/detail/".encrypt_url($row[id_produk])."'>".$judul."</a></h4>";
+                                  if ($row['diskon']=='0'){
+                                    echo "<span style='color:red;'>Rp ".rupiah($row['harga_konsumen'])."</span><br>";
+                                  }else{
+                                    echo "<span style='color:red;'>Rp ".rupiah($row['harga_konsumen']-$row['diskon'])."</span>
+                                         <span style='color:#8a8a8a;'><del>".rupiah($row['harga_konsumen'])."</del></span><br>";
+                                  }
+
+                                  echo "<b>Stok $stok</b><br>
+        </div>";
+    $no++;
+  }
+    echo "</div>
+
+  </div>
+  <!-- /.row -->
+
+</div>";
+?>
+<!-- /.container -->

@@ -75,64 +75,13 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
       }
     }
   </script>
-
-<script type="text/javascript">
-	  $(document).ready(function() {
-
-      $('#frmLogin').submit(function() {
-		    $.ajax({
-			    type: 'POST',
-			    url: $(this).attr('action'),
-			    data: $(this).serialize(),
-			    success: function(data) {
-            $('#aksilogin').html(data);
-            //console.log(data);
-            //$('#reloading').html(data);
-            //$('#reloadcontent').hide();
-			    }
-		    })
-		    return false;
-	    });
-
-      $('#frmRegister').submit(function() {
-		    $.ajax({
-			    type: 'POST',
-			    url: $(this).attr('action'),
-			    data: $(this).serialize(),
-          beforeSend: function(){
-            $('#aksiregister').html("<div class='text-center'><img class='img-fluid' src='"+baseurl+"asset/images/loading.gif' /></div>");
-          },
-			    success: function(data) {
-            $('#aksiregister').html(data);
-            //console.log(data);
-            //$('#reloading').html(data);
-            //$('#reloadcontent').hide();
-			    }
-		    })
-		    return false;
-	    });
-
-      $('#btnLogout').click(function(){
-        var urllogout = '<?php echo base_url() ?>members/logout';
-        console.log(urllogout);
-        $.ajax({
-			    url: urllogout,
-			    success: function(data) {
-            $('#aksilogout').html(data);
-            //console.log(data);
-            //$('#reloading').html(data);
-            //$('#reloadcontent').hide();
-			    }
-		    })
-		    return false;
-      });
-
-    });
-</script>
 <script>
     $(document).ready(function(){
       $(".preloader").fadeOut();
     });
+    $('.btn-disabled').click(function(e){
+    e.preventDefault();
+    })
     </script>
 </head>
 
@@ -150,10 +99,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
   <div id='aksilogout'></div>
   <?php include "header.php"; ?>
   <?php echo $contents; ?>
-
-
-
-
+  <?php include "footer.php"; ?>
 
 <div class="modal fade" id="uploadfoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -236,8 +182,6 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
 
 <script src="<?php echo base_url(); ?>asset/vendor/jquery-easing/jquery.easing.min.js"></script>
 <!--<script src="<?php echo base_url(); ?>asset/js/bootstrap.min.js"></script>-->
-<script src="<?php echo base_url(); ?>asset/js/cekdomain.js"></script>
-<script src="<?php echo base_url(); ?>asset/js/bank.js"></script>
 <script src="<?php echo base_url(); ?>asset/js/agency.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/floating-wa.js"></script>
 

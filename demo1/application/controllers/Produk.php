@@ -66,7 +66,12 @@ class Produk extends CI_Controller {
 			$data['title'] = "$cek[nama_produk]";
 			$data['judul'] = "$cek[nama_produk]";
 			$data['row'] = $this->model_app->view_where('rb_produk',array('id_produk'=>$cek['id_produk']))->row_array();
+			$data['iden'] = $this->model_app->view('identitas')->row_array();
 			$data['kons'] = $this->model_app->view_where('rb_konsumen',array('id_konsumen'=>$this->session->id_konsumen))->row_array();
+			$data['rows'] = $this->db->query("SELECT * FROM rb_produk ORDER BY RAND() LIMIT 4");
+			$produk = $this->model_app->view_where('rb_produk',array('id_produk'=>$cek['id_produk']))->row_array();
+			$this->breadcrumb->add('Produk','produk')
+				 ->add($produk[nama_produk],'produk/details');
 			$this->template->load('phpmu-one/template','phpmu-one/view_produk_detail',$data);
 		}else{
 			redirect('main');
