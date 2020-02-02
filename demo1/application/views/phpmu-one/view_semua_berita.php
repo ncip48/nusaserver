@@ -1,7 +1,12 @@
 <div class='container isi'>
+    <div class="row">
+        <div class="col-lg-12 text-center my-4">
+          <h4 class="section-heading text-uppercase">&nbsp; <?php echo $judul; ?></h2>
+          <p class="section-subheading text-muted">Semua Artikel Kami</p>
+        </div>
+    </div>
     <div class='row'>
 <?php
-            echo "<p class='sidebar-title'> &nbsp; $title</p><hr>";
                 $no = 1;
                 foreach ($berita->result_array() as $row){
                     $isi_berita = strip_tags($row['isi_berita']); 
@@ -22,6 +27,11 @@
                         }
                     $no++;
                 }
-            ?>
+    echo "<div style='clear:both'></div>
+  </div>
+  <div class='row my-3'>
+        <div class='col'>";
+            echo $this->pagination->create_links(); ?>
+        </div>
     </div>
 </div>
