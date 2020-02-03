@@ -11,6 +11,7 @@
                   <table class='table table-condensed table-bordered'>
                   <tbody>
                     <input type='hidden' name='id' value=''>
+                    <tr><th width='120px' scope='row'>Judul</th>   <td><input type='text' class='form-control' name='judul'></td></tr>
                     <tr><th width='120px' scope='row'>Keterangan</th>   <td><textarea class='form-control' name='a' style='height:100px'></textarea></td></tr>
                     <tr><th scope='row'>Gambar</th>                    <td><input type='file' class='form-control' name='b'></td></tr>
                   </tbody>

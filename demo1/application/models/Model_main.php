@@ -66,17 +66,19 @@ class Model_main extends CI_model{
     }
 
     function slide_tambah(){
-        $config['upload_path'] = 'asset/foto_slide/';
+        $config['upload_path'] = 'asset/slider/';
         $config['allowed_types'] = 'gif|jpg|png|JPG';
         $config['max_size'] = '3000'; // kb
         $this->load->library('upload', $config);
         $this->upload->do_upload('b');
         $hasil=$this->upload->data();
         if ($hasil['file_name']==''){
-            $datadb = array('keterangan'=>$this->db->escape_str($this->input->post('a')),
+            $datadb = array('judul'=>$this->db->escape_str($this->input->post('judul')),
+                            'keterangan'=>$this->db->escape_str($this->input->post('a')),
                             'waktu'=>date('Y-m-d H:i:s'));
         }else{
-            $datadb = array('keterangan'=>$this->db->escape_str($this->input->post('a')),
+            $datadb = array('judul'=>$this->db->escape_str($this->input->post('judul')),
+                            'keterangan'=>$this->db->escape_str($this->input->post('a')),
                             'gambar'=>$hasil['file_name'],
                             'waktu'=>date('Y-m-d H:i:s'));
         }
@@ -84,16 +86,18 @@ class Model_main extends CI_model{
     }
 
     function slide_update(){
-        $config['upload_path'] = 'asset/foto_slide/';
+        $config['upload_path'] = 'asset/slider/';
         $config['allowed_types'] = 'gif|jpg|png|JPG';
         $config['max_size'] = '3000'; // kb
         $this->load->library('upload', $config);
         $this->upload->do_upload('b');
         $hasil=$this->upload->data();
         if ($hasil['file_name']==''){
-            $datadb = array('keterangan'=>$this->db->escape_str($this->input->post('a')));
+            $datadb = array('judul'=>$this->db->escape_str($this->input->post('judul')),
+                            'keterangan'=>$this->db->escape_str($this->input->post('a')));
         }else{
-            $datadb = array('keterangan'=>$this->db->escape_str($this->input->post('a')),
+            $datadb = array('judul'=>$this->db->escape_str($this->input->post('judul')),
+                            'keterangan'=>$this->db->escape_str($this->input->post('a')),
                             'gambar'=>$hasil['file_name']);
         }
         $this->db->where('id_slide',$this->input->post('id'));
