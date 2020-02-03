@@ -19,7 +19,7 @@
                     <img style='width:100%' src='".base_url()."asset/foto_berita/".$foto."'>
                 </div>
                         </div>
-                        <div class='col-md-8'>
+                        <div class='col-md-8 text-justify'>
                             <small class='date pull-right'><span class='glyphicon glyphicon-time'></span> $row[hari], $tanggal</small><br>
                             
                             <h6><a href='".base_url()."artikel/detail/$row[judul_seo]'>".$row['judul']."</a></h6>

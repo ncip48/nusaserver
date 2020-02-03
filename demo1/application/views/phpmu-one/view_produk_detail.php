@@ -29,7 +29,7 @@
       <img class='img-fluid' style='max-height:100%;' src='".base_url()."asset/foto_produk/$foto_produk'>
     </div>
 
-    <div class='col-md-8'>
+    <div class='col-md-8 text-justify'>
 
       <hr>";
       if ($row['diskon']=='0'){

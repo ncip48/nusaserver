@@ -27,4 +27,12 @@ class Main extends CI_Controller {
 	function notfound(){
 		$this->load->view('notfound');
 	}
+
+	function aboutus(){
+		$data['title'] = "About Us";
+		$data['description'] = description();
+		$data['keywords'] = keywords();
+		$data['record'] = $this->db->query("SELECT * FROM halamanstatis")->row_array();
+		$this->template->load('phpmu-one/template','phpmu-one/about',$data);
+	}
 }
