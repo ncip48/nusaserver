@@ -50,12 +50,9 @@
             </div><!-- /.col -->
             </a>
 
-            <section class="col-lg-6 connectedSortable">
+            <section class="col-lg-12 connectedSortable">
                 <?php include "home_grafik.php"; ?>
             </section><!-- /.Left col -->
 
-            <section class="col-lg-6 connectedSortable">
-                <?php include "home_berita.php"; ?>
-
-            </section><!-- right col -->
+           
             
