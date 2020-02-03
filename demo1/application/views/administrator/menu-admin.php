@@ -30,6 +30,11 @@
                 if($cek==1 OR $this->session->level=='admin'){
                   echo "<li><a href='".base_url()."administrator/imagesslider'><i class='fa fa-circle-o'></i> Images Slider</a></li>";
                 }
+
+                $cek=$this->model_app->umenu_akses("about",$this->session->id_session);
+                if($cek==1 OR $this->session->level=='admin'){
+                  echo "<li><a href='".base_url()."administrator/about'><i class='fa fa-circle-o'></i> Tentang Saya</a></li>";
+                }
               ?>
               </ul>
             </li>
@@ -70,6 +75,8 @@
               ?>
               </ul>
             </li>
+
+
             <li class="treeview">
               <a href="#"><i class="fa fa-cog"></i> <span>Modul Users</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">

@@ -97,10 +97,21 @@ class Administrator extends CI_Controller {
 
 	// Controller Modul Halaman Baru
 
-	function halamanbaru(){
+	/*function about(){
 		cek_session_akses('halamanbaru',$this->session->id_session);
 		$data['record'] = $this->model_halaman->halamanstatis();
-		$this->template->load('administrator/template','administrator/mod_halaman/view_halaman',$data);
+		$this->template->load('administrator/template','administrator/mod_about/view_about',$data);
+	}*/
+
+	function about(){
+		cek_session_akses('about',$this->session->id_session);
+		if (isset($_POST['submit'])){
+			$this->model_halaman->about_update();
+			redirect('administrator/about');
+		}else{
+			$data['record'] = $this->model_halaman->halamanstatis();
+			$this->template->load('administrator/template','administrator/mod_about/view_about',$data);
+		}
 	}
 
 	function tambah_halamanbaru(){

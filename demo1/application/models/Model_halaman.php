@@ -9,7 +9,13 @@ class Model_halaman extends CI_model{
     }
 
     function halamanstatis(){
-        return $this->db->query("SELECT * FROM halamanstatis ORDER BY id_halaman DESC");
+        return $this->db->query("SELECT * FROM halamanstatis")->row_array();
+    }
+
+    function about_update(){
+        $datadb = array('isi_halaman'=>$this->input->post('a'),
+                        'tgl_posting'=>date('Y-m-d'));
+        $this->db->update('halamanstatis',$datadb);
     }
 
     function halamanstatis_tambah(){

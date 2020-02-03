@@ -5,7 +5,5 @@
           <p class="section-subheading text-muted">Deskripsi toko kami</p>
         </div>
     </div>
-    <div class='row text-justify'>
-    <p><?= $record[isi_halaman] ?></p>
-    </div>
+    <p class='text-justify'><?php echo $record['isi_halaman'] ?></p>
 </div>
