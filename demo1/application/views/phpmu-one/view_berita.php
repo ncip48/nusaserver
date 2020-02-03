@@ -36,7 +36,7 @@
                             <div style='height:130px; overflow:hidden'>
                                 <img style='width:100%' src='".base_url()."asset/foto_berita/".$foto."'>
                             </div>
-                            <h6><a href='".base_url()."berita/detail/$row[judul_seo]'>".$row['judul']."</a></h6>
+                            <h6><a href='".base_url()."artikel/detail/$row[judul_seo]'>".$row['judul']."</a></h6>
                         </div>";
                         if ($no % 3 == 0){
                             echo "<div style='clear:both'><hr></div>";
