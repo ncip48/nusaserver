@@ -893,20 +893,20 @@ class Administrator extends CI_Controller {
             $this->upload->do_upload('g');
             $hasil=$this->upload->data();
             if ($hasil['file_name']==''){
-		        $data = array('nama_produk'=>$this->db->escape_str($this->input->post('b')),
-		        			  'produk_seo'=>$this->db->escape_str(seo_title($this->input->post('b'))),
-		        			  'harga_konsumen'=>$this->input->post('f'),
+		        $data = array('produk_seo'=>$this->db->escape_str(seo_title($this->input->post('b'))),
+							  'harga_konsumen'=>$this->input->post('f'),
+							  'diskon'=>$this->input->post('diskon'),
 		        			  'keterangan'=>$this->input->post('ff'),
 		        			  'username'=>$this->session->username,
 		        			  'waktu_input'=>date('Y-m-d H:i:s'));
 		    }else{
-		    	$data = array('id_kategori_produk'=>$this->input->post('a'),
-		        			  'nama_produk'=>$this->input->post('b'),
+		    	$data = array('nama_produk'=>$this->input->post('b'),
 		        			  'produk_seo'=>$this->db->escape_str(seo_title($this->input->post('b'))),
 		        			  'satuan'=>$this->input->post('c'),
 		        			  'harga_beli'=>$this->input->post('d'),
 		        			  'harga_reseller'=>$this->input->post('e'),
-		        			  'harga_konsumen'=>$this->input->post('f'),
+							  'harga_konsumen'=>$this->input->post('f'),
+							  'diskon'=>$this->input->post('diskon'),
 		        			  'berat'=>$this->input->post('berat'),
 		        			  'gambar'=>$hasil['file_name'],
 		        			  'keterangan'=>$this->input->post('ff'),
@@ -932,24 +932,24 @@ class Administrator extends CI_Controller {
             $this->upload->do_upload('g');
             $hasil=$this->upload->data();
             if ($hasil['file_name']==''){
-		        $data = array('id_kategori_produk'=>$this->input->post('a'),
-		        			  'nama_produk'=>$this->input->post('b'),
+		        $data = array('nama_produk'=>$this->input->post('b'),
 		        			  'produk_seo'=>$this->db->escape_str(seo_title($this->input->post('b'))),
 		        			  'satuan'=>$this->input->post('c'),
 		        			  'harga_beli'=>$this->input->post('d'),
 		        			  'harga_reseller'=>$this->input->post('e'),
-		        			  'harga_konsumen'=>$this->input->post('f'),
+							  'harga_konsumen'=>$this->input->post('f'),
+							  'diskon'=>$this->input->post('diskon'),
 		        			  'berat'=>$this->input->post('berat'),
 		        			  'keterangan'=>$this->input->post('ff'),
 		        			  'username'=>$this->session->username);
 		    }else{
-		    	$data = array('id_kategori_produk'=>$this->input->post('a'),
-		        			  'nama_produk'=>$this->input->post('b'),
+		    	$data = array('nama_produk'=>$this->input->post('b'),
 		        			  'produk_seo'=>$this->db->escape_str(seo_title($this->input->post('b'))),
 		        			  'satuan'=>$this->input->post('c'),
 		        			  'harga_beli'=>$this->input->post('d'),
 		        			  'harga_reseller'=>$this->input->post('e'),
-		        			  'harga_konsumen'=>$this->input->post('f'),
+							  'harga_konsumen'=>$this->input->post('f'),
+							  'diskon'=>$this->input->post('diskon'),
 		        			  'berat'=>$this->input->post('berat'),
 		        			  'gambar'=>$hasil['file_name'],
 		        			  'keterangan'=>$this->input->post('ff'),

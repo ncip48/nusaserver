@@ -132,7 +132,8 @@ class Model_main extends CI_model{
                                     'alamat'=>$this->db->escape_str($this->input->post('alamat')),
                                     'meta_deskripsi'=>$this->db->escape_str($this->input->post('g')),
                                     'meta_keyword'=>$this->db->escape_str($this->input->post('h')),
-                                    'maps'=>$this->db->escape_str($this->input->post('j')));
+                                    'maps'=>$this->db->escape_str($this->input->post('j')),
+                                    'no_wa'=>$this->db->escape_str($this->input->post('wa')));
             }else{
                     $datadb = array('nama_website'=>$this->db->escape_str($this->input->post('a')),
                                     'email'=>$this->db->escape_str($this->input->post('b')),
@@ -145,7 +146,8 @@ class Model_main extends CI_model{
                                     'meta_deskripsi'=>$this->db->escape_str($this->input->post('g')),
                                     'meta_keyword'=>$this->db->escape_str($this->input->post('h')),
                                     'favicon'=>$hasil['file_name'],
-                                    'maps'=>$this->db->escape_str($this->input->post('j')));
+                                    'maps'=>$this->db->escape_str($this->input->post('j')),
+                                    'no_wa'=>$this->db->escape_str($this->input->post('wa')));
             }
             $this->db->where('id_identitas',1);
             $this->db->update('identitas',$datadb);

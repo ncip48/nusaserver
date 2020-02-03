@@ -17,6 +17,7 @@
                     <tr><th scope='row'>Sosial Network</th>               <td><input type='text' class='form-control' name='d' value='$record[facebook]'></td></tr>
                     <tr><th scope='row'>No. Rekening</th>                 <td><input type='text' class='form-control' name='e' value='$record[rekening]'></td></tr>
                     <tr><th scope='row'>No Telpon</th>                    <td><input type='text' class='form-control' name='f' value='$record[no_telp]'></td></tr>
+                    <tr><th scope='row'>No Telpon</th>                    <td><input type='text' class='form-control' name='wa' value='$record[no_wa]'></td></tr>
                     <tr><th scope='row'>Kota Toko</th>                    <td><select class='form-control' name='kota' required>
                         <option value=''>- Pilih -</option>";
                         $kota = $this->model_app->view('rb_kota');

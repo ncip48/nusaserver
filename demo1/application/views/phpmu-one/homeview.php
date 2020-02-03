@@ -1,43 +1,61 @@
 <?php 
-$iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_array(); 
+$iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_array();
+$slider = $this->db->query("SELECT * FROM slide");
+$jumlahslide =  $this->db->query("SELECT count(*) as jumlah FROM slide")->row_array();
 ?>
 <header>
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+<div id='slider' class='carousel slide' data-ride='carousel'>
+    <ol class='carousel-indicators'>
+      <li data-target='#slider' data-slide-to='0' class='active'></li>
+    <?php
+    for ($i = 1; $i < $jumlahslide[jumlah]; $i++) {
+        echo "<li data-target='#slider' data-slide-to='$i'></li>";
+    }
+    ?>
     </ol>
-    <div class="carousel-inner" role="listbox">
+    <div class='carousel-inner' role='listbox'>
       <!-- Slide One - Set the background image for this slide in the line below -->
-      <div class="carousel-item active" style="background-image: url('<?= base_url() ?>asset/slider/slide1.jpg')">
-        <div class="carousel-caption d-md-block">
-          <h2 class="display-4">Slide Pertama</h2>
-          <p class="lead">Deskripsi untuk slide pertama.</p>
+      <div class='carousel-item active' style='background-image: url("<?= base_url() ?>asset/slider/<?= $slider->row_array()[gambar]?>")'>
+        <div class='carousel-caption d-md-block'>
+          <h2 class='display-4'><?= $slider->row_array()[judul]?></h2>
+          <p class='lead'><?= $slider->row_array()[keterangan]?></p>
         </div>
       </div>
-      <!-- Slide Two - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url('<?= base_url() ?>asset/slider/slide2.jpg')">
-        <div class="carousel-caption d-md-block">
-          <h2 class="display-4">Slide Kedua</h2>
-          <p class="lead">Deskripsi untuk slide kedua.</p>
+      <?php
+      //for ($i = 1; $i < $jumlahslide[jumlah]; $i++) {
+        $temp_row = array_slice($slider->result_array(), 1);
+        foreach ($temp_row as $row){
+          echo "<div class='carousel-item' style='background-image: url(".base_url()."asset/slider/".$row['gambar'].")'>
+                  <div class='carousel-caption d-md-block'>
+                    <h2 class='display-4'>$row[judul]</h2>
+                    <p class='lead'>$row[keterangan]</p>
+                  </div>
+                </div>";
+        }
+      //}
+      ?>
+<!--
+      <div class='carousel-item' style='background-image: url("<?= base_url() ?>asset/slider/slide2.jpg")'>
+        <div class='carousel-caption d-md-block'>
+          <h2 class='display-4'>Slide Kedua</h2>
+          <p class='lead'>Deskripsi untuk slide kedua.</p>
         </div>
       </div>
-      <!-- Slide Three - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url('<?= base_url() ?>asset/slider/slide3.jpg')">
-        <div class="carousel-caption d-md-block">
-          <h2 class="display-4">Slide Ketiga</h2>
-          <p class="lead">Ngebucin sek ah wkwkkwkwkwkwkkwkw.</p>
+
+      <div class='carousel-item' style='background-image: url("<?= base_url() ?>asset/slider/slide3.jpg")'>
+        <div class='carousel-caption d-md-block'>
+          <h2 class='display-4'>Slide Ketiga</h2>
+          <p class='lead'>Ngebucin sek ah wkwkkwkwkwkwkkwkw.</p>
         </div>
       </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
+    </div> -->
+    <a class='carousel-control-prev' href='#slider' role='button' data-slide='prev'>
+          <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+          <span class='sr-only'>Previous</span>
         </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
+    <a class='carousel-control-next' href='#slider' role='button' data-slide='next'>
+          <span class='carousel-control-next-icon' aria-hidden='true'></span>
+          <span class='sr-only'>Next</span>
         </a>
   </div>
 </header>

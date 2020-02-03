@@ -12,7 +12,12 @@
                   <tbody>
                     <input type='hidden' name='id' value=''>
                     <tr><th width='130px' scope='row'>Nama Produk</th>  <td><input type='text' class='form-control' name='b' required></td></tr>
-                    <tr><th scope='row'>Harga Konsumen</th>             <td><input type='text' class='form-control' name='f'></td></tr>
+                    <tr><th scope='row'>Satuan</th>                     <td><input type='text' class='form-control' name='c'></td></tr>
+                    <tr><th scope='row'>Berat</th>                      <td><input type='text' class='form-control' name='berat'></td></tr>
+                    <tr><th scope='row'>Harga Beli</th>                 <td><input type='number' class='form-control' name='d'></td></tr>
+                    <tr><th scope='row'>Harga Reseller</th>             <td><input type='number' class='form-control' name='e'></td></tr>
+                    <tr><th scope='row'>Harga Konsumen</th>             <td><input type='number' class='form-control' name='f'></td></tr>
+                    <tr><th scope='row'>Diskon</th>             <td><input type='number' class='form-control' name='diskon'></td></tr>
                     <tr><th scope='row'>Keterangan</th>                 <td><textarea id='editor1' class='form-control' name='ff'></textarea></td></tr>
                     <tr><th scope='row'>Gambar</th>                     <td><input type='file' class='form-control' name='g'></td></tr>
                   </tbody>
