@@ -40,7 +40,8 @@ class Artikel extends CI_Controller {
 	        }
 		$data['title'] = $row->judul;
 		$data['record'] = $this->model_berita->berita_detail($ids)->row_array();
-		$data['infoterbaru'] = $this->model_berita->info_terbaru(4);
+		//$data['infoterbaru'] = $this->model_berita->info_terbaru(4);
+		$data['infoterbaru'] = $this->db->query("SELECT * FROM berita ORDER BY RAND() LIMIT 4");
 		$this->model_berita->berita_dibaca_update($ids);
 		$this->template->load('phpmu-one/template','phpmu-one/view_berita',$data);
 	}

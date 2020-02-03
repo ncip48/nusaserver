@@ -9,13 +9,21 @@
                 <small class='date'><span class='glyphicon glyphicon-user'></span> $record[nama_lengkap], Kategori : <a href='".base_url()."artikel/kategori/$record[kategori_seo]'>$record[nama_kategori]</a></small><hr>
             <div class='col-md-12'>";
                 if ($record['gambar'] != ''){
-                    echo "<img width='100%' src='".base_url()."asset/foto_berita/".$record['gambar']."'><br>
+                    echo "<img class='mx-auto d-block' src='".base_url()."asset/foto_berita/".$record['gambar']."'><br>
                           <small class='btn btn-default btn-xs btn-block' style='color:red;'>$record[keterangan_gambar]</small>";
                 }
                 echo "<p>$record[isi_berita]</p>
-            </div><div style='clear:both'><br></div>
-
-            </div><div class='row'><div class='col-lg-12 text-left my-4'><span class='glyphicon glyphicon-list'></span> &nbsp; Informasi Utama</p><hr>";
+            </div>
+            </div>
+            <!--<div class='col-lg-4 text-justify my-4'>
+            A
+            </div>-->
+            <div style='clear:both'></div>
+            </div>
+            <div class='row'>
+            <div class='col-lg-12 text-left my-4'>
+            <span class='glyphicon glyphicon-list'></span>Artikel Lainnya</p><hr>
+            <div class='row'>";
                 $no = 1;
                 foreach ($infoterbaru->result_array() as $row){
                     $isi_berita = strip_tags($row['isi_berita']); 
@@ -28,7 +36,7 @@
                             <div style='height:130px; overflow:hidden'>
                                 <img style='width:100%' src='".base_url()."asset/foto_berita/".$foto."'>
                             </div>
-                            <a href='".base_url()."berita/detail/$row[judul_seo]'>".$row['judul']."</a>
+                            <h6><a href='".base_url()."berita/detail/$row[judul_seo]'>".$row['judul']."</a></h6>
                         </div>";
                         if ($no % 3 == 0){
                             echo "<div style='clear:both'><hr></div>";
