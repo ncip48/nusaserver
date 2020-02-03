@@ -217,11 +217,11 @@ class Model_main extends CI_model{
     }
 
     function kunjungan(){
-        //$ip      = $_SERVER['REMOTE_ADDR'];
-        $json = file_get_contents('https://api.ipify.org?format=json');
+        $ip      = $_SERVER['REMOTE_ADDR'];
+        //$json = file_get_contents('https://api.ipify.org?format=json');
 
-        $ips = json_decode($json,true);
-        $ip = $ips['ip'];
+        //$ips = json_decode($json,true);
+        //$ip = $ips['ip'];
         $tanggal = date("Y-m-d");
         $waktu   = time(); 
         $cekk = $this->db->query("SELECT * FROM statistik WHERE ip='$ip' AND tanggal='$tanggal'");
