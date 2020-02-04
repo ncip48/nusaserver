@@ -184,6 +184,7 @@ class Mulai extends CI_Controller {
 
         $totalpay = $harga_final+$hargadomain;
         $aktif = '0';
+        $kodetx = "TX-NS".random_string('numeric', 5);
 
         if ($id_produk=='') {
           $error[] = 'Tolong Pilih Paket';
@@ -227,7 +228,7 @@ class Mulai extends CI_Controller {
           $this->db->insert('rb_services',$datab);
           $id_order = $this->db->insert_id();
 
-          $data3 = array('no_tagihan'=>"TX-NS".random_string('numeric', 5),
+          $data3 = array('no_tagihan'=>$kodetx,
 	        			  'id_konsumen'=>$id_konsumen,
 	        			  'id_order'=>$id_order,
 	        			  'id_domain'=>$id_domain,
