@@ -165,7 +165,7 @@ class Mulai extends CI_Controller {
         $id_konsumen = $this->input->post('a');
         $id_produk = $this->input->post('b');
         $tipe = $this->input->post('c');
-        $tgldaftar = date('Y-m-d');
+        $tgldaftar = date('Y-m-d H-i-s');
         $durasi = $this->input->post('e');
         $harga_final = $this->input->post('f');
 
