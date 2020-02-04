@@ -360,12 +360,14 @@
                                 <input id='ringkasan' type='hidden' value='' \>
                                 <input id='ringkasan2' type='hidden' value='' \>
                                 <input id='banktype' name='g' type='hidden' value='' \>
-
+                                
                                 <input id='pilihandomain' name='l' type='hidden' value='' \>
                                 <input id='namadomain' name='h' type='hidden' value='' \>
                                 <input id='tld' name='i' type='hidden' value='' \>
                                 <input id='durasidomain' name='j' type='hidden' value='' \>
                                 <input id='hargadomain' name='k' type='hidden' value='' \>
+
+                                <input name='kodetrx' type='hidden' value='TX-NS".random_string('numeric', 5)."' \>
                                 <input id='btnsubmit' type='submit' class='btn btn-primary btn-sm btn-block' value='BAYAR' \>
                                 </form>
                                 <p>

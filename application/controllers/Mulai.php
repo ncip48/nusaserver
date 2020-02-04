@@ -179,12 +179,16 @@ class Mulai extends CI_Controller {
         $tld = $this->input->post('i');
         $durasidomain = $this->input->post('j');
         $hargadomain = $this->input->post('k');
-        $row = $this->model_app->view_where('rb_produk',array('id_produk'=>$id_produk))->row_array();
-        $namaproduk = $row['nama_produk'];
+        $rowd = $this->model_app->view_where('rb_produk',array('id_produk'=>$id_produk))->row_array();
+        $namaproduk = $rowd['nama_produk'];
 
         $totalpay = $harga_final+$hargadomain;
         $aktif = '0';
-        $kodetx = "TX-NS".random_string('numeric', 5);
+        $kodetx = $this->input->post('kodetrx');
+
+        $identitas = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_array();
+        $row = $this->db->query("SELECT * FROM rb_konsumen where id_konsumen='".$this->session->id_konsumen."'")->row_array();
+        if ($row['jenis_kelamin']=='Laki-laki'){ $panggill = 'Bpk.'; }else{ $panggill = 'Ibuk.'; }
 
         if ($id_produk=='') {
           $error[] = 'Tolong Pilih Paket';
@@ -263,7 +267,40 @@ class Mulai extends CI_Controller {
           $data['norek'] = $norek;
 
           $data['totalpay'] = $totalpay; */
-          $data = array('error'=>'0','error'=>"<span class='badge badge-pill badge-success'>o</span> <small class='text-dark'>Pembelian Berhasil, silahkan cek di dashboard anda</small>");
+
+          $email_tujuan = $row['email'];
+          $tglaktif = date("d-m-Y H:i:s");
+          $subject      = 'Order Diterima';
+          $message      = "<html><body>Halooo! <b>$panggill ".$row['nama_lengkap']."</b> ... <br> Hari ini pada tanggal <span style='color:red'>$tgldaftar</span> Anda Melakukan Order Dengan detail sbb:
+            <table style='width:100%; margin-left:25px'>
+                <tr><td style='background:#337ab7; color:#fff; pading:20px' cellpadding=6 colspan='2'><b>Berikut Data Order Anda : </b></td></tr>
+              <tr><td><b>Nama Lengkap</b></td>			<td> : ".$row['nama_lengkap']."</td></tr>
+              <tr><td><b>Nama Paket</b></td>			<td> : ".$namaproduk." ($durasi Hari) Template ke $tipe</td></tr>
+              <tr><td><b>Harga Paket</b></td>				<td> : ".rupiah($harga_final)."</td></tr>
+              <tr><td><b>Nama Domain</b></td>			<td> : ".$subdomain.".".$tld." </td></tr>
+              <tr><td><b>Harga Domain</b></td>				<td> : ".rupiah($hargadomain)." </td></tr>
+              <tr><td><b>Total</b></td>			<td> : ".rupiah($totalpay)." </td></tr>
+            </table>
+            <br> Silahkan Konfirmasi di : <a href='".$identitas['url']."konfirmasi/".$kodetx."'>Sini</a> <br>
+            Admin, $identitas[nama_website] </body></html> \n";
+          
+          $this->email->from($identitas['email'], $identitas['nama_website']);
+          $this->email->to($email_tujuan);
+          $this->email->cc('');
+          $this->email->bcc('');
+
+          $this->email->subject($subject);
+          $this->email->message($message);
+          $this->email->set_mailtype("html");
+          $this->email->send();
+          
+          $config['protocol'] = 'sendmail';
+          $config['mailpath'] = '/usr/sbin/sendmail';
+          $config['charset'] = 'utf-8';
+          $config['wordwrap'] = TRUE;
+          $config['mailtype'] = 'html';
+          $this->email->initialize($config);
+          $data = array('error'=>'0','error'=>"<span class='badge badge-pill badge-success'>o</span> <small class='text-dark'>Pembelian Berhasil, silahkan cek di dashboard anda dan email anda untuk konfirmasi pembayaran, kode trx : ".$kodetx."</small>");
           $this->output->set_output(json_encode($data));
         }
       }
