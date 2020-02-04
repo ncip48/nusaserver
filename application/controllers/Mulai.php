@@ -262,7 +262,7 @@ class Mulai extends CI_Controller {
           $data['norek'] = $norek;
 
           $data['totalpay'] = $totalpay; */
-          $data = array('error'=>'0','error'=>"<span class='badge badge-pill badge-success'>o</span> <small class='text-dark'>Pembelian Berhasil</small>");
+          $data = array('error'=>'0','error'=>"<span class='badge badge-pill badge-success'>o</span> <small class='text-dark'>Pembelian Berhasil, silahkan cek di dashboard anda</small>");
           $this->output->set_output(json_encode($data));
         }
       }
