@@ -5,7 +5,7 @@
           <div class='row'>
             <?php 
               foreach ($domain->result_array() as $domen){
-                if ($servis['aktif']==0){
+                if ($domen['aktif']==0){
                   $tulis = "Belum Aktif";
                 }else{
                   $tulis = "Aktif";
@@ -15,7 +15,7 @@
                     <div class='card'>
                       <div class='card-body'>
                         <div class='card-title'><h5>".$domen['nama_domain'].".".$domen['tld']."</h5></div>
-                        <h5 class='float-right'>".$servis['durasi_domain']." Hari</h5>
+                        <h5 class='float-right'>".$domen['durasi_domain']." Hari</h5>
                       </div>
                       <div class='card-footer bg-white'>
                       <a href='http://".$domen['nama_domain'].".".$domen['tld']."' class='card-link'>Lihat</a>
