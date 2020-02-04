@@ -165,7 +165,7 @@ class Mulai extends CI_Controller {
         $id_konsumen = $this->input->post('a');
         $id_produk = $this->input->post('b');
         $tipe = $this->input->post('c');
-        $tgldaftar = $this->input->post('d');
+        $tgldaftar = date('Y-m-d');
         $durasi = $this->input->post('e');
         $harga_final = $this->input->post('f');
 
@@ -181,6 +181,9 @@ class Mulai extends CI_Controller {
         $hargadomain = $this->input->post('k');
         $row = $this->model_app->view_where('rb_produk',array('id_produk'=>$id_produk))->row_array();
         $namaproduk = $row['nama_produk'];
+
+        $totalpay = $harga_final+$hargadomain;
+        $aktif = '0';
 
         if ($id_produk=='') {
           $error[] = 'Tolong Pilih Paket';
@@ -202,7 +205,39 @@ class Mulai extends CI_Controller {
           $data = array('error'=>"<span class='badge badge-pill badge-danger'>!</span> <small class='text-danger'>".implode("</small><br /><span class='badge badge-pill badge-danger'>!</span> <small class='text-danger'>", $error));
           $this->output->set_output(json_encode($data));
         }else{
-          $data = array();
+          $datab = array('id_konsumen'=>$id_konsumen,
+	        			  'id_produk'=>$id_produk,
+                  'tipe'=>$tipe,
+                  'tgl_daftar'=>$tgldaftar,
+	        			  'durasi'=>$durasi,
+	        			  'harga'=>$harga_final,
+	        			  'aktif'=>$aktif);
+          $this->db->insert('rb_services',$datab);
+          $id_order = $this->db->insert_id();
+
+          $data2 = array('id_konsumen'=>$id_konsumen,
+	        			  'nama_domain'=>$subdomain,
+	        			  'tld'=>$tld,
+	        			  'tgl_daftar'=>$tgldaftar,
+	        			  'durasi_domain'=>$durasidomain,
+	        			  'harga_domain'=>$hargadomain,
+						      'aktif'=>$aktif);
+          $this->db->insert('rb_domain',$data2);
+          $id_domain = $this->db->insert_id();
+
+          $data3 = array('no_tagihan'=>"TXXXX",
+	        			  'id_konsumen'=>$id_konsumen,
+	        			  'id_order'=>$id_order,
+	        			  'id_domain'=>$id_domain,
+	        			  'total'=>$totalpay,
+	        			  'ppn'=>$aktif,
+                  'tanggal'=>$tgldaftar,
+                  'status'=>$aktif,
+                  'bank'=>$bank);
+          $this->db->insert('rb_invoice',$data3);
+
+
+          /*$data = array();
           $data['error'] = '0';
           $data['id_konsumen'] = $id_konsumen;
           $data['id_produk'] = $id_produk;
@@ -223,6 +258,9 @@ class Mulai extends CI_Controller {
           $data['bank'] = $bank;
           $data['namarek'] = $pemilikrek;
           $data['norek'] = $norek;
+
+          $data['totalpay'] = $totalpay; */
+          $data = array('error'=>'0','error'=>"<span class='badge badge-pill badge-success'>o</span> <small class='text-dark'>Pembelian Berhasil</small>");
           $this->output->set_output(json_encode($data));
         }
       }

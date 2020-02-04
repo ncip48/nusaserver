@@ -350,11 +350,10 @@
                         </div>
                         <div class='card my-2'>
                             <div class='card-body'>
-                                <form method='post' action='".base_url()."mulai/beli' id='beli'>
+                                <form method='post' action='' id='beli'>
                                 <input id='id_konsumen' name='a' type='hidden' value='".$this->session->id_konsumen."' \>
                                 <input id='id_produk' name='b' type='hidden' \>
                                 <input id='tipe' name='c' type='hidden' value='' \>
-                                <input id='tgldaftar' name='d' type='hidden' value='".date('Y-m-d H:i:s')."' \>
                                 <input id='durasi' name='e' type='hidden' value='' \>
                                 <input id='harga_final' name='f' type='hidden' value='' \>
                                 
@@ -585,7 +584,7 @@ $(document).ready(function() {
     $('#beli').submit(function() {
 		    $.ajax({
 			    type: 'POST',
-			    url: $(this).attr('action'),
+			    url: "<?php echo base_url(); ?>mulai/beli",
 			    data: $(this).serialize(),
                 beforeSend: function(){
                     $('#load').html("<img class='loading' src='"+baseurl+"asset/images/loading.gif' />");
@@ -594,14 +593,15 @@ $(document).ready(function() {
                     var data = jQuery.parseJSON(response);
                     //$('#panelregister').hide();
                     //$('#aksiregister').html(data);
-                    if (data.error =='0'){
-                        //console.log(data);
+                    $('#error_log').html(data.error);
+                    /*if (data.error =='0'){
+                        console.log(data);
                         $('#error_log').html("Pembelian berhasil, tunggu...");
                         alert("Daftar Pembelian:\nPaket: "+data.nama_produk+" ("+data.durasi+" Hari, Template no "+data.tipe+")\nHarga: "+data.hargafinal+"\n==========\nDomain: "+data.subdomain+data.tld+"\nHarga: "+data.harga_domain+"\n=============\nSilahkan Transfer ke rekening dibawah\nNama Bank: "+data.bank+"\nNama Pemilik: "+data.namarek+"\nNo Rekening: "+data.norek+"\n=======Terimakasih")
                     }else{
                         //console.log(data);
                         $('#error_log').html(data.error);
-                    }
+                    }*/
 			    }
 		    })
 		    return false;

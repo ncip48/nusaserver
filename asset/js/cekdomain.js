@@ -108,8 +108,8 @@ $(document).ready(function() {
 
     $('#ceksubdomain').click(function() {
         var subdomain3 = $('#subdomain3').val();
-        var domain = '.nusaserver.com';
-        var dom = subdomain3+domain;
+        var domain = 'nusaserver.com';
+        var dom = subdomain3+"."+domain;
         //var baseurl = "<?php echo base_url(); ?>";
 
         //console.log(dom);
