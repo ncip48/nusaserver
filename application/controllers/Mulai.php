@@ -269,7 +269,6 @@ class Mulai extends CI_Controller {
           $data['totalpay'] = $totalpay; */
 
           $email_tujuan = $row['email'];
-          $tglaktif = date("d-m-Y H:i:s");
           $subject      = 'Order Diterima';
           $message      = "<html><body>Halooo! <b>$panggill ".$row['nama_lengkap']."</b> ... <br> Hari ini pada tanggal <span style='color:red'>$tgldaftar</span> Anda Melakukan Order Dengan detail sbb:
             <table style='width:100%; margin-left:25px'>
@@ -281,7 +280,7 @@ class Mulai extends CI_Controller {
               <tr><td><b>Harga Domain</b></td>				<td> : ".rupiah($hargadomain)." </td></tr>
               <tr><td><b>Total</b></td>			<td> : ".rupiah($totalpay)." </td></tr>
             </table>
-            <br> Silahkan Konfirmasi di : <a href='".$identitas['url']."konfirmasi/".$kodetx."'>Sini</a> <br>
+            <br> Silahkan Konfirmasi di : <a href='".$identitas['url']."/konfirmasi/".$kodetx."'>Sini</a> <br>
             Admin, $identitas[nama_website] </body></html> \n";
           
           $this->email->from($identitas['email'], $identitas['nama_website']);
@@ -300,6 +299,7 @@ class Mulai extends CI_Controller {
           $config['wordwrap'] = TRUE;
           $config['mailtype'] = 'html';
           $this->email->initialize($config);
+
           $data = array('error'=>'0','error'=>"<span class='badge badge-pill badge-success'>o</span> <small class='text-dark'>Pembelian Berhasil, silahkan cek di dashboard anda dan email anda untuk konfirmasi pembayaran, kode trx : ".$kodetx."</small>");
           $this->output->set_output(json_encode($data));
         }
