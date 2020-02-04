@@ -35,6 +35,11 @@
                 if($cek==1 OR $this->session->level=='admin'){
                   echo "<li><a href='".base_url()."administrator/about'><i class='fa fa-circle-o'></i> Tentang Saya</a></li>";
                 }
+
+                $cek=$this->model_app->umenu_akses("hubungi",$this->session->id_session);
+                if($cek==1 OR $this->session->level=='admin'){
+                  echo "<li><a href='".base_url()."administrator/hubungi'><i class='fa fa-circle-o'></i> Pesan Masuk</a></li>";
+                }
               ?>
               </ul>
             </li>

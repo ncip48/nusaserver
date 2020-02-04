@@ -12,6 +12,10 @@ class Model_halaman extends CI_model{
         return $this->db->query("SELECT * FROM halamanstatis")->row_array();
     }
 
+    function hubungi(){
+        return $this->db->query("SELECT * FROM hubungi");
+    }
+
     function about_update(){
         $datadb = array('isi_halaman'=>$this->input->post('a'),
                         'tgl_posting'=>date('Y-m-d'));

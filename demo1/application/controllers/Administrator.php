@@ -114,6 +114,17 @@ class Administrator extends CI_Controller {
 		}
 	}
 
+	function hubungi(){
+		cek_session_akses('hubungi',$this->session->id_session);
+		if (isset($_POST['submit'])){
+			$this->model_halaman->about_update();
+			redirect('administrator/about');
+		}else{
+			$data['record'] = $this->model_halaman->hubungi();
+			$this->template->load('administrator/template','administrator/mod_hubungi/view_hubungi',$data);
+		}
+	}
+
 	function tambah_halamanbaru(){
 		cek_session_akses('halamanbaru',$this->session->id_session);
 		if (isset($_POST['submit'])){
