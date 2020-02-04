@@ -66,7 +66,7 @@ class Members extends CI_Controller {
 		$id = $this->uri->segment(3);
 		if (isset($_POST['submit'])){
 			$this->model_members->profile_update($this->session->id_konsumen);
-			redirect('members/profile');
+			redirect('members/editprofile');
 		}else{
 			$data['title'] = 'Edit Profile Anda';
 			$data['row'] = $this->model_app->profile_konsumen($this->session->id_konsumen)->row_array();

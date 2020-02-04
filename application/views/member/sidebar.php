@@ -9,6 +9,7 @@
 	<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
 	  	<div class="user-logo">
 	  		<div class="img" style="background-image: url(<?= base_url() ?>asset/foto_user/<?= $foto_user ?>);"></div>
+                <a href='#uploadfoto' data-toggle='modal' data-target='#uploadfoto'>ganti foto?</a>
 	  			<h3><?= $row['nama_lengkap'] ?></h3>
 	  	</div>
 	</div>
