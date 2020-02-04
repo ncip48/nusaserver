@@ -5,14 +5,25 @@
           <div class='row'>
             <?php 
               foreach ($service as $servis){
+                $domen = $this->db->query("SELECT * FROM rb_domain WHERE id_domain='".$servis[id_domain]."'")->row_array();
+                if ($servis['aktif']==0){
+                  $tulis = "Belum Aktif";
+                }else{
+                  $tulis = "Aktif";
+                }
                   echo "
                   <div class='col-md-4 col-sm-6 mb-3'>
                     <div class='card'>
                       <div class='card-body'>
-                        <div class='card-title'><h5>".$servis['nama_produk']."</h5></div>
+                        <div class='card-title'>
+                        <h5>".$servis['nama_produk']."</h5>
+                        <h6 class='float-left'>".$domen['nama_domain'].".".$domen['tld']."</h6>
+                        <h5 class='float-right'>".$servis['durasi']." Hari</h5>
+                        </div>
                       </div>
                       <div class='card-footer bg-white'>
-                        <a href='https://www.malasngoding.com/card-bootstrap-4/' class='card-link'>Lihat</a>
+                        <a href='http://".$domen['nama_domain'].".".$domen['tld']."' class='card-link'>Lihat</a>
+                        <h6 class='float-right'>".$tulis."</h6>
                       </div>
                     </div>
                   </div>

@@ -205,15 +205,6 @@ class Mulai extends CI_Controller {
           $data = array('error'=>"<span class='badge badge-pill badge-danger'>!</span> <small class='text-danger'>".implode("</small><br /><span class='badge badge-pill badge-danger'>!</span> <small class='text-danger'>", $error));
           $this->output->set_output(json_encode($data));
         }else{
-          $datab = array('id_konsumen'=>$id_konsumen,
-	        			  'id_produk'=>$id_produk,
-                  'tipe'=>$tipe,
-                  'tgl_daftar'=>$tgldaftar,
-	        			  'durasi'=>$durasi,
-	        			  'harga'=>$harga_final,
-	        			  'aktif'=>$aktif);
-          $this->db->insert('rb_services',$datab);
-          $id_order = $this->db->insert_id();
 
           $data2 = array('id_konsumen'=>$id_konsumen,
 	        			  'nama_domain'=>$subdomain,
@@ -225,7 +216,18 @@ class Mulai extends CI_Controller {
           $this->db->insert('rb_domain',$data2);
           $id_domain = $this->db->insert_id();
 
-          $data3 = array('no_tagihan'=>"TXXXX",
+          $datab = array('id_konsumen'=>$id_konsumen,
+                  'id_produk'=>$id_produk,
+                  'id_domain'=>$id_domain,
+                  'tipe'=>$tipe,
+                  'tgl_daftar'=>$tgldaftar,
+	        			  'durasi'=>$durasi,
+	        			  'harga'=>$harga_final,
+	        			  'aktif'=>$aktif);
+          $this->db->insert('rb_services',$datab);
+          $id_order = $this->db->insert_id();
+
+          $data3 = array('no_tagihan'=>"TX-NS".random_string('numeric', 5),
 	        			  'id_konsumen'=>$id_konsumen,
 	        			  'id_order'=>$id_order,
 	        			  'id_domain'=>$id_domain,
