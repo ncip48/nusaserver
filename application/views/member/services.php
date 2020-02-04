@@ -1,5 +1,5 @@
 <div id="content" class="p-4 p-md-5 pt-5">
-    <h2 class="mb-4">My Services</h2>
+    <h2 class="mb-4">My Services <a class='btn btn-sm btn-primary' href="<?= base_url() ?>mulai">Tambah baru?</a></h2> 
     <hr>
     <p class='sidebar-title'><span class='glyphicon glyphicon-triangle-right'></span> Paket Yang Anda Miliki</p>
           <div class='row'>
