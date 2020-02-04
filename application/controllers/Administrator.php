@@ -1220,6 +1220,27 @@ class Administrator extends CI_Controller {
 		$this->template->load('administrator/template','administrator/mod_penjualan/view_orders_report',$data);
 	}
 
+	function services(){
+		cek_session_akses('konsumen',$this->session->id_session);
+		$data['title'] = 'Laporan Pesanan Paket';
+		$data['record'] = $this->model_app->service_report();
+		$this->template->load('administrator/template','administrator/mod_service/view_orders_report',$data);
+	}
+
+	function domains(){
+		cek_session_akses('konsumen',$this->session->id_session);
+		$data['title'] = 'Laporan Pesanan Domain';
+		$data['record'] = $this->model_app->domain_report();
+		$this->template->load('administrator/template','administrator/mod_domain/view_orders_report',$data);
+	}
+
+	function invoices(){
+		cek_session_akses('konsumen',$this->session->id_session);
+		$data['title'] = 'Laporan Tagihan';
+		$data['record'] = $this->model_app->invoice_report();
+		$this->template->load('administrator/template','administrator/mod_invoice/view_orders_report',$data);
+	}
+
 	function print_orders(){
 		cek_session_akses('konsumen',$this->session->id_session);
 		$data['title'] = 'Laporan Pesanan Masuk';

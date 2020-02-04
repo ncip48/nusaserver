@@ -143,6 +143,18 @@ class Model_app extends CI_model{
         return $this->db->query("SELECT * FROM `rb_penjualan` a ORDER BY a.id_penjualan DESC");
     }
 
+    function service_report(){
+        return $this->db->query("SELECT * FROM `rb_services` a JOIN `rb_konsumen` b ON a.id_konsumen=b.id_konsumen JOIN `rb_produk` c ON a.id_produk=c.id_produk JOIN `rb_invoice` d ON a.id_order=d.id_order ORDER BY a.id_order DESC");
+    }
+
+    function domain_report(){
+        return $this->db->query("SELECT * FROM `rb_domain` a JOIN `rb_konsumen` b ON a.id_konsumen=b.id_konsumen JOIN `rb_invoice` d ON a.id_domain=d.id_domain ORDER BY a.id_domain DESC");
+    }
+
+    function invoice_report(){
+        return $this->db->query("SELECT * FROM `rb_invoice` a JOIN `rb_konsumen` b ON a.id_konsumen=b.id_konsumen JOIN `rb_services` c ON a.id_order=c.id_order JOIN `rb_domain` d ON a.id_domain=d.id_domain JOIN `rb_produk` e ON c.id_produk=e.id_produk ORDER BY a.id_domain DESC");
+    }
+
     function orders_report_home($limit){
         return $this->db->query("SELECT * FROM `rb_penjualan` a ORDER BY a.id_penjualan DESC LIMIT $limit");
     }

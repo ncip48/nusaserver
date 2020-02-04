@@ -21,12 +21,14 @@
                     $no = 1;
 
                     foreach ($record as $row){
-                    $harga = explode(';', $row[harga_konsumen]);
+                    $harga1 = explode(';', $row[harga_satu]);
+                    $harga6 = explode(';', $row[harga_enam]);
+                    $harga12 = explode(';', $row[harga_duabelas]);
                     echo "<tr><td>$no</td>
                               <td>$row[nama_produk]</td>
-                              <td><del>Rp ".rupiah($harga[0])."</del> Rp ".rupiah($harga[1])."</td>
-                              <td>Rp ".rupiah($harga[2])."</td>
-                              <td>Rp ".rupiah($harga[3])."</td>
+                              <td><del>Rp ".rupiah($harga1[0])."</del> Rp ".rupiah($harga1[1])."</td>
+                              <td><del>Rp ".rupiah($harga6[0])."</del> Rp ".rupiah($harga6[1])."</td>
+                              <td><del>Rp ".rupiah($harga12[0])."</del> Rp ".rupiah($harga12[1])."</td>
                               <td><center>
                                 <a class='btn btn-success btn-xs' title='Edit Data' href='".base_url()."administrator/edit_produk/$row[id_produk]'><span class='glyphicon glyphicon-edit'></span></a>
                                 <a class='btn btn-danger btn-xs' title='Delete Data' href='".base_url()."administrator/delete_produk/$row[id_produk]' onclick=\"return confirm('Apa anda yakin untuk hapus Data ini?')\"><span class='glyphicon glyphicon-remove'></span></a>

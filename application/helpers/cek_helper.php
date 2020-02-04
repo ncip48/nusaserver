@@ -81,6 +81,15 @@ error_reporting(0);
             return $tanggal.' '.$bulan.' '.$tahun;       
     } 
 
+    function tgl_jam($tgl){
+        $tanggal = substr($tgl,8,2);
+        $bulan = getBulan(substr($tgl,5,2));
+        $tahun = substr($tgl,0,4);
+        $jam = substr($tgl,11,2);
+        $menit = substr($tgl,14,2);
+        return $tanggal.' '.$bulan.' '.$tahun.' Jam '.$jam.":".$menit;       
+} 
+
     function tgl_simpan($tgl){
             $tanggal = substr($tgl,0,2);
             $bulan = substr($tgl,3,2);

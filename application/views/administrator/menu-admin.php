@@ -95,6 +95,28 @@
                   ?>
               </ul>
             </li>
+
+            <li class="treeview">
+              <a href="#"><i class="fa fa-gears"></i> <span>Modul Order</span><i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                  <?php 
+                    $cek=$this->model_app->umenu_akses("services",$this->session->id_session);
+                    if($cek==1 OR $this->session->level=='admin'){
+                      echo "<li><a href='".base_url()."administrator/services'><i class='fa fa-circle-o'></i> Pembelian Paket</a></li>";
+                    }
+
+                    $cek=$this->model_app->umenu_akses("domain",$this->session->id_session);
+                    if($cek==1 OR $this->session->level=='admin'){
+                      echo "<li><a href='".base_url()."administrator/domains'><i class='fa fa-circle-o'></i> Pembelian Domain</a></li>";
+                    }
+
+                    $cek=$this->model_app->umenu_akses("invoice",$this->session->id_session);
+                    if($cek==1 OR $this->session->level=='admin'){
+                      echo "<li><a href='".base_url()."administrator/invoices'><i class='fa fa-circle-o'></i> Tagihan</a></li>";
+                    }
+                  ?>
+              </ul>
+            </li>
             
             <li class="treeview">
               <a href="#"><i class="glyphicon glyphicon-pencil"></i> <span>Modul Berita</span><i class="fa fa-angle-left pull-right"></i></a>

@@ -3,7 +3,7 @@
     <hr>
     <p class='sidebar-title'><span class='fa fa-arrow-right'></span> Daftar Tagihan yang Anda Miliki</p>
           <div class='row'>
-            <table class="table table-bordered table-responsive table-striped w-100 d-block d-md-table">
+            <table  class="table table-bordered table-responsive table-striped w-100 d-block d-md-table">
                     <thead class='text-center'>
                       <tr>
                         <th style='width:30px'>No</th>
