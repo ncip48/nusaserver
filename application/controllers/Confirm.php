@@ -27,7 +27,7 @@ class Confirm extends CI_Controller {
             //redirect('members/profile');
             echo "<script type='text/javascript'>
                 var count = 6;
-                var redirect = '". base_url()."members/profile';
+                var redirect = '". base_url()."mulai';
                  
                 function countDown(){
                     var timer = document.getElementById('timer');
@@ -52,7 +52,7 @@ class Confirm extends CI_Controller {
             if ($aktif['confirm']=='1'){
                 echo "<script type='text/javascript'>
                 var count = 6;
-                var redirect = '". base_url()."members/profile';
+                var redirect = '". base_url()."mulai';
                  
                 function countDown(){
                     var timer = document.getElementById('timer');
