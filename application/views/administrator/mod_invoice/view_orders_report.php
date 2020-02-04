@@ -23,7 +23,7 @@
                                 <?php 
                                   $no = 1;
                                   foreach ($record->result_array() as $row){
-                                  if ($row['status']=='0'){ $proses = '<i class="text-danger">Belum Aktif</i>'; $color = 'danger'; $text = 'Belum Aktif'; }elseif($row['status']=='1'){ $proses = '<i class="text-warning">Sudah Aktif</i>'; $color = 'warning'; $text = 'Sudah Aktif'; }
+                                  if ($row['status']=='0'){ $proses = '<i class="text-danger">Belum Lunas</i>'; $color = 'danger'; $text = 'Belum Lunas'; }elseif($row['status']=='1'){ $proses = '<i class="text-warning">Lunas</i>'; $color = 'warning'; $text = 'Lunas'; }
                                   $total = $this->db->query("SELECT a.kode_transaksi, a.kurir, a.service, a.proses, a.ongkir, e.nama_kota, f.nama_provinsi, sum((b.harga_jual*b.jumlah)-(c.diskon*b.jumlah)) as total FROM `rb_penjualan` a JOIN rb_penjualan_detail b ON a.id_penjualan=b.id_penjualan JOIN rb_produk c ON b.id_produk=c.id_produk JOIN rb_konsumen d ON a.id_pembeli=d.id_konsumen JOIN rb_kota e ON d.kota_id=e.kota_id JOIN rb_provinsi f ON e.provinsi_id=f.provinsi_id where a.kode_transaksi='$row[kode_transaksi]'")->row_array();
                                   
                                   echo "<tr><td>$no</td>
