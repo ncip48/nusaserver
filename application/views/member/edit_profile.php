@@ -7,7 +7,7 @@
           echo "<p>Berikut Informasi Data Profile anda.<br> 
                   Pastikan data-data dibawah ini sudah benar, agar tidak terjadi kesalahan saat transaksi.</p>";                
                           $attributes = array('id' => 'formku','class'=>'form-horizontal','role'=>'form');
-                          echo form_open_multipart('members/edit_profile',$attributes); 
+                          echo form_open_multipart('members/editprofile',$attributes); 
                           echo "<table class='table table-light table-condensed table-responsive'>
                                 <thead>
                                   <tr><td width='140px'><b>Username</b></td> <td><input class='required form-control' style='width:50%; display:inline-block' name='aa' type='text' value='$row[username]'></td></tr>

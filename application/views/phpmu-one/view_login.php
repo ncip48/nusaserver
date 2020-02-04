@@ -85,7 +85,7 @@
                     $('#aksilogin').html(data.error);
                     if (data.result=='1'){
                         var delay = 2000; 
-                        var url = baseurl+"members";    
+                        var url = baseurl+"mulai";    
                         setTimeout(function(){ window.location = url; }, delay);
                     }
                     //console.log(data);
