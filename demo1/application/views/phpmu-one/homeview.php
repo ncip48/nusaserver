@@ -152,25 +152,25 @@ $jumlahslide =  $this->db->query("SELECT count(*) as jumlah FROM slide")->row_ar
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <form id="contactForm" name="sentMessage" novalidate="novalidate">
+          <form id="frmPesan" name="sentMessage" novalidate="novalidate" method='POST' action='<?= base_url() ?>main/contact'>
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
+                  <input class="form-control" name='a' id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Masukkan Nama.">
                   <p class="help-block text-danger"></p>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">
+                  <input class="form-control" name='b' id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Masukkan Email.">
                   <p class="help-block text-danger"></p>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number.">
+                  <input class="form-control" name='c' id="phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Masukkan No HP.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <textarea class="form-control" id="message" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message."></textarea>
+                  <textarea class="form-control" name='d' id="message" placeholder="Your Message *" required="required" data-validation-required-message="Masukkan Pesan."></textarea>
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
@@ -181,7 +181,29 @@ $jumlahslide =  $this->db->query("SELECT count(*) as jumlah FROM slide")->row_ar
               </div>
             </div>
           </form>
+          <div id='aksipesan'></div>
         </div>
       </div>
     </div>
   </section>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $('#frmPesan').submit(function() {
+		    $.ajax({
+			    type: 'POST',
+			    url: $(this).attr('action'),
+			    data: $(this).serialize(),
+			    success: function(response) {
+                    var data = jQuery.parseJSON(response);
+                    //console.log(data);
+                    $('#aksipesan').html(data.error);
+                    //console.log(data);
+                    //$('#reloading').html(data);
+                    //$('#reloadcontent').hide();
+			    }
+		    })
+		    return false;
+	    });
+    })
+</script>
