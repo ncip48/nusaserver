@@ -270,7 +270,7 @@ class Mulai extends CI_Controller {
 
           $email_tujuan = $row['email'];
           $subject      = 'Order Diterima';
-          $message      = "<html><body>Halooo! <b>$panggill ".$row['nama_lengkap']."</b> ... <br> Hari ini pada tanggal <span style='color:red'>$tgldaftar</span> Anda Melakukan Order Dengan detail sbb:
+          $message      = "<html><body>Halooo! <b>$panggill ".$row['nama_lengkap']."</b> ... <br> Hari ini pada tanggal <span style='color:red'>".tgl_jam($tgldaftar)."</span> Anda Melakukan Order Dengan detail sbb:
             <table style='width:100%; margin-left:25px'>
                 <tr><td style='background:#337ab7; color:#fff; pading:20px' cellpadding=6 colspan='2'><b>Berikut Data Order Anda : </b></td></tr>
               <tr><td><b>Nama Lengkap</b></td>			<td> : ".$row['nama_lengkap']."</td></tr>
