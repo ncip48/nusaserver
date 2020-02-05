@@ -8,7 +8,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
         <div class="col-md-6 col-xs-12">
           <h2 class="jumbotron-heading">Kelola Toko Online Anda Lebih Mudah dengan <?php echo $iden['nama_website']; ?></h2>
           <p class="jumbotron-paragraf"><?php echo $iden['nama_website']; ?> membantu Anda mengelola bisnis secara profesional dengan menyediakan laporan data penjualan secara <i>realtime</i>, manajemen stok dengan multi gudang, pengelolaan <i>database</i> pelanggan, dan memaksimalkan konversi penjualan melalui toko online Anda.</p> 
-          <p><a class="btn btn-jumbotron btn-primary btn-lg" href="<?php echo base_url(); ?>mulai" role="button">Gabung Yuk</a></p> 
+          <p><a class="btn btn-jumbotron btn-primary btn-lg active" href="<?php echo base_url(); ?>mulai" role="button">Gabung Yuk</a></p> 
       </div>
     </div>
   </div>
@@ -70,7 +70,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
       <div class="row text-center">
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-circle fa-stack-2x text-primary active"></i>
             <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
           </span>
           <h4 class="service-heading">Pro UKM</h4>
@@ -209,8 +209,8 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Portfolio</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h4 class="section-heading text-uppercase">Template</h4>
+          <h3 class="section-subheading text-muted">Beberapa demo yang kami berikan</h3>
         </div>
       </div>
       <div class="row">
@@ -302,132 +302,13 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
     </div>
   </section>
 
-  <!-- Team -->
-  <section class="bg-light page-section" id="team">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
-            <h4>Kay Garland</h4>
-            <p class="text-muted">Lead Designer</p>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
-            <h4>Larry Parker</h4>
-            <p class="text-muted">Lead Marketer</p>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
-            <h4>Diana Pertersen</h4>
-            <p class="text-muted">Lead Developer</p>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Clients -->
-  <section class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 col-sm-6">
-          <a href="#">
-            <img class="img-fluid d-block mx-auto" src="img/logos/envato.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <a href="#">
-            <img class="img-fluid d-block mx-auto" src="img/logos/designmodo.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <a href="#">
-            <img class="img-fluid d-block mx-auto" src="img/logos/themeforest.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <a href="#">
-            <img class="img-fluid d-block mx-auto" src="img/logos/creative-market.jpg" alt="">
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Contact -->
-  <section class="page-section" id="contact">
+  <section class="page-section bg-primary" id="contact">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Contact Us</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h4 class="section-heading text-uppercase">Contact US</h4>
+          <h3 class="section-subheading text-dark">Hubungi kami di bawah ini</h3>
         </div>
       </div>
       <div class="row">
@@ -457,7 +338,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
               <div class="clearfix"></div>
               <div class="col-lg-12 text-center">
                 <div id="success"></div>
-                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
+                <button id="sendMessageButton" class="btn btn-primary btn-sm text-uppercase" type="submit">Send Message</button>
               </div>
             </div>
           </form>
