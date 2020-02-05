@@ -1,3 +1,5 @@
+<div class="container isi">
+<div class="row">
 <p class='sidebar-title'><span class='glyphicon glyphicon-remove'></span> <strong>Maaf, Reset Password Gagal!</strong></p>
 <center style='padding:50px'>
 <style>
@@ -11,3 +13,4 @@ Silahkan Menghubungi kami <a href='<?php echo base_url(); ?>/contact'>disini</a>
 
 <br><br>
 </center>
+</div></div>
