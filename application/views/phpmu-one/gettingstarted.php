@@ -370,6 +370,7 @@
                                 <input name='kodetrx' type='hidden' value='TX-NS".random_string('numeric', 5)."' \>
                                 <input id='btnsubmit' type='submit' class='btn btn-primary btn-sm btn-block' value='BAYAR' \>
                                 </form>
+                                <div class='text-center' id='loadingpay' class='text-left'></div>
                                 <p>
                                 <div id='error_log' class='text-left'></div>
                             </div>
@@ -589,11 +590,11 @@ $(document).ready(function() {
 			    url: "<?php echo base_url(); ?>mulai/beli",
 			    data: $(this).serialize(),
                 beforeSend: function(){
-                    $('#load').html("<img class='loading' src='"+baseurl+"asset/images/loading.gif' />");
+                    $('#loadingpay').html("<img class='loading' src='"+baseurl+"asset/images/loading.gif' />");
                 },
 			    success: function(response) {
                     var data = jQuery.parseJSON(response);
-                    //$('#panelregister').hide();
+                    $('#loadingpay').hide();
                     //$('#aksiregister').html(data);
                     $('#error_log').html(data.error);
                     /*if (data.error =='0'){

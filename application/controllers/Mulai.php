@@ -175,6 +175,7 @@ class Mulai extends CI_Controller {
         $norek = $rek['no_rekening'];
         
         $pilihandomain = $this->input->post('l');
+
         $subdomain = $this->input->post('h');
         $tld = $this->input->post('i');
         $durasidomain = $this->input->post('j');
@@ -243,7 +244,10 @@ class Mulai extends CI_Controller {
                   'bank'=>$bank);
           $this->db->insert('rb_invoice',$data3);
 
-
+          if ($pilihandomain=='1'){
+            $data4 = array('nama_subdomain'=>$subdomain.".".$tld);
+          $this->db->insert('subdomain',$data4);
+          }
           /*$data = array();
           $data['error'] = '0';
           $data['id_konsumen'] = $id_konsumen;
