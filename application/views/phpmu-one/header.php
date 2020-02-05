@@ -30,7 +30,7 @@
           if ($this->session->id_konsumen != ''){
             echo "<li class='nav-item'><a class='nav-link js-scroll-trigger' href='".base_url()."members'>Member Area</a></li>";
           }else{
-            echo "<li class='nav-item'><a style='border-radius: 40px;' class='btn btn-primary nav-link js-scroll-trigger' href='".base_url()."login'>Sign Up</a></li>";
+            echo "<li class='nav-item'><a style='border-radius: 40px;display: block;margin: 1.1em 1em!important;' class='py-0 btn btn-primary  btn-sm active text-white' href='".base_url()."login'>Sign Up</a></li>";
           }
           }elseif ($this->uri->segment(1)=='members'){
               echo "<li class='nav-item'><span class='nav-link js-scroll-trigger'>Selamat Datang ".$ksm['username']."</span></li>
