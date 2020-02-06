@@ -15,32 +15,41 @@
         <?php 
           $ksm = $this->db->query("SELECT * FROM rb_konsumen where id_konsumen='".$this->session->id_konsumen."'")->row_array();
           if ($this->uri->segment(1)=='' OR $this->uri->segment(1)=='main'){
-          echo "<li class='nav-item'>
-            <a class='nav-link js-scroll-trigger' href='#fitur'>Fitur</a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link js-scroll-trigger' href='#produk'>Produk</a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link js-scroll-trigger' href='#team'>FAQ</a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link js-scroll-trigger' href='#contact'>Contact</a>
-          </li>";
-          if ($this->session->id_konsumen != ''){
-            echo "<li class='nav-item'><a class='nav-link js-scroll-trigger' href='".base_url()."members'>Member Area</a></li>";
-          }else{
-            echo "<li class='nav-item'><a style='border-radius: 40px;display: block;margin: 1.1em 1em!important;' class='py-0 btn btn-primary  btn-sm active text-white' href='".base_url()."login'>Sign Up</a></li>";
-          }
-          }elseif ($this->uri->segment(1)=='members'){
-              echo "<li class='nav-item'><span class='nav-link js-scroll-trigger'>Selamat Datang ".$ksm['username']."</span></li>
-              <li class='nav-item'><a id='btnLogout' class='nav-link js-scroll-trigger' href='#'>Logout</a></li>";
+            echo "<li class='nav-item'>
+              <a class='nav-link js-scroll-trigger' href='#fitur'>Fitur</a>
+            </li>
+            <li class='nav-item'>
+              <a class='nav-link js-scroll-trigger' href='#produk'>Produk</a>
+            </li>
+            <li class='nav-item'>
+              <a class='nav-link js-scroll-trigger' href='#team'>FAQ</a>
+            </li>
+            <li class='nav-item'>
+              <a class='nav-link js-scroll-trigger' href='#contact'>Contact</a>
+            </li>";
+            if ($this->session->id_konsumen != ''){
+              echo "<li class='nav-item'><a class='nav-link js-scroll-trigger' href='".base_url()."members'>Member Area</a></li>";
+            }else{
+              echo "<li class='nav-item'><a style='border-radius: 40px;display: block;margin: 1.1em 1em!important;' class='py-0 btn btn-primary  btn-sm active text-white' href='".base_url()."login'>Sign Up</a></li>";
+            }
           }else{
             if ($this->session->id_konsumen != ''){
+              echo "<li class='nav-item'>
+              <a class='nav-link js-scroll-trigger' href='#'>Paket Website</a>
+              </li>
+              <li class='nav-item'>
+              <a class='nav-link js-scroll-trigger' href='#'>Beli Domain</a>
+              </li>";
               echo "<li class='nav-item'><a class='nav-link js-scroll-trigger' href='".base_url()."members'>Dashboard</a></li>
-              <li class='nav-item'><a id='btnLogout' class='nav-link js-scroll-trigger' href='#'>Logout</a></li>";
+              <li class='nav-item'><a id='btnLogout' style='border-radius: 40px;display: block;margin: 1.1em 1em!important;' class='py-0 btn btn-primary  btn-sm active text-white' href='#'>Logout</a></li>";
             }else{
-              echo "<li class='nav-item'><a class='nav-link js-scroll-trigger' href='".base_url()."login'>Login</a></li>";
+              echo "<li class='nav-item'>
+              <a class='nav-link js-scroll-trigger' href='#'>Paket Website</a>
+              </li>
+              <li class='nav-item'>
+              <a class='nav-link js-scroll-trigger' href='#'>Beli Domain</a>
+              </li>";
+              echo "<li class='nav-item'><a style='border-radius: 40px;display: block;margin: 1.1em 1em!important;' class='py-0 btn btn-primary  btn-sm active text-white' href='".base_url()."login'>Login</a></li>";
             }
           }
           ?>
