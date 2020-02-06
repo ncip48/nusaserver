@@ -290,7 +290,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
 
 <script type="text/javascript">
 $('#myDiv').floatingWhatsApp({
-    phone: '6281335241314',
+    phone: '6283845504763',
     popupMessage: 'Selamat datang di Nusaserver, ada yang bisa kami bantu?',
     showPopup: true,
     showOnIE: true,
