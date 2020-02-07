@@ -21,6 +21,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
   <meta property="og:description" content="<?php echo $iden['meta_deskripsi']; ?>" />
   <meta property="og:url" content="<?php echo "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>" />
   <meta property="og:site_name" content="<?php echo $iden['nama_website']; ?>" />
+  <meta name="google-site-verification" content="MOW4tVpUDvdLX1eLb7EKAoZS_OVzFo3Aq-7MnS5xSZQ" />
 
   <link rel="icon" type="image/x-icon" href='<?php echo base_url(); ?>asset/images/<?php echo $iden['favicon']; ?>'>
 
