@@ -34,4 +34,9 @@ class Berita extends CI_Controller {
 		$data['kategori'] = $this->model_berita->detail_kategori($row->id_kategori, 9);
 		$this->template->load('phpmu-one/template','phpmu-one/view_kategori',$data);
 	}
+
+	public function kebijakan(){
+		$data['row'] = $this->db->query("SELECT * FROM privacy");
+		$this->template->load('phpmu-one/template','phpmu-one/view_kebijakan',$data);
+	}
 }
