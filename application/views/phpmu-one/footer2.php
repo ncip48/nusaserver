@@ -2,7 +2,7 @@
 <section id="footer">
 		<div class="container">
 			<div class="row text-center text-xs-center text-sm-left text-md-left">
-				<div class="col-xs-12 col-sm-4 col-md-4">
+				<div class="col-xs-12 col-sm-3 col-md-3 text-left">
 					<h5>Hubungi Kami</h5>
 					<ul class="list-unstyled text-white">
 						<li>Telp: <?php echo $iden['no_telp']; ?></li>
@@ -12,7 +12,7 @@
 						<li><?php echo $iden['alamat']; ?></a></li>
 					</ul>
 				</div>
-				<div class="col-xs-12 col-sm-4 col-md-4">
+				<div class="col-xs-12 col-sm-3 col-md-3 text-left">
 					<h5>Layanan</h5>
 					<ul class="list-unstyled quick-links">
 						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Paket Website</a></li>
@@ -21,7 +21,15 @@
 						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Paket Wordpress</a></li>
 					</ul>
 				</div>
-				<div class="col-xs-12 col-sm-4 col-md-4">
+				<div class="col-xs-12 col-sm-3 col-md-3 text-left">
+					<h5>Tutorial</h5>
+					<ul class="list-unstyled quick-links">
+						<li><a href="<?= base_url() ?>artikel"><i class="fa fa-angle-double-right"></i>Blog</a></li>
+						<li><a href="<?= base_url() ?>cara-beli"><i class="fa fa-angle-double-right"></i>Cara Pembelian</a></li>
+						<li><a href="<?= base_url() ?>cara-bayar"><i class="fa fa-angle-double-right"></i>Cara Pembayaran</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-3 col-md-3 text-left">
 					<h5>Tentang Kami</h5>
 					<ul class="list-unstyled quick-links">
 						<li><a href="<?= base_url() ?>tentang-kami"><i class="fa fa-angle-double-right"></i>Tentang</a></li>
