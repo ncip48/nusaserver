@@ -37,6 +37,7 @@ class Berita extends CI_Controller {
 
 	public function kebijakan(){
 		$data['row'] = $this->db->query("SELECT * FROM privacy")->row_array();
+		$data['title'] = 'Kebijakan Privasi - NusaServer'
 		$this->template->load('phpmu-one/template','phpmu-one/view_kebijakan',$data);
 	}
 }
