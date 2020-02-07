@@ -4,7 +4,7 @@
 			<div class="row text-center text-xs-center text-sm-left text-md-left">
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>Hubungi Kami</h5>
-					<ul class="list-unstyled quick-links text-white">
+					<ul class="list-unstyled text-white">
 						<li>Telp: <?php echo $iden['no_telp']; ?></li>
 						<li>WA: <?php echo $iden['no_telp']; ?></a></li>
 						<li>Available 24 hours.</a></li>
