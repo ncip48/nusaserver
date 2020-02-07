@@ -47,8 +47,8 @@
 			</div>	
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-					<p><u><a href="https://www.nationaltransaction.com/">National Transaction Corporation</a></u> is a Registered MSP/ISO of Elavon, Inc. Georgia [a wholly owned subsidiary of U.S. Bancorp, Minneapolis, MN]</p>
-					<p class="h6">&copy All right Reversed.<a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank">Sunlimetech</a></p>
+					<p><u><a href="<?= base_url() ?>"><?php echo $iden['nama_website']; ?></a></u> adalah penyedia domain dan template untuk bisnis/toko online</p>
+					<p class="h6">&copy <?php echo $iden['nama_website']; ?> 2020</p>
 				</div>
 				</hr>
 			</div>	
