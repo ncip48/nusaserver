@@ -36,7 +36,7 @@ class Berita extends CI_Controller {
 	}
 
 	public function kebijakan(){
-		$data['row'] = $this->db->query("SELECT * FROM privacy");
+		$data['row'] = $this->db->query("SELECT * FROM privacy")->row_array();
 		$this->template->load('phpmu-one/template','phpmu-one/view_kebijakan',$data);
 	}
 }
