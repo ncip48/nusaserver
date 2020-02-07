@@ -3,33 +3,31 @@
 		<div class="container">
 			<div class="row text-center text-xs-center text-sm-left text-md-left">
 				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h5>Quick links</h5>
-					<ul class="list-unstyled quick-links">
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
+					<h5>Hubungi Kami</h5>
+					<ul class="list-unstyled quick-links text-white">
+						<li>Telp: <?php echo $iden['no_telp']; ?></li>
+						<li>WA: <?php echo $iden['no_telp']; ?></a></li>
+						<li>Available 24 hours.</a></li>
+						<br>
+						<li><?php echo $iden['alamat']; ?></a></li>
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h5>Quick links</h5>
+					<h5>Layanan</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
+						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Paket Website</a></li>
+						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Domain</a></li>
+						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Company Profile</a></li>
+						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Paket Wordpress</a></li>
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h5>Quick links</h5>
+					<h5>Tentang Kami</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-						<li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
+						<li><a href="<?= base_url() ?>tentang-kami"><i class="fa fa-angle-double-right"></i>Tentang</a></li>
+						<li><a href="<?= base_url() ?>contact"><i class="fa fa-angle-double-right"></i>Kontak Kami</a></li>
+						<li><a href="<?= base_url() ?>syarat-ketentuan"><i class="fa fa-angle-double-right"></i>Syarat & Ketentuan</a></li>
+						<li><a href="<?= base_url() ?>kebijakan-privasi"><i class="fa fa-angle-double-right"></i>Kebijakan Privasi</a></li>
 					</ul>
 				</div>
 			</div>
