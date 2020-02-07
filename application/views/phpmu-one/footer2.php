@@ -6,7 +6,7 @@
 					<h5>Hubungi Kami</h5>
 					<ul class="list-unstyled text-white">
 						<li>Telp: <?php echo $iden['no_telp']; ?></li>
-						<li>WA: <?php echo $iden['no_telp']; ?></a></li>
+						<li>WA: <?php echo $iden['no_wa']; ?></a></li>
 						<li>Available 24 hours.</a></li>
 						<br>
 						<li><?php echo $iden['alamat']; ?></a></li>
