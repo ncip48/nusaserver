@@ -176,7 +176,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
                   <ul class='fa-ul'>
                     $row[keterangan]
                   </ul>
-                  <a href='".base_url()."mulai' class='btn btn-block btn-primary text-uppercase text-dark'>Gabung Yuk</a>
+                  <a href='".base_url()."mulai' class='btn btn-block btn-primary text-uppercase text-white'>Gabung Yuk</a>
                 </div>
               </div>
             </div>";
@@ -205,7 +205,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
 </section>
 
   <!-- Portfolio Grid -->
-  <section class="bg-light page-section" id="portfolio">
+  <section class="bg-white page-section" id="portfolio">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
@@ -303,7 +303,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
   </section>
 
   <!-- Contact -->
-  <section class="page-section bg-primary" id="contact">
+  <section class="page-section bg-light" id="contact">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
