@@ -1209,14 +1209,6 @@ section .section-title {
 	}
 }
 
-.custom-control-label2 {
-    position: relative;
-    margin-bottom: 0;
-    vertical-align: top;
-}
-
-.custom-control-input:checked~.custom-control-label2::before {
-	//color: #000000;
-    border-color: #000000;
-    background-color: #000000;
+.btn-white {
+	background-color: #fff;
 }

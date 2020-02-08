@@ -14,7 +14,7 @@ if($this->uri->segment(1)=='survey'){
             ?>
       <?php
       if($this->uri->segment(1)=='survey'){
-        echo "<a style='border-radius: 40px;margin: 1.1em 1em!important;' class='navbar-responsive py-0 btn btn-light btn-sm active text-primary' href='".base_url()."login'>Login</a>";
+        echo "<a style='border-radius: 40px;margin: 1.1em 1em!important;' class='navbar-responsive py-0 btn btn-white btn-sm active text-primary' href='".base_url()."login'>Login</a>";
       }else{
         echo "<button class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation'>
         Menu
@@ -45,7 +45,7 @@ if($this->uri->segment(1)=='survey'){
               echo "<li class='nav-item'><a style='border-radius: 40px;display: block;margin: 1.1em 1em!important;' class='py-0 btn btn-primary  btn-sm active text-white' href='".base_url()."login'>Sign Up</a></li>";
             }
           }else if ($this->uri->segment(1)=='survey'){
-            echo "<li class='nav-item'><a style='border-radius: 40px;display: block;margin: 1.1em 1em!important;' class='py-0 btn btn-light btn-sm active text-primary' href='".base_url()."login'>Login</a></li>";
+            echo "<li class='nav-item'><a style='border-radius: 40px;display: block;margin: 1.1em 1em!important;' class='py-0 btn btn-white btn-sm active text-primary' href='".base_url()."login'>Login</a></li>";
           }else{
             if ($this->session->id_konsumen != ''){
               echo "<li class='nav-item'>
