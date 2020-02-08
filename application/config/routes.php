@@ -73,6 +73,7 @@ $route = array(
     'login' => 'auth/login',
     'signout' => 'members/keluar',
     'kebijakan-privasi' => 'berita/kebijakan',
+    'survey' => 'main/survey',
 );
 
 $route['(:any)'] = 'ref/$1/$2';

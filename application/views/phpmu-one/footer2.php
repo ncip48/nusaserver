@@ -36,6 +36,7 @@
 						<li><a href="<?= base_url() ?>contact"><i class="fa fa-angle-double-right"></i>Kontak Kami</a></li>
 						<li><a href="<?= base_url() ?>syarat-ketentuan"><i class="fa fa-angle-double-right"></i>Syarat & Ketentuan</a></li>
 						<li><a href="<?= base_url() ?>kebijakan-privasi"><i class="fa fa-angle-double-right"></i>Kebijakan Privasi</a></li>
+						<li><a href="<?= base_url() ?>survey"><i class="fa fa-angle-double-right"></i>Survey</a></li>
 					</ul>
 				</div>
 			</div>

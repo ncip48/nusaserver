@@ -1,4 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top" id="mainNav">
+<?php
+if($this->uri->segment(1)=='survey'){
+  echo "<nav class='navbar navbar-expand-lg navbar-dark bg-primary text-white fixed-top' id='mainNav'>";
+}else{
+  echo "<nav class='navbar navbar-expand-lg navbar-dark bg-white fixed-top' id='mainNav'>";
+}
+?>
     <div class="container">
       <?php 
               $logo = $this->model_app->view_ordering_limit('logo','id_logo','DESC',0,1);
@@ -6,10 +12,16 @@
               echo "<a class='navbar-brand js-scroll-trigger' href='".base_url()."'><img height=20px src='".base_url()."asset/images/$row[gambar]'/></a>";
               }
             ?>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <?php
+      if($this->uri->segment(1)=='survey'){
+        echo "<a style='border-radius: 40px;margin: 1.1em 1em!important;' class='navbar-responsive py-0 btn btn-light btn-sm active text-primary' href='".base_url()."login'>Login</a>";
+      }else{
+        echo "<button class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation'>
         Menu
-        <i class="fas fa-bars"></i>
-      </button>
+        <i class='fas fa-bars'></i>
+        </button>";
+      }
+      ?>  
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
         <?php 
@@ -32,6 +44,8 @@
             }else{
               echo "<li class='nav-item'><a style='border-radius: 40px;display: block;margin: 1.1em 1em!important;' class='py-0 btn btn-primary  btn-sm active text-white' href='".base_url()."login'>Sign Up</a></li>";
             }
+          }else if ($this->uri->segment(1)=='survey'){
+            echo "<li class='nav-item'><a style='border-radius: 40px;display: block;margin: 1.1em 1em!important;' class='py-0 btn btn-light btn-sm active text-primary' href='".base_url()."login'>Login</a></li>";
           }else{
             if ($this->session->id_konsumen != ''){
               echo "<li class='nav-item'>

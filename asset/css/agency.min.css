@@ -110,6 +110,25 @@ img::-moz-selection {
 	background-color: #ffffff;
 }
 
+.bsg-primary{
+	background-color: #007bff!important;
+}
+
+.bg-primary{
+	background-color: #0062cc!important;
+}
+
+#mainNav .navbar-toggler-blue {
+	font-size: 12px;
+	right: 0;
+	padding: 13px;
+	text-transform: uppercase;
+	color: rgb(255, 255, 255);
+	border: 0;
+	background-color: #0062cc;
+	font-family: Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+}
+
 #mainNav .navbar-toggler {
 	font-size: 12px;
 	right: 0;
@@ -150,6 +169,10 @@ img::-moz-selection {
 		transition: padding-top .3s,padding-bottom .3s;
 		border: none;
 		background-color: transparent;
+	}
+
+	.navbar-responsive {
+		display: none;
 	}
 
 	#mainNav .navbar-brand {
@@ -1179,9 +1202,21 @@ section .section-title {
 
 @media (max-width:767px){
 	#footer h5 {
-    padding-left: 0;
-    border-left: transparent;
-    padding-bottom: 0px;
-    margin-bottom: 10px;
+		padding-left: 0;
+		border-left: transparent;
+		padding-bottom: 0px;
+		margin-bottom: 10px;
+	}
 }
+
+.custom-control-label2 {
+    position: relative;
+    margin-bottom: 0;
+    vertical-align: top;
+}
+
+.custom-control-input:checked~.custom-control-label2::before {
+	//color: #000000;
+    border-color: #000000;
+    background-color: #000000;
 }

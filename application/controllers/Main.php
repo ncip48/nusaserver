@@ -23,6 +23,13 @@ class Main extends CI_Controller {
 		$this->template->load('phpmu-one/template','phpmu-one/homeview',$data);
 	}
 
+	function survey(){
+		$data['title'] = "Survey - ".title();
+		$data['iden'] = $this->model_app->view('identitas')->row_array();
+		//$data['record'] = $this->db->query("SELECT * FROM rb_produk");
+		$this->template->load('phpmu-one/template','phpmu-one/survey',$data);
+	}
+
 	function notfound(){
 		$this->load->view('notfound');
 	}

@@ -137,7 +137,13 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
     </script>
 </head>
 
-<body id="page-top" class="bg-white">
+<?php
+if($this->uri->segment(1)=='survey'){
+  echo "<body id='page-top' class='bg-primary'>";
+}else{
+  echo "<body id='page-top' class='bg-white'>";
+}
+?>
   <div class="preloader">
       <div class="loading">
         <a class="intro-banner-vdo-play-btn pinkBg">
