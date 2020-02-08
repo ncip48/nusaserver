@@ -3,7 +3,7 @@
         <div class='col-md-12 login-form-2'>
             <h3>Daftar NusaServer</h3>
         </div>
-        <div class='col-md-6'>
+        <div class='col-md-6 login-form-2'>
             <?php 
             $attributes = array('id' => 'frmRegister','class'=>'form-horizontal','role'=>'form');
             echo form_open_multipart('auth/aksiregister',$attributes); ?>
@@ -25,7 +25,7 @@
                 </select>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 login-form-2">
             <div class="form-group">
                 <input type="email" class="email form-control" name='d' placeholder="Masukkan Email" value="" />
             </div>
