@@ -74,9 +74,6 @@ if($this->uri->segment(1)=='survey'){
             }
           }
           ?>
-          <?php
-                
-              ?>
         </ul>
       </div>
     </div>
