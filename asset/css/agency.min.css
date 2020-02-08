@@ -1227,3 +1227,32 @@ section .section-title {
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
   }
+
+  .transparan{
+	font-size: 13pt;
+	background: transparent;
+	color: #fff;
+	font-family: roboto;
+}
+ 
+.transparan:focus{
+	font-size: 13pt;
+	background: transparent;
+	color: #fff;
+	font-family: roboto;
+}
+
+ 
+.transparan::-webkit-input-placeholder{
+	color: white;
+}
+ 
+/*support mozilla*/
+.transparan:-moz-input-placeholder{
+	color: white;
+}
+ 
+/*support internet explorer*/
+.transparan:-ms-input-placeholder{
+	color: white;
+}

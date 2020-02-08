@@ -14,9 +14,6 @@ $(document).ready(function() {
                     var url = baseurl+"mulai";    
                     setTimeout(function(){ window.location = url; }, delay);
                 }
-                //console.log(data);
-                //$('#reloading').html(data);
-                //$('#reloadcontent').hide();
 			}
 		})
 		return false;
@@ -39,17 +36,13 @@ $(document).ready(function() {
     });
 
     $('#btnLogout').click(function(){
-        var urllogout = '<?php echo base_url() ?>members/logout';
-        console.log(urllogout);
+        var urllogout = baseurl+'members/logout';
         $.ajax({
-			    url: urllogout,
-			    success: function(data) {
-            $('#aksilogout').html(data);
-            //console.log(data);
-            //$('#reloading').html(data);
-            //$('#reloadcontent').hide();
-			    }
-		    })
-		    return false;
+			url: urllogout,
+			success: function(data) {
+                $('#aksilogout').html(data);
+			}
+		})
+		return false;
       });
 })

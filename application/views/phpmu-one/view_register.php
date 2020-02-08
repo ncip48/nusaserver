@@ -17,7 +17,7 @@
                 <input type="text" name='e' class="form-control" placeholder="Alamat" value="" />
             </div>
             <div class="form-group">
-                <select class='form-control' name='h' required>
+                <select class='form-control' name='h'>
                     <option value=''>- Pilih Kota -</option>";
                 <?php foreach ($kota as $rows) {
                     echo "<option value='$rows[kota_id]'>$rows[nama_kota]</option>";
@@ -38,7 +38,10 @@
             <div class="form-group">
                 <input type="password" class="form-control" placeholder="Masukkan Password Kembali" value="" />
             </div>
-            <div id='loadingzz'></div><input type="submit" class="btnSubmit"  value="Register"/>
+            
+        </div>
+        <div class='col-md-12 login-form-2'>
+        <input type="submit" style='border-radius: 1rem;font-weight: 600;color: #0062cc;background-color: #fff;' class="btn btn-white"  value="Register"/><div id='loadingzz'></div>
         </div>
                 </form>
             <div class='messageregister'></div>

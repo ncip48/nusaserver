@@ -1,4 +1,3 @@
-<!-- Footer -->
 <section id="footer">
 		<div class="container">
 			<div class="row text-center text-xs-center text-sm-left text-md-left">
@@ -61,4 +60,3 @@
 			</div>	
 		</div>
 	</section>
-	<!-- ./Footer -->

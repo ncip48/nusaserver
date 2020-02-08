@@ -304,7 +304,7 @@ class Mulai extends CI_Controller {
           $config['mailtype'] = 'html';
           $this->email->initialize($config);
 
-          $data = array('error'=>'0','error'=>"<span class='badge badge-pill badge-success'>o</span> <small class='text-dark'>Pembelian Berhasil, silahkan cek di dashboard anda dan email anda untuk konfirmasi pembayaran, kode trx : ".$kodetx."</small>");
+          $data = array('result'=>'0','error'=>"<span class='badge badge-pill badge-success'>o</span> <small class='text-dark'>Pembelian Berhasil, silahkan cek di dashboard anda dan email anda untuk konfirmasi pembayaran, kode trx : ".$kodetx."</small>");
           $this->output->set_output(json_encode($data));
         }
       }

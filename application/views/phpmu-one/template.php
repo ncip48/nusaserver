@@ -76,7 +76,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
       }
     }
   </script>
-  
+
 <script>
     $(document).ready(function(){
       $(".preloader").fadeOut();
@@ -104,47 +104,6 @@ if($this->uri->segment(1)=='survey' OR $this->uri->segment(1)=='login' OR $this-
   <div id='aksilogout'></div>
   <?php include "header.php"; ?>
   <?php echo $contents; ?>
-
-
-    <?php /*
-    if ($this->uri->segment(1) == '' OR $this->uri->segment(1) == 'main'){
-      include "homeview.php";
-    }
-
-  echo "<div class='container container-content'>
-  <div class='row'>";
-    if ($this->uri->segment(1) != '' AND $this->uri->segment(1) != 'produk' OR $this->uri->segment(2) == 'keranjang' OR $this->uri->segment(2) == 'checkouts'){
-      echo "<div class='col-md-8'>";
-    }else{
-      echo "<div class='col-md-12'>";
-    }
-      echo $contents;
-      echo "</div>";
-
-    if ($this->uri->segment(1) != '' AND $this->uri->segment(1) != 'produk' OR $this->uri->segment(2) == 'keranjang' OR $this->uri->segment(2) == 'checkouts'){
-      echo "<div class='col-md-4'>
-        <div class='col-md-12 box-sidebar'>";
-            include "sidebar.php"; 
-        echo "</div>
-      </div>";
-    } */
-    ?>
-  <!-- </div>
-</div> /container
-<div style="clear:both"></div>
-<footer style='background:#e3e3e3; border-top:1px solid #cecece'>
-  <div class="container">
-      <div class="row">
-          <div class="col-sm-12">
-              <center>
-                <small class='text-footer'>Copyright (c) 2015 - 2016 - <b><?php echo $iden['nama_website']; ?></b>, Develop by Robby Prihandaya <br>
-                       <?php echo $iden['alamat']; ?> - <?php echo $iden['no_telp']; ?></small>
-              </center>
-              </p>
-          </div>
-      </div>
-  </div>
-</footer> -->
 
 <div class="modal fade" id="uploadfoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
