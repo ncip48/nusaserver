@@ -138,7 +138,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
 </head>
 
 <?php
-if($this->uri->segment(1)=='survey'){
+if($this->uri->segment(1)=='survey' OR $this->uri->segment(1)=='login' OR $this->uri->segment(1)=='daftar'){
   echo "<body id='page-top' class='bg-primary'>";
 }else{
   echo "<body id='page-top' class='bg-white'>";
@@ -266,7 +266,7 @@ if($this->uri->segment(1)=='survey'){
     </div>
   </div>
 </div>
-<div id="myDiv"></div>
+<div id="mysDiv"></div>
 <?php $this->model_main->kunjungan(); ?>
 
 
@@ -282,6 +282,7 @@ if($this->uri->segment(1)=='survey'){
 <!--<script src="<?php echo base_url(); ?>asset/js/bootstrap.min.js"></script>-->
 <script src="<?php echo base_url(); ?>asset/js/cekdomain.js"></script>
 <script src="<?php echo base_url(); ?>asset/js/bank.js"></script>
+<script src="<?php echo base_url(); ?>asset/js/app.js"></script>
 <script src="<?php echo base_url(); ?>asset/js/agency.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/floating-wa.js"></script>
 

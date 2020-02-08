@@ -140,7 +140,8 @@ class Auth extends CI_Controller {
 				}
 		}else{
 			$data['title'] = 'User Login';
-			$this->load->view('phpmu-one/view_login',$data);
+			$this->template->load('phpmu-one/template','phpmu-one/view_login',$data);
+			//$this->load->view('phpmu-one/view_login',$data);
 		}
 	}
 

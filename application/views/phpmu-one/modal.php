@@ -38,8 +38,8 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
+        <h5 class="modal-title float-left" id="myModalLabel">Ganti Foto Profile anda?</h5>
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h5 class="modal-title" id="myModalLabel">Lupa Password?</h5>
       </div><center>
       <div class="modal-body">
       <?php

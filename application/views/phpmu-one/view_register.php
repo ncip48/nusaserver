@@ -1,10 +1,3 @@
-<html>
-<head>
-<title><?php echo $title ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
         body {
             background-image: url('<?php echo base_url() ?>asset/images/bg.jpg');
@@ -126,33 +119,6 @@
             color: #495057;
         }
     </style>
-    <script>var baseurl = '<?php echo base_url() ?>';</script>
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $('#frmRegister').submit(function() {
-		    $.ajax({
-			    type: 'POST',
-			    url: $(this).attr('action'),
-			    data: $(this).serialize(),
-                beforeSend: function(){
-                    $('#loadingzz').html("<img class='loading' src='"+baseurl+"asset/images/loading.gif' />");
-                },
-			    success: function(data) {
-                    $('#panelregister').hide();
-                    $('#aksiregister').html(data);
-			    }
-		    })
-		    return false;
-	    });
-    })
-</script>
-</head>
-<body>
-    
-</body>
-</html>
-
-<!------ Include the above in your HEAD tag ---------->
 
 <div class="container register">
                 <div class="row align-items-center">

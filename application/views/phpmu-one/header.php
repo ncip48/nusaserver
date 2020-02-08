@@ -1,5 +1,5 @@
 <?php
-if($this->uri->segment(1)=='survey'){
+if($this->uri->segment(1)=='survey' OR $this->uri->segment(1)=='login' OR $this->uri->segment(1)=='daftar'){
   echo "<nav class='navbar navbar-expand-lg navbar-dark bg-primary text-white fixed-top' id='mainNav'>";
 }else{
   echo "<nav class='navbar navbar-expand-lg navbar-dark bg-white fixed-top' id='mainNav'>";
@@ -7,9 +7,12 @@ if($this->uri->segment(1)=='survey'){
 ?>
     <div class="container">
       <?php 
-      if($this->uri->segment(1)=='survey'){
+      if($this->uri->segment(1)=='survey' OR $this->uri->segment(1)=='daftar'){
         echo "<a class='navbar-brand js-scroll-trigger' href='".base_url()."'><img height=20px src='".base_url()."asset/images/Nusaserver2.png'/></a>
               <a style='border-radius: 40px;margin: 1.1em 1em!important;' class='navbar-responsive py-0 btn btn-white btn-sm active text-primary' href='".base_url()."login'>Login</a>";
+      }else if ($this->uri->segment(1)=='login'){
+        echo "<a class='navbar-brand js-scroll-trigger' href='".base_url()."'><img height=20px src='".base_url()."asset/images/Nusaserver2.png'/></a>
+              <a style='border-radius: 40px;margin: 1.1em 1em!important;' class='navbar-responsive py-0 btn btn-white btn-sm active text-primary' href='".base_url()."daftar'>Sign Up</a>";
       }else{
         $logo = $this->model_app->view_ordering_limit('logo','id_logo','DESC',0,1);
         foreach ($logo->result_array() as $row) {
@@ -49,10 +52,12 @@ if($this->uri->segment(1)=='survey'){
             if ($this->session->id_konsumen != ''){
               echo "<li class='nav-item'><a class='nav-link js-scroll-trigger' href='".base_url()."members'>Member Area</a></li>";
             }else{
-              echo "<li class='nav-item'><a style='border-radius: 40px;display: block;margin: 1.1em 1em!important;' class='py-0 btn btn-primary  btn-sm active text-white' href='".base_url()."login'>Sign Up</a></li>";
+              echo "<li class='nav-item'><a style='border-radius: 40px;display: block;margin: 1.1em 1em!important;' class='py-0 btn btn-primary  btn-sm active text-white' href='".base_url()."daftar'>Sign Up</a></li>";
             }
-          }else if ($this->uri->segment(1)=='survey'){
+          }else if ($this->uri->segment(1)=='survey' OR $this->uri->segment(1)=='daftar'){
             echo "<li class='nav-item'><a style='border-radius: 40px;display: block;margin: 1.1em 1em!important;' class='py-0 btn btn-white btn-sm active text-primary' href='".base_url()."login'>Login</a></li>";
+          }else if ($this->uri->segment(1)=='login'){
+            echo "<li class='nav-item'><a style='border-radius: 40px;display: block;margin: 1.1em 1em!important;' class='py-0 btn btn-white btn-sm active text-primary' href='".base_url()."daftar'>Sign Up</a></li>";
           }else{
             if ($this->session->id_konsumen != ''){
               echo "<li class='nav-item'>
