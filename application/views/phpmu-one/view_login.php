@@ -1,20 +1,3 @@
-<style>
-.container-login {
-  height: 100vh;
-  position: relative;
-}
-
-.center {
-  margin: 0;
-  width: fit-content;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-</style>
-
 <div class='container container-login'>
     <div class='center row justify-content-center'>
         <div class='col-md-12 login-form-2'>
@@ -35,6 +18,8 @@
                 <div id='aksilogin'></div>
             </form>
         </div>
+        <div class="col-md-6"></div>
+        <div class="col-md-6"></div>
     </div>
 </div>
 

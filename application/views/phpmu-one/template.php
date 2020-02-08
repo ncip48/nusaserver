@@ -76,60 +76,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
       }
     }
   </script>
-
-<script type="text/javascript">
-	  $(document).ready(function() {
-
-      $('#frmLogin').submit(function() {
-		    $.ajax({
-			    type: 'POST',
-			    url: $(this).attr('action'),
-			    data: $(this).serialize(),
-			    success: function(data) {
-            $('#aksilogin').html(data);
-            //console.log(data);
-            //$('#reloading').html(data);
-            //$('#reloadcontent').hide();
-			    }
-		    })
-		    return false;
-	    });
-
-      $('#frmRegister').submit(function() {
-		    $.ajax({
-			    type: 'POST',
-			    url: $(this).attr('action'),
-			    data: $(this).serialize(),
-          beforeSend: function(){
-            $('#aksiregister').html("<div class='text-center'><img class='img-fluid' src='"+baseurl+"asset/images/loading.gif' /></div>");
-          },
-			    success: function(data) {
-            $('#aksiregister').html(data);
-            //console.log(data);
-            //$('#reloading').html(data);
-            //$('#reloadcontent').hide();
-			    }
-		    })
-		    return false;
-	    });
-
-      $('#btnLogout').click(function(){
-        var urllogout = '<?php echo base_url() ?>members/logout';
-        console.log(urllogout);
-        $.ajax({
-			    url: urllogout,
-			    success: function(data) {
-            $('#aksilogout').html(data);
-            //console.log(data);
-            //$('#reloading').html(data);
-            //$('#reloadcontent').hide();
-			    }
-		    })
-		    return false;
-      });
-
-    });
-</script>
+  
 <script>
     $(document).ready(function(){
       $(".preloader").fadeOut();
@@ -291,8 +238,6 @@ if($this->uri->segment(1)=='survey' OR $this->uri->segment(1)=='login' OR $this-
     <script src="<?php echo base_url(); ?>asset/admin/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <!-- <script type="text/javascript"> $(window).load(function() { $('#slider').nivoSlider(); }); </script> -->
 <script src="<?php echo base_url() ?>asset/js/jquery.validate.js"></script>
-<script> $(document).ready(function(){ $("#formku").validate(); }); </script>
-<script> $(document).ready(function(){ $("#formkuu").validate(); }); </script>
 <script src="<?php echo base_url(); ?>asset/admin/plugins/datepicker/bootstrap-datepicker.js"></script>
 <script src="<?php echo base_url(); ?>asset/admin/plugins/timepicker/bootstrap-timepicker.js"></script>
 
@@ -312,146 +257,6 @@ $('#myDiv').floatingWhatsApp({
   $('.timepicker').timepicker()
 </script>
 
-<script type="text/javascript">
-  $(document).ready(function() {
-    /// make loader hidden in start
-    $('#loading').hide();
-     $('#username').blur(function(){
-        var username_val = $("#username").val();
-            // show loader
-            $('#loading').show();
-            $.post("<?php echo site_url()?>members/username_check", {
-                a: username_val
-            }, function(response){
-                $('#loading').hide();
-                $('#messageusername').html('').html(response.messageusername).show();
-            });
-            return false;
-    });
-  });  
-</script>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    /// make loader hidden in start
-    $('#loading').hide();
-     $('#sponsor').blur(function(){
-        var sponsor_val = $("#sponsor").val();
-            // show loader
-            $('#loading').show();
-            $.post("<?php echo site_url()?>members/sponsor_check", {
-                sps: sponsor_val
-            }, function(response){
-                $('#loading').hide();
-                $('#messagesponsor').html('').html(response.messagesponsor).show();
-            });
-            return false;
-    });
-  });  
-</script>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    /// make loader hidden in start
-    $('#loading').hide();
-     $('#presenter').blur(function(){
-        var presenter_val = $("#presenter").val();
-            // show loader
-            $('#loading').show();
-            $.post("<?php echo site_url()?>members/presenter_check", {
-                psr: presenter_val
-            }, function(response){
-                $('#loading').hide();
-                $('#messagepresenter').html('').html(response.messagepresenter).show();
-            });
-            return false;
-    });
-  });  
-</script>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    /// make loader hidden in start
-    $('#loading').hide();
-     $('#kodeaktivasi').blur(function(){
-        var kodeaktivasi_val = $("#kodeaktivasi").val();
-            // show loader
-            $('#loading').show();
-            $.post("<?php echo site_url()?>members/paket_check", {
-                kode: kodeaktivasi_val
-            }, function(response){
-                $('#loading').hide();
-                $('#messagekode').html('').html(response.messagekode).show();
-            });
-            return false;
-    });
-  });  
-</script>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        /// make loader hidden in start
-        $('#loading').hide();
-         $('#email').blur(function(){
-            var email_val = $("#email").val();
-            var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
-            if(filter.test(email_val)){
-                // show loader
-                $('#loading').show();
-                $.post("<?php echo site_url()?>members/email_check", {
-                    d: email_val
-                }, function(response){
-                    $('#loading').hide();
-                    $('#message').html('').html(response.message).show();
-                });
-                return false;
-            }
-        });
-    });  
-</script>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    /// make loader hidden in start
-    $('#loading').hide();
-     $('#ktp').blur(function(){
-        var ktp_val = $("#ktp").val();
-            // show loader
-            $('#loading').show();
-            $.post("<?php echo site_url()?>members/ktp_check", {
-                g: ktp_val
-            }, function(response){
-                $('#loading').hide();
-                $('#messagektp').html('').html(response.messagektp).show();
-            });
-            return false;
-    });
-  });  
-
-      $(function () { 
-        $("#example1").DataTable();
-        $("#example11").DataTable();
-        $('#example2').DataTable({
-          "paging": true,
-          "lengthChange": false,
-          "searching": false,
-          "ordering": true,
-          "info": true,
-          "autoWidth": false
-        });
-
-        $('#example3').DataTable({
-          "paging": true,
-          "lengthChange": true,
-          "searching": true,
-          "info": true,
-          "autoWidth": false,
-          "pageLength": 10,
-          "order": [[ 4, "desc" ]]
-        });
-
-      });
-</script>
 <?php include "modal.php"; ?>
 </body>
 </html>

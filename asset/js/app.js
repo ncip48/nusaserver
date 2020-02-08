@@ -37,4 +37,19 @@ $(document).ready(function() {
         })
         return false;
     });
+
+    $('#btnLogout').click(function(){
+        var urllogout = '<?php echo base_url() ?>members/logout';
+        console.log(urllogout);
+        $.ajax({
+			    url: urllogout,
+			    success: function(data) {
+            $('#aksilogout').html(data);
+            //console.log(data);
+            //$('#reloading').html(data);
+            //$('#reloadcontent').hide();
+			    }
+		    })
+		    return false;
+      });
 })

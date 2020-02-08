@@ -14,44 +14,9 @@ class Auth extends CI_Controller {
 	}
 
 	public function register(){
-		if (isset($_POST['submit'])){
-			
-
-		}elseif (isset($_POST['submit2'])){
-			$cek  = $this->model_app->view_where('rb_reseller',array('username'=>$this->input->post('a')))->num_rows();
-			if ($cek >= 1){
-				$username = $this->input->post('a');
-				echo "<script>window.alert('Maaf, Username $username sudah dipakai oleh orang lain!');
-                                  window.location=('".base_url()."/auth/register')</script>";
-			}else{
-				$route = array('administrator','agenda','auth','berita','contact','download','gallery','konfirmasi','main','members','page','produk','reseller','testimoni','video');
-				if (in_array($this->input->post('a'), $route)){
-					$username = $this->input->post('a');
-					echo "<script>window.alert('Maaf, Username $username sudah dipakai oleh orang lain!');
-	                                  window.location=('".base_url()."/".$this->input->post('i')."')</script>";
-				}else{
-				$data = array('username'=>$this->input->post('a'),
-		        			  'password'=>hash("sha512", md5($this->input->post('b'))),
-		        			  'nama_reseller'=>$this->input->post('c'),
-		        			  'jenis_kelamin'=>$this->input->post('d'),
-		        			  'alamat_lengkap'=>$this->input->post('e'),
-		        			  'no_telpon'=>$this->input->post('f'),
-							  'email'=>$this->input->post('g'),
-							  'kode_pos'=>$this->input->post('h'),
-							  'referral'=>$this->input->post('i'),
-							  'tanggal_daftar'=>date('Y-m-d H:i:s'),
-							  'kode_konfirmasi' => random_string('alnum', 35));
-				$this->model_app->insert('rb_reseller',$data);
-				$id = $this->db->insert_id();
-				$this->session->set_userdata(array('id_reseller'=>$id, 'level'=>'reseller'));
-				redirect('reseller/home');
-				}
-			}
-		}else{
 			$data['title'] = 'Formulir Pendaftaran';
 			$data['kota'] = $this->model_app->view_ordering('rb_kota','kota_id','ASC');
-			$this->load->view('phpmu-one/view_register',$data);
-		}
+			$this->template->load('phpmu-one/template','phpmu-one/view_register',$data);
 	}
 
 	public function aksiregister(){
@@ -121,28 +86,8 @@ class Auth extends CI_Controller {
 	}
 
 	public function login(){
-		if (isset($_POST['login'])){
-				$username = strip_tags($this->input->post('a'));
-				$password = hash("sha512", md5(strip_tags($this->input->post('b'))));
-				$cek = $this->db->query("SELECT * FROM rb_konsumen where username='".$this->db->escape_str($username)."' AND password='".$this->db->escape_str($password)."'");
-			    $row = $cek->row_array();
-			    $total = $cek->num_rows();
-				if ($total > 0){
-					if ($row['confirm']=='0'){
-						echo "Maaf konfirmasi email dahulu";
-					}else{
-					$this->session->set_userdata(array('id_konsumen'=>$row['id_konsumen'], 'level'=>'konsumen'));
-					redirect('members/profile');
-					}
-				}else{
-					$data['title'] = 'Gagal Login';
-					$this->template->load('phpmu-one/template','phpmu-one/view_login_error',$data);
-				}
-		}else{
 			$data['title'] = 'User Login';
 			$this->template->load('phpmu-one/template','phpmu-one/view_login',$data);
-			//$this->load->view('phpmu-one/view_login',$data);
-		}
 	}
 
 	public function aksilogin(){

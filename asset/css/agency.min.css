@@ -1212,3 +1212,18 @@ section .section-title {
 .btn-white {
 	background-color: #fff;
 }
+
+.container-login {
+	height: 100vh;
+	position: relative;
+  }
+  
+  .center {
+	margin: 0;
+	width: fit-content;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+  }
