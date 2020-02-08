@@ -7,20 +7,27 @@ if($this->uri->segment(1)=='survey'){
 ?>
     <div class="container">
       <?php 
-              $logo = $this->model_app->view_ordering_limit('logo','id_logo','DESC',0,1);
-              foreach ($logo->result_array() as $row) {
-              echo "<a class='navbar-brand js-scroll-trigger' href='".base_url()."'><img height=20px src='".base_url()."asset/images/$row[gambar]'/></a>";
-              }
-            ?>
-      <?php
       if($this->uri->segment(1)=='survey'){
+        echo "<a class='navbar-brand js-scroll-trigger' href='".base_url()."'><img height=20px src='".base_url()."asset/images/Nusaserver2.png'/></a>
+              <a style='border-radius: 40px;margin: 1.1em 1em!important;' class='navbar-responsive py-0 btn btn-white btn-sm active text-primary' href='".base_url()."login'>Login</a>";
+      }else{
+        $logo = $this->model_app->view_ordering_limit('logo','id_logo','DESC',0,1);
+        foreach ($logo->result_array() as $row) {
+          echo "<a class='navbar-brand js-scroll-trigger' href='".base_url()."'><img height=20px src='".base_url()."asset/images/$row[gambar]'/></a>";
+        }
+        echo "<button class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation'>
+        Menu
+        <i class='fas fa-bars'></i>
+        </button>";
+      } 
+      /*if($this->uri->segment(1)=='survey'){
         echo "<a style='border-radius: 40px;margin: 1.1em 1em!important;' class='navbar-responsive py-0 btn btn-white btn-sm active text-primary' href='".base_url()."login'>Login</a>";
       }else{
         echo "<button class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation'>
         Menu
         <i class='fas fa-bars'></i>
         </button>";
-      }
+      }*/
       ?>  
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
