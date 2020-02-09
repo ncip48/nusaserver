@@ -32,6 +32,26 @@ class Model_berita extends CI_model{
         return $this->db->query("SELECT * FROM berita ORDER BY id_berita DESC");
     }
 
+    function list_survey(){
+        $query = $this->db->get('rb_survey');
+        if($query->num_rows() > 0){
+            return $query->result();
+        }else{
+            return false;
+        }
+    }
+
+    public function cari_survey($match) {
+        $field = array('nama','email','no_hp');    
+        $this->db->like('concat('.implode(',',$field).')',$match);
+        $query = $this->db->get('rb_survey');
+         if($query->num_rows() > 0){
+            return $query->result();
+        }else{
+            return false;
+        }
+    }
+
     function kategori_berita(){
         return $this->db->query("SELECT * FROM kategori ORDER BY id_kategori DESC");
     }

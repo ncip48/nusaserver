@@ -139,6 +139,18 @@
               ?>
               </ul>
             </li>
+
+            <li class="treeview">
+              <a href="#"><i class="glyphicon glyphicon-book"></i> <span>Modul Survey</span><i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+              <?php
+                $cek=$this->model_app->umenu_akses("survey",$this->session->id_session);
+                if($cek==1 OR $this->session->level=='admin'){
+                  echo "<li><a href='".base_url()."administrator/survey'><i class='fa fa-circle-o'></i> Survey</a></li>";
+                }
+              ?>
+              </ul>
+            </li>
             
             <li class="treeview">
               <a href="#"><i class="glyphicon glyphicon-camera"></i> <span>Modul Gallery</span><i class="fa fa-angle-left pull-right"></i></a>

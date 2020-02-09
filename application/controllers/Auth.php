@@ -17,6 +17,7 @@ class Auth extends CI_Controller {
 			$data['title'] = 'Formulir Pendaftaran';
 			$data['kota'] = $this->model_app->view_ordering('rb_kota','kota_id','ASC');
 			$this->template->load('phpmu-one/template','phpmu-one/view_register',$data);
+			//$this->load->view('phpmu-one/view_register3', $data);
 	}
 
 	public function aksiregister(){

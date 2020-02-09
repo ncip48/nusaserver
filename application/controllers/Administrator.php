@@ -376,6 +376,35 @@ class Administrator extends CI_Controller {
 		redirect('administrator/listberita');
 	}
 
+	// Controller untuk survey
+
+	function survey(){
+		cek_session_akses('survey',$this->session->id_session);
+		//$data['record'] = $this->model_berita->list_berita();
+		$this->template->load('administrator/template','administrator/mod_survey/view_survey',$data);
+	}
+
+	public function tampil_survey()
+    {
+           $query=  $this->model_berita->list_survey();
+             if($query){
+        
+                   $result['biodata']  = $this->model_berita->list_survey();
+             
+          }
+        echo json_encode($result);
+	}
+	
+	public function cari_survey(){
+		$value = $this->input->post('text');
+		 $query =  $this->model_berita->cari_survey($value);
+		  if($query){
+			  $result['biodata']= $query;
+		  }
+		  
+	   echo json_encode($result);
+		
+   }
 
 	// Controller Modul Kategori Berita
 
