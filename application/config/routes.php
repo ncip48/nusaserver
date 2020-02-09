@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route = array(
+/*$route = array(
     'default_controller' => 'main',
     'administrator' => 'administrator',
     'login' => 'login',
@@ -78,4 +78,44 @@ $route = array(
 
 $route['(:any)'] = 'ref/$1/$2';
 $route['404_override'] = 'main/notfound';
-$route['translate_uri_dashes'] = FALSE;
+$route['translate_uri_dashes'] = FALSE; */
+
+switch ( $_SERVER['HTTP_HOST'] ) {
+    case 'blog.nusaserver.com':
+        $route['default_controller'] = "berita";
+    break;
+    case 'auth.nusaserver.com':
+        $route['default_controller'] = "auth/login";
+    break;
+    default:
+    $route = array(
+        'default_controller' => 'main',
+        'administrator' => 'administrator',
+        'login' => 'login',
+        'agenda' => 'agenda',
+        'auth' => 'auth',
+        'artikel' => 'berita',
+        'contact' => 'contact',
+        'download' => 'download',
+        'gallery' => 'gallery',
+        'konfirmasi' => 'konfirmasi',
+        'main' => 'main',
+        'members' => 'members',
+        'page' => 'page',
+        'produk' => 'produk',
+        'reseller' => 'reseller',
+        'testimoni' => 'testimoni',
+        'video' => 'video',
+        'confirm' => 'confirm',
+        'mulai' => 'mulai',
+        'daftar' => 'auth/register',
+        'login' => 'auth/login',
+        'signout' => 'members/keluar',
+        'kebijakan-privasi' => 'berita/kebijakan',
+        'survey' => 'main/survey',
+    );
+    
+    $route['(:any)'] = 'ref/$1/$2';
+    $route['404_override'] = 'main/notfound';
+    $route['translate_uri_dashes'] = FALSE;
+}
