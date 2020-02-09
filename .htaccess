@@ -1,33 +1,28 @@
-RewriteEngine On
-RewriteCond %{REQUEST_URI} ^/system.*
-RewriteRule ^(.*)$ index.php?/$1 [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.+)$ index.php?/$1 [L]
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
 
-<IfModule mod_headers.c>
-  <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css|js)$">
-    Header set Access-Control-Allow-Origin "*"
-  </FilesMatch>
+    #codeigniter specific rule
+    RewriteCond %{REQUEST_URI} ^system.*
+    RewriteRule ^(.*)$ /index.php?/$1 [L]
+
+    #codeigniter specific rule
+    RewriteCond %{REQUEST_URI} ^application.*
+    RewriteRule ^(.*)$ /index.php?/$1 [L]
+
+    #this rule removes www from the URL if its used
+    RewriteCond %{HTTP_HOST} ^www.
+    RewriteRule ^(.*)$ http://nusaserver.com/$1 [R=301,L]
+
+    #the auth system URIs which don't have subdomains
+    RewriteCond %{HTTP_HOST} ^nusaserver.
+    RewriteRule ^(login|register|forgot_password)/?$ index.php?/auth/$1 [L]
+
+    #this rule handles the subdomains
+    #RewriteCond %{HTTP_HOST} ^([a-z0-9]+).nusaserver.com
+    #RewriteRule ^(.*)$ index.php?/public_site/%1/$1 [L]
 </IfModule>
 
-#RewriteEngine on
-#RewriteCond %{REQUEST_URI} !maintenance.html
-#RewriteCond %{REQUEST_FILENAME} !(styles|images).+$
-#RewriteCond %{REMOTE_ADDR} !^144\.4\.78\.177$
-#RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1$
-#RewriteRule (.*) /maintenance.html [R,L]
-
-
-RewriteCond %{HTTP_HOST} ^(blog|auth).nusaserver.com$ [NC]
-RewriteRule ^$ %1/ [L]
-
-RewriteCond %{HTTP_HOST} ^(blog|auth).nusaserver.com$ [NC]
-RewriteCond %{REQUEST_FILENAME} !(blog|auth)
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ %1/$1 [L]
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php/$1 [L]
+<IfModule !mod_rewrite.c>
+    ErrorDocument 404 /index.php
+</IfModule>
