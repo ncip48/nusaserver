@@ -85,7 +85,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
 </head>
 
 <?php
-if($this->uri->segment(1)=='survey' OR $this->uri->segment(1)=='login' OR $this->uri->segment(1)=='daftar' OR base_url()=='auth.nusaserver.com'){
+if($this->uri->segment(1)=='survey' OR $this->uri->segment(1)=='login' OR $this->uri->segment(1)=='daftar' OR base_url=='auth.nusaserver.com'){
   echo "<body id='page-top' class='bg-primary'>";
 }else{
   echo "<body id='page-top' class='bg-white'>";
