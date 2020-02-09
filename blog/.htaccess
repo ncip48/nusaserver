@@ -1,0 +1,16 @@
+RewriteEngine on
+
+RewriteBase /
+
+RewriteCond %{HTTP_HOST} ^(blog|auth).nusaserver.com$ [NC]
+RewriteRule ^$ %1/ [L]
+
+RewriteCond %{HTTP_HOST} ^(blog|auth).nusaserver.com$ [NC]
+RewriteCond %{REQUEST_FILENAME} !(blog|auth)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ %1/$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
