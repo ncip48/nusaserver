@@ -1,18 +1,21 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /
+
 
     #codeigniter specific rule
     RewriteCond %{REQUEST_URI} ^system.*
     RewriteRule ^(.*)$ /index.php?/$1 [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.+)$ index.php?/$1 [L]
 
     #codeigniter specific rule
     RewriteCond %{REQUEST_URI} ^application.*
     RewriteRule ^(.*)$ /index.php?/$1 [L]
 
     #this rule removes www from the URL if its used
-    RewriteCond %{HTTP_HOST} ^www.
-    RewriteRule ^(.*)$ http://nusaserver.com/$1 [R=301,L]
+    #RewriteCond %{HTTP_HOST} ^www.
+    #RewriteRule ^(.*)$ http://nusaserver.com/$1 [R=301,L]
 
     #the auth system URIs which don't have subdomains
     RewriteCond %{HTTP_HOST} ^nusaserver.
