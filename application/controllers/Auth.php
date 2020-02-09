@@ -74,7 +74,7 @@ class Auth extends CI_Controller {
 				echo "<div class='tab-pane fade show active' id='home' role='tabpanel' aria-labelledby='home-tab'>
                                 <h3 class='register-heading'>Pendaftaran Sukses</h3>
                                 <div class='row register-form align-items-center'>
-                                    <div class='col text-center'>
+                                    <div class='col text-center text-white'>
                                     <h5>Silahkan cek inbox / spam email <i>".$rows['email']."</i> untuk konfirmasi email. Terimakasih</h5>
                                     </div>
                                 </div>

@@ -28,7 +28,7 @@ $(document).ready(function() {
                 $('#loadingzz').html("<img class='loading' src='"+baseurl+"asset/images/loading.gif' />");
             },
             success: function(data) {
-                $('#panelregister').hide();
+                $('.panelregister').hide();
                 $('#aksiregister').html(data);
             }
         })
