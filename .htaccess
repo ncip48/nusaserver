@@ -18,10 +18,19 @@ RewriteRule ^(.+)$ index.php?/$1 [L]
 #RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1$
 #RewriteRule (.*) /maintenance.html [R,L]
 
+RewriteEngine on
+
+RewriteBase /
+
 RewriteCond %{HTTP_HOST} ^(blog|auth).nusaserver.com$ [NC]
-RewriteRule ^$ index.php?/%1/ [L]
+RewriteRule ^$ %1/ [L]
+
+RewriteCond %{HTTP_HOST} ^(blog|auth).nusaserver.com$ [NC]
+RewriteCond %{REQUEST_FILENAME} !(blog|auth)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ %1/$1 [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !\.(jpe?g|gif|png|bmp|css|html?|pdf)$
-RewriteRule ^(.*)$ /index.php?/$1 [L]
+RewriteRule ^(.*)$ index.php/$1 [L]
