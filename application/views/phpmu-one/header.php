@@ -36,7 +36,7 @@ if($this->uri->segment(1)=='survey' OR $this->uri->segment(1)=='login' OR $this-
         <ul class="navbar-nav text-uppercase ml-auto">
         <?php 
           $ksm = $this->db->query("SELECT * FROM rb_konsumen where id_konsumen='".$this->session->id_konsumen."'")->row_array();
-          if ($this->uri->segment(1)=='d' OR $this->uri->segment(1)=='main'){
+          if ($this->uri->segment(1)=='' OR $this->uri->segment(1)=='main'){
             echo "<li class='nav-item'>
               <a class='nav-link js-scroll-trigger' href='#fitur'>Fitur</a>
             </li>
