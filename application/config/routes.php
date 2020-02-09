@@ -86,6 +86,7 @@ switch ( $_SERVER['HTTP_HOST'] ) {
     break;
     case 'auth.nusaserver.com':
         $route['default_controller'] = "auth/login";
+        $route['daftar'] = "auth/register";
     break;
     default:
     $route = array(
