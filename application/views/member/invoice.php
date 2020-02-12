@@ -23,7 +23,7 @@
               foreach ($invoicee->result_array() as $tagihan){
                   if ($tagihan['status']=='0'){
                     $status = 'Belum Lunas';
-                    $tombol = "<a class='btn btn-warning btn-xs' title='Edit Data' href='".base_url()."konfirmasi/$tagihan[no_tagihan]' target='_blank'><span class='fa fa-send'></span></a>";
+                    $tombol = "<a class='btn btn-warning btn-xs' title='Edit Data' href='".base_url()."konfirmasi/".encrypt_url($tagihan[no_tagihan])."' target='_blank'><span class='fa fa-send'></span></a>";
                   }else{
                     $status = '<i>Lunas</i>';
                     $tombol = '';

@@ -50,7 +50,7 @@ class Konfirmasi extends CI_Controller {
 
 	function kodetrx($kode){
 		$data['title'] = 'Konfirmasi Orderan anda';
-		$kode_transaksi = $kode;
+		$kode_transaksi = decrypt_url($kode);
 		$data['rows'] = $this->db->query("SELECT * FROM rb_invoice a JOIN rb_services b ON a.id_order=b.id_order JOIN rb_produk c ON b.id_produk=c.id_produk JOIN rb_domain d ON a.id_domain=d.id_domain where a.no_tagihan='$kode_transaksi'")->row_array();
 
 		$data['ksm'] = $this->model_app->view_where('rb_konsumen',array('id_konsumen'=>$this->session->id_konsumen))->row_array();
