@@ -111,7 +111,8 @@ switch ( $_SERVER['HTTP_HOST'] ) {
         'kebijakan-privasi' => 'berita/kebijakan',
         'survey' => 'main/survey',
         'blog/(:any)' => 'berita/detail/$1',
-        'confirm/(:any)/(:any)' => 'confirm/kode/$1/$2'
+        'confirm/(:any)/(:any)' => 'confirm/kode/$1/$2',
+        'konfirmasi/(:any)' => 'konfirmasi/kodetrx/$1',
     );
     
     $route['(:any)'] = 'ref/$1/$2';

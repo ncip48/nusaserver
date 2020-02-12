@@ -44,5 +44,20 @@ $(document).ready(function() {
 			}
 		})
 		return false;
-      });
+    });
+
+
+    $('#frmKonfirmasi').submit(function() {
+		$.ajax({
+			type: 'POST',
+			url: $(this).attr('action'),
+			data: $(this).serialize(),
+			success: function(response) {
+                //var data = jQuery.parseJSON(response);
+                console.log(response);
+                
+			}
+		})
+		return false;
+    });
 })

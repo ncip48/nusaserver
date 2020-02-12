@@ -23,8 +23,10 @@
               foreach ($invoicee->result_array() as $tagihan){
                   if ($tagihan['status']=='0'){
                     $status = 'Belum Lunas';
+                    $tombol = "<a class='btn btn-warning btn-xs' title='Edit Data' href='".base_url()."konfirmasi/$tagihan[no_tagihan]' target='_blank'><span class='fa fa-send'></span></a>";
                   }else{
                     $status = '<i>Lunas</i>';
+                    $tombol = '';
                   }
                   echo "<tr class='text-center'><td>$no</td>
                   <td >$tagihan[no_tagihan]</td>
@@ -35,6 +37,7 @@
                   <td>Rp ".rupiah($tagihan['total']+$tagihan['ppn'])."</td>
                   <td>$status</td>
                   <td><center>
+                    $tombol
                     <a class='btn btn-primary btn-xs' title='Edit Data' href='".base_url()."members/invoice/$tagihan[no_tagihan]' target='_blank'><span class='fa fa-eye'></span></a>
                   </center></td>
               </tr>

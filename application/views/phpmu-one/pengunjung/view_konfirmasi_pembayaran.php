@@ -1,35 +1,40 @@
-<p class='sidebar-title'> Konfirmasi Pembayaran Pesanan Anda</p>
+<div class="container isi">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+    <?php 
 
-<?php 
+    if($rows[durasi]==30){
+      $durasi = '1 Bulan';
+    }elseif ($rows[durasi]==183){
+      $durasi = '6 Bulan';
+    }elseif ($rows[durasi]==365){
+      $durasi = '1 Tahun';
+    }else{
+      $durasi = 'bercanda???';
+    }
 
-    $attributes = array('class'=>'form-horizontal','role'=>'form');
-    echo form_open_multipart('konfirmasi/index',$attributes); 
-    echo "<div class='alert alert-info'>Masukkan No Invoice atau No Transaksi Terlebih dahulu!</div>
-      <table class='table table-condensed'>
+    $attributes = array('class'=>'form-horizontal','role'=>'form', 'id'=>'frmKonfirmasi');
+    echo form_open_multipart('konfirmasi/aksikonfirmasi',$attributes); 
+    echo "<table class='table table-borderless'>
         <tbody>
-          <input type='hidden' name='id' value='$rows[id_penjualan]'>
-          <tr><th scope='row' width='120px'>No Invoice</th>       <td><input type='text' name='a' class='form-control' style='width:100%' value='$rows[kode_transaksi]' placeholder='TRX-0000000000' required>";
-          if ($rows['kode_transaksi']!=''){
-            echo "<tr><th scope='row'>Total</th>                  <td><input type='text' name='b' class='form-control' style='width:50%' value='Rp ".rupiah($total['total']+$total['ongkir']+substr($rows['kode_transaksi'],-3))."' required>
-            <tr><th scope='row'>Transfer Ke</th>                  <td><select name='c' class='form-control' required>
-                                                                        <option value='' selected>- Pilih -</option>";
-                                                                    foreach ($record->result_array() as $row){
-                                                                        echo "<option value='$row[id_rekening]'>$row[nama_bank] - $row[no_rekening], A/N : $row[pemilik_rekening]</option>";
-                                                                    }
-            echo "</td></tr>
-            <tr><th width='130px' scope='row'>Nama Pengirim</th>  <td><input type='text' class='form-control' style='width:70%' name='d' value='$ksm[nama_lengkap]' required></td></tr>
-            <tr><th scope='row'>Tanggal Transfer</th>             <td><input type='text' class='datepicker form-control' style='width:40%; padding-left:13px' name='e' data-date-format='yyyy-mm-dd' value='".date('Y-m-d')."'></td></tr>
-            <tr><th scope='row'>Bukti Transfer</th>               <td><input type='file' class='form-control' name='f'></td></tr>";
-          }
-        echo "</tbody>
+          <input type='hidden' name='id' class='form-control' style='width:100%' value='$rows[id_invoice]'>
+          <tr><th scope='row' >No Invoice</th><td><input type='text' name='a' class='form-control' style='width:100%' value='$rows[no_tagihan]' readonly>
+          <tr><th scope='row' >Nama Paket</th><td><input type='text' class='form-control' style='width:100%' value='$rows[nama_produk] ($durasi) @ ".rupiah($rows[harga])."' readonly>
+          <tr><th scope='row' >Nama Domain</th><td><input type='text' class='form-control' style='width:100%' value='$rows[nama_domain].$rows[tld] (1 Tahun) @ ".rupiah($rows[harga_domain])."' readonly>
+          <tr><th scope='row'>Total</th><td><input type='text' name='b' class='form-control' value='Rp ".rupiah($rows['harga']+$rows['harga_domain']+rows[ppn])."' readonly>
+          <tr><th  scope='row'>Nama Pengirim</th>  <td><input type='text' class='form-control' name='d' value='$ksm[nama_lengkap]' required></td></tr>
+          <tr><th scope='row'>Tanggal Transfer</th>             <td><input type='text' class='datepicker form-control' style='padding-left:13px' name='e' data-date-format='yyyy-mm-dd' value='".date('Y-m-d')."'></td></tr>
+          <tr><th scope='row'>Bukti Transfer</th>               <td><input type='file' class='form-control' name='f'></td></tr>
+        </tbody>
       </table>
 
-    <div class='box-footer'>";
-        if ($rows['kode_transaksi']!=''){
-          echo "<button type='submit' name='submit' class='btn btn-info'>Kirimkan</button>";
-        }else{
-          echo "<button type='submit' name='submit1' class='btn btn-info'>Cek Invoice</button>";
-        }
-    echo "</div>";
+    <div class='box-footer'>
+      <button type='submit' name='submit' class='btn btn-primary'>Konfirmasi</button>
+    </div>";
     echo form_close();
+    ?>
+    </div>
+  </div>
+</div>
+
 
