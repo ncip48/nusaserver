@@ -25,6 +25,7 @@ class Confirm extends CI_Controller {
             $this->session->unset_userdata('id_konsumen_temp');
             $this->session->set_userdata(array('id_konsumen'=>$row['id_konsumen'], 'level'=>'konsumen'));
             $data['error'] = '0';
+            $data['title'] = "Aktivasi Sukses";
             //redirect('members/profile');
             /*echo "<script type='text/javascript'>
                 var count = 6;
@@ -52,6 +53,7 @@ class Confirm extends CI_Controller {
             $aktif = $this->db->query("SELECT * FROM rb_konsumen where kode_konfirmasi='$kode'")->row_array();
             if ($aktif['confirm']=='1'){
                 $data['error'] = '2';
+                $data['title'] = "Aktivasi Gagal";
                 /*echo "<script type='text/javascript'>
                 var count = 6;
                 var redirect = '". base_url()."mulai';
@@ -77,6 +79,7 @@ class Confirm extends CI_Controller {
             }else{
                 //echo "Kirim aktivasi lagi?";
                 $data['error'] = '1';
+                $data['title'] = "Aktivasi Gagal";
             }
         }
         $this->template->load('phpmu-one/template','phpmu-one/view_aktivasi',$data);
