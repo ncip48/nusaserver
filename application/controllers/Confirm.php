@@ -6,12 +6,12 @@ class Confirm extends CI_Controller {
         //echo random_string('alnum', 35);
     }
 
-    public function kode(){
-        $kode = $this->uri->segment(3);
-        $iduser = decrypt_url($this->uri->segment(4));
+    public function kode($kode, $iduser){
+        //$kode = $this->uri->segment(3);
+        //$iduser = decrypt_url($this->uri->segment(4));
 
         if ($this->session->id_konsumen_temp == ''){
-            $id = $iduser;
+            $id = decrypt_url($iduser);
         }else{
             $id = $this->session->id_konsumen_temp;
         }
@@ -24,8 +24,9 @@ class Confirm extends CI_Controller {
             $this->db->query("UPDATE rb_konsumen SET confirm='1'  where id_konsumen='$id'");
             $this->session->unset_userdata('id_konsumen_temp');
             $this->session->set_userdata(array('id_konsumen'=>$row['id_konsumen'], 'level'=>'konsumen'));
+            $data['error'] = '0';
             //redirect('members/profile');
-            echo "<script type='text/javascript'>
+            /*echo "<script type='text/javascript'>
                 var count = 6;
                 var redirect = '". base_url()."mulai';
                  
@@ -46,11 +47,12 @@ class Confirm extends CI_Controller {
                  
                 <span id='timer'>
                 <script type='text/javascript'>countDown();</script>
-                </span>";
+                </span>";*/
         }else{
             $aktif = $this->db->query("SELECT * FROM rb_konsumen where kode_konfirmasi='$kode'")->row_array();
             if ($aktif['confirm']=='1'){
-                echo "<script type='text/javascript'>
+                $data['error'] = '2';
+                /*echo "<script type='text/javascript'>
                 var count = 6;
                 var redirect = '". base_url()."mulai';
                  
@@ -71,11 +73,13 @@ class Confirm extends CI_Controller {
                  
                 <span id='timer'>
                 <script type='text/javascript'>countDown();</script>
-                </span>";
+                </span>"; */
             }else{
-                echo "Kirim aktivasi lagi?";
+                //echo "Kirim aktivasi lagi?";
+                $data['error'] = '1';
             }
         }
+        $this->template->load('phpmu-one/template','phpmu-one/view_aktivasi',$data);
         //echo $kode;
         //echo $id;
     }
