@@ -7,8 +7,9 @@ class Berita extends CI_Controller {
 		$this->template->load('phpmu-one/template','phpmu-one/view_semua_berita',$data);
 	}
 
-	public function detail(){
-		$ids = $this->uri->segment(3);
+	public function detail($judul){
+		$ids = $judul;
+		//$ids = $this->uri->segment(3);
 		$dat = $this->db->query("SELECT * FROM berita where judul_seo='$ids' OR id_berita='$ids'");
 	    $row = $dat->row();
 	    $total = $dat->num_rows();

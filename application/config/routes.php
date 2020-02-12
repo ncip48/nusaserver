@@ -83,6 +83,7 @@ $route['translate_uri_dashes'] = FALSE; */
 switch ( $_SERVER['HTTP_HOST'] ) {
     case 'blog.nusaserver.com':
         $route['default_controller'] = "berita";
+        $route['(:any)'] = 'berita/detail/$1';
     break;
     case 'auth.nusaserver.com':
         $route['default_controller'] = "auth/login";
@@ -97,16 +98,11 @@ switch ( $_SERVER['HTTP_HOST'] ) {
         'auth' => 'auth',
         'artikel' => 'berita',
         'contact' => 'contact',
-        'download' => 'download',
-        'gallery' => 'gallery',
         'konfirmasi' => 'konfirmasi',
         'main' => 'main',
         'members' => 'members',
         'page' => 'page',
         'produk' => 'produk',
-        'reseller' => 'reseller',
-        'testimoni' => 'testimoni',
-        'video' => 'video',
         'confirm' => 'confirm',
         'mulai' => 'mulai',
         'daftar' => 'auth/register',
@@ -114,6 +110,7 @@ switch ( $_SERVER['HTTP_HOST'] ) {
         'signout' => 'members/keluar',
         'kebijakan-privasi' => 'berita/kebijakan',
         'survey' => 'main/survey',
+        'blog/(:any)' => 'berita/detail/$1',
     );
     
     $route['(:any)'] = 'ref/$1/$2';
