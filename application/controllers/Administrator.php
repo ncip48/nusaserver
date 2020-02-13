@@ -1170,17 +1170,8 @@ class Administrator extends CI_Controller {
 		if ($this->uri->segment(3)!=''){
 			$kode_transaksi = filter($this->uri->segment(3));
 			$data['title'] = 'Tracking Order '.$kode_transaksi;
-			$data['rows'] = $this->db->query("SELECT * FROM rb_penjualan a JOIN rb_konsumen b ON a.id_pembeli=b.id_konsumen JOIN rb_kota c ON b.kota_id=c.kota_id where a.kode_transaksi='$kode_transaksi'")->row_array();
-			$data['record'] = $this->db->query("SELECT a.kode_transaksi, b.*, c.nama_produk, c.diskon, c.produk_seo FROM `rb_penjualan` a JOIN rb_penjualan_detail b ON a.id_penjualan=b.id_penjualan JOIN rb_produk c ON b.id_produk=c.id_produk where a.kode_transaksi='".$kode_transaksi."'");
-			$data['total'] = $this->db->query("SELECT a.resi, a.id_penjualan, a.kode_transaksi, a.kurir, a.service, a.proses, a.ongkir, sum((b.harga_jual*b.jumlah)-(c.diskon*b.jumlah)) as total FROM `rb_penjualan` a JOIN rb_penjualan_detail b ON a.id_penjualan=b.id_penjualan JOIN rb_produk c ON b.id_produk=c.id_produk where a.kode_transaksi='".$kode_transaksi."'")->row_array();
+			$data['rows'] = $this->db->query("SELECT * FROM rb_invoice a JOIN rb_services b ON a.id_order=b.id_order JOIN rb_produk c ON b.id_produk=c.id_produk JOIN rb_domain d ON a.id_domain=d.id_domain JOIN rb_rekening e ON a.bank=e.nama_bank JOIN rb_konsumen f ON a.id_konsumen=f.id_konsumen where a.no_tagihan='$kode_transaksi'")->row_array();
 			$this->template->load('administrator/template','administrator/mod_penjualan/view_tracking',$data);
-		}
-
-		if (isset($_POST['submit'])){
-			$data = array('resi'=>$this->input->post('resi'));
-			$where = array('id_penjualan' => $this->uri->segment('4'));
-			$this->model_app->update('rb_penjualan', $data, $where);
-			redirect('administrator/tracking/'.$this->uri->segment('3'));
 		}
 	}
 

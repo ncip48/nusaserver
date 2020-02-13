@@ -46,18 +46,24 @@ $(document).ready(function() {
 		return false;
     });
 
-
     $('#frmKonfirmasi').submit(function() {
-		$.ajax({
-			type: 'POST',
-			url: $(this).attr('action'),
-			data: $(this).serialize(),
-			success: function(response) {
-                //var data = jQuery.parseJSON(response);
-                console.log(response);
-                
-			}
-		})
-		return false;
-    });
+        var form = $('form')[0]; // You need to use standard javascript object here
+        var formData = new FormData(form);
+            $.ajax({
+                type: 'POST',
+                url: $(this).attr('action'),
+          data: formData,
+          contentType: false,
+          processData: false,
+                success: function(response) {
+                    var data = jQuery.parseJSON(response);
+                    //var data = jQuery.parseJSON(response);
+                    //console.log(data);
+                    $('#konfirmasi').html(data.error);
+                    
+                }
+            })
+            return false;
+        });
+    
 })

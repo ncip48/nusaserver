@@ -98,7 +98,7 @@ switch ( $_SERVER['HTTP_HOST'] ) {
         'auth' => 'auth',
         'artikel' => 'berita',
         'contact' => 'contact',
-        'konfirmasi' => 'konfirmasi',
+        'konfirmasi/kirim' => 'konfirmasi/aksikonfirmasi',
         'main' => 'main',
         'members' => 'members',
         'page' => 'page',

@@ -71,6 +71,15 @@ class Model_app extends CI_model{
         return $this->db->get()->result_array();
     }
 
+    public function view_invoice($table1,$table2,$field,$field2,$where,$order,$ordering){
+        $this->db->select('*');
+        $this->db->from($table1);
+        $this->db->join($table2, $table1.'.'.$field.'='.$table2.'.'.$field2);
+        $this->db->where($where);
+        $this->db->order_by($order,$ordering);
+        return $this->db->get()->result_array();
+    }
+
     public function view_join_rows($table1,$table2,$field,$where,$order,$ordering){
         $this->db->select('*');
         $this->db->from($table1);
@@ -136,7 +145,7 @@ class Model_app extends CI_model{
     }
 
     function konfirmasi_bayar(){
-        return $this->db->query("SELECT b.kode_transaksi, a.*, c.* FROM `rb_konfirmasi` a JOIN rb_penjualan b ON a.id_penjualan=b.id_penjualan JOIN rb_rekening c ON a.id_rekening=c.id_rekening ORDER BY a.id_konfirmasi_pembayaran DESC");
+        return $this->db->query("SELECT * FROM `rb_konfirmasi` a JOIN rb_rekening b ON a.id_rekening=b.nama_bank JOIN rb_invoice c ON a.id_penjualan=c.id_invoice ORDER BY a.id_konfirmasi_pembayaran DESC");
     }
 
     function orders_report_all(){
