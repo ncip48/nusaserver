@@ -63,7 +63,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h4 class="section-heading text-uppercase">ALASAN MENGAPA HARUS MEMILIH <?php echo $iden['nama_website']; ?></h2>
+          <h4 class="section-heading text-uppercase">9 ALASAN MENGAPA ANDA HARUS MEMILIH <?php echo $iden['nama_website']; ?></h2>
           <h3 class="section-subheading text-muted">Bebearapa fitur yang kami berikan</h3>
         </div>
       </div>
