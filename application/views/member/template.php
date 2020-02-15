@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>asset/admin/plugins/daterangepicker/daterangepicker-bs3.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="<?php echo base_url()?>asset/memberpage/css/style.css">
-    <script src="<?php echo base_url(); ?>asset/vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>asset/admin/plugins/jQuery/jquery-1.12.3.min.js"></script>
   </head>
   <body>
 		
@@ -21,7 +21,7 @@
         <!-- Page Content  -->
       <?php echo $contents ?>
 		</div>
-    <div class="modal fade" id="uploadfoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="uploadfoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -55,7 +55,38 @@
   </div>
 </div>
 
-    <script src="<?php echo base_url()?>asset/memberpage/js/jquery.min.js"></script>
+<div class="modal fade" id="tambahkomunitas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title float-left" id="myModalLabel">Tambah Komunitas</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div><center>
+      <div class="modal-body">
+            <?php 
+                $attributes = array('class'=>'form-horizontal','role'=>'form');
+                echo form_open_multipart('members/tambahkomunitas',$attributes); ?>
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-6 control-label">Nama Komunitas</label>
+                        <div style='background:#fff;' class="input-group col-sm-7">
+                            <input style='text-transform:lowercase;' type="text" class="form-control" name="kom">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-1">
+                            <button type="submit" name='submit' class="btn btn-primary">Ajukan</button>
+                        </div>
+                    </div>
+
+                </form><div style='clear:both'></div>
+      </div>
+      </center>
+    </div>
+  </div>
+</div>
+
     <script src="<?php echo base_url()?>asset/memberpage/js/popper.js"></script>
     <script src="<?php echo base_url()?>asset/memberpage/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url()?>asset/memberpage/js/main.js"></script>

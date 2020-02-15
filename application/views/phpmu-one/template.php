@@ -42,7 +42,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
   <link rel="stylesheet" href="<?php echo base_url(); ?>/asset/admin/plugins/datatables/dataTables.bootstrap.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>asset/admin/plugins/datepicker/datepicker3.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>asset/admin/plugins/timepicker/bootstrap-timepicker.css">
-  <script type="text/javascript" src="<?php echo base_url(); ?>/asset/admin/plugins/jQuery/jquery-1.12.3.min.js"></script> -->
+  <script type="text/javascript" src="<?php echo base_url(); ?>asset/admin/plugins/jQuery/jquery-1.12.3.min.js"></script> -->
   <script src="<?php echo base_url(); ?>asset/vendor/jquery/jquery.min.js"></script>
   <script>var baseurl = '<?php echo base_url() ?>';</script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
