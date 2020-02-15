@@ -2,6 +2,8 @@
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Tampil Produk (8)</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Link Chat Whatsapp</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Tampilkan Artikel (3) Random</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Trafict Record Kunjungan Website</li>
+<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Track Record Penjualan</li>
 <li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Kolom Banner</li>
 <li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Footer Fitur Google Maps</li>
 <li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Link Media Sosial</li>
@@ -15,6 +17,8 @@
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Tampilkan Produk (8)</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Link Chat Whatsapp</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Tampilkan Artikel (3) Random</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Trafict Record Kunjungan Website</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Track Record Penjualan</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Kolom Banner</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Footer Fitur Google Maps</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Link Media Sosial</li>
@@ -28,6 +32,8 @@
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Tampilkan Produk (8)</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Link Chat Whatsapp</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Tampilkan Artikel (3) Random</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Trafict Record Kunjungan Website</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Track Record Penjualan</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Kolom Banner</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Footer Fitur Google Maps</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Link Media Sosial</li>
