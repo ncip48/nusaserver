@@ -83,6 +83,33 @@ class Members extends CI_Controller {
 		$this->template->load('phpmu-one/template','phpmu-one/pengunjung/view_orders_report',$data);
 	}
 
+	function applyreseller(){
+		cek_session_members();
+		$data['title'] = 'Form Pengajuan Reseller';
+		$data['row'] = $this->model_app->profile_konsumen($this->session->id_konsumen)->row_array();
+		$row = $this->model_app->profile_konsumen($this->session->id_konsumen)->row_array();
+		$data['kota'] = $this->model_app->view('rb_kota');
+		$data['komunitas'] = $this->model_app->view('rb_komunitas');
+		$this->template->load('member/template','member/apply_reseller',$data);
+	}
+
+	function aksiregister(){
+		if($this->input->is_ajax_request()) {
+			$id = $this->input->post('id');
+			$kode_reff = random_string('alnum', 35);
+			$id_komunitas = $this->input->post('b');
+			$nama_bank = $this->input->post('c');
+			$no_rek = $this->input->post('d');
+
+			$data = array('id_konsumen'=>$id,
+	        			  'id_komunitas'=>$id_komunitas,
+	        			  'kode_refferal'=>$kode_reff,
+	        			  'nama_bank'=>$nama_bank,
+	        			  'no_rek'=>$no_rek);
+			$this->model_app->insert('rb_reseller',$data);
+		}
+	}
+
 	function logout(){
 		cek_session_members();
 		$this->session->sess_destroy();

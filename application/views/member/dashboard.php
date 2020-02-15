@@ -33,4 +33,7 @@
               </div>
             </div>
           </div>
+          <div class="col-md-12 col-sm-12 mb-3">
+          Apakah mau menjadi reseller? klik <a href="<?= base_url() ?>members/applyreseller">disini</a>
+          </div>
 </div>
