@@ -1,4 +1,4 @@
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Banner Slide Show Manual</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Banner Slide Show Semi-Automatis</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Tampil Produk (8)</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Link Chat Whatsapp</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Tampilkan Artikel (3) Random</li>
@@ -9,7 +9,7 @@
 <li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Link Media Sosial</li>
 <li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Support Email Bisnis</li>
 <li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Support Basic/Power Artikel SEO</li>
-<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Cek Ongkir & Resi</li>
+<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Fitur Cek Ongkir & Resi</li>
 <li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Kolom Testimoni</li>
 <li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Logo Perijinan</li>
 
@@ -24,7 +24,7 @@
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Link Media Sosial</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Support Email Bisnis</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Support Basic Artikel SEO</li>
-<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Cek Ongkir & Resi</li>
+<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Fitur Cek Ongkir & Resi</li>
 <li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Kolom Testimoni</li>
 <li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Logo Perijinan</li>
 
@@ -39,7 +39,7 @@
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Link Media Sosial</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Support Email Bisnis</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Support Power Artikel SEO</li>
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Cek Ongkir & Resi</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Fitur Cek Ongkir & Resi</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Kolom Testimoni</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Logo Perijinan</li>
 
