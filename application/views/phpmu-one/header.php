@@ -16,7 +16,7 @@ if($this->uri->segment(1)=='survey' OR $this->uri->segment(1)=='login' OR $this-
       }else{
         $logo = $this->model_app->view_ordering_limit('logo','id_logo','DESC',0,1);
         foreach ($logo->result_array() as $row) {
-          echo "<a class='navbar-brand js-scroll-trigger' href='".base_url()."'><img height=40px src='".base_url()."asset/images/$row[gambar]'/></a>";
+          echo "<a class='navbar-brand js-scroll-trigger' href='".base_url()."'><img height=30px src='".base_url()."asset/images/$row[gambar]'/></a>";
         }
         echo "<button class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation'>
         Menu
