@@ -154,7 +154,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
       <div class="row">
         <div class="col-lg-12 text-center">
           <h4 class="section-heading text-uppercase">Daftar Paket</h2>
-          <h3 class="section-subheading text-muted">Berikut paket yang kami sediakan</h3>
+          <h3 class="section-subheading text-muted">Berikut Daftar paket yang kami sediakan</h3>
         </div>
       </div>
     </div>
