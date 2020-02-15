@@ -63,8 +63,8 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h4 class="section-heading text-uppercase">ALASAN MENGAPA HARUS MEMILIH <?php echo $iden['nama_website']; ?></h2>
-          <h3 class="section-subheading text-muted">Bebearapa fitur yang kami berikan</h3>
+          <h4 class="section-heading text-uppercase">9 ALASAN MENGAPA ANDA HARUS MEMILIH <?php echo $iden['nama_website']; ?></h2>
+          <h3 class="section-subheading text-muted">Sejumlah fitur yang kami berikan</h3>
         </div>
       </div>
       <div class="row text-center">
@@ -74,49 +74,49 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
             <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
           </span>
           <h4 class="service-heading">Pro UKM</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          <p class="text-muted">Nusaserver merupakan platfrom yang suport UKM mulai dari fitur hingga trafict record.</p>
         </div>
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
             <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="service-heading">Multi Template</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          <h4 class="service-heading">Suport Trafict Record</h4>
+          <p class="text-muted">Fitur kami dapat membantu website anda dalam menganalisa trafict pengunjung yang masuk kedalam website, sehingga anda dapat memantau perkembangan website.</p>
         </div>
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
             <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Free Artikel SEO</h4>
+          <p class="text-muted">Fitur yang kami hadirkan kali ini dapat membantu website anda untuk menduduki posisi page one google sehingga, website anda mudah ditemukan oleh pengunjung. Dan fitur ini gratis untuk paket terjangkau dan bersahabat.</p>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Unlimited Bandwith</h4>
+          <p class="text-muted">Dengan system Cloud, berapapun pengunjung Anda, akses tetap stabil dan tidak ada biaya tambahan.</p>
+        </div>
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
           </span>
           <h4 class="service-heading">Mobile Friendly</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          <p class="text-muted">Tampilan website anda dapat menyesuaikan ukuran layar gadget di smartphone maupun tablet sehingga, visitor anda dapat merasa nyaman.</p>
         </div>
-      </div>
-      <div class="row text-center">
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
           </span>
           <h4 class="service-heading">Harga Terjangkau</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-        </div>
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">Super SEO Friendly</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-        </div>
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">Pelatihan UKM</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          <p class="text-muted">Meskipun platfrom kami memiliki fitur yang lengkap dan elegan, kami tetap suport perkembangan bisnis anda dengan memberikan harga ekonomis dan pelayanan maksimal. </p>
         </div>
       </div>
       <div class="row text-center">
@@ -125,24 +125,24 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
             <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="service-heading">Pembayaran Cepat</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          <h4 class="service-heading">Multi Tempelate</h4>
+          <p class="text-muted">Kami berikan beberapa pilihan template untuk anda agar dapat menjadi pertimbangan dalam memilih tampilan website yang anda sukai.</p>
         </div>
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
             <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="service-heading">Support Tutorial</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          <h4 class="service-heading">Support Pelatihan UKM dan Grub Telegram</h4>
+          <p class="text-muted">Kami hadirkan event hingga pelatihan offline maupun online guna meningkatkan softskill UKM dalam mengelola bisnis agar dapat berkembang pesat.</p>
         </div>
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
             <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="service-heading">Support Group dan Materi</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          <h4 class="service-heading">Tersedia Fitur Re-Seller</h4>
+          <p class="text-muted">Bagi anda yang ingin memulai bisnis tapi tidak memiliki modal, kami berikan fitur ini secara gratis tanpa ada pungutan biaya dengan margin profit besar.</p>
         </div>
       </div>
     </div>
