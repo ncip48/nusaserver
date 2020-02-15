@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>asset/admin/plugins/daterangepicker/daterangepicker-bs3.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="<?php echo base_url()?>asset/memberpage/css/style.css">
+    <script src="<?php echo base_url(); ?>asset/vendor/jquery/jquery.min.js"></script>
   </head>
   <body>
 		

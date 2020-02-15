@@ -13,15 +13,16 @@
                                   <tr><td><b>Email</b></td><td><input class='required email form-control' type='email' name='b' value='$row[email]' readonly></td></tr>
                                   <div class='form-group row'>
                         <tr><td></td><td><div class='custom-control custom-radio'>
-                            <input type='radio' id='1' name='b' class='custom-control-input' value='0'>
+                            <input type='radio' id='1' name='komunitas' class='custom-control-input' value='0' checked>
                             <label class='custom-control-label' for='1'>Perorangan </label>
                         </div>
                         <div class='custom-control custom-radio'>
-                            <input type='radio' id='2' name='b' class='custom-control-input' value='1'>
+                            <input type='radio' id='2' name='komunitas' class='custom-control-input' value='1'>
                             <label class='custom-control-label' for='2'>Komunitas</label>
                         </div>
                     </div></td></tr>
-                                  <tr><td><b>Pilih Komunitas</td><td>
+                                  
+                                  <tr id='kom'><td><b>Pilih Komunitas</td><td>
                                   <select class='form-control' name='h'>";
                                   foreach ($komunitas->result_array() as $k) {
                                     echo "<option value='$k[id_komunitas]'>$k[nama_komunitas]</option>";
@@ -36,6 +37,7 @@
                                       <option value='bni'>BNI</option>
                                     </select>
                                   </td></tr>
+                                  
                                   <tr><td><b>No rekening</b></td><td><input class='required number form-control' type='number' name='d' value=''></td></tr>
                                 
                                   <tr><td></td><td><input class='float-right btn btn-sm btn-primary' type='submit' name='submit' value='Ajukan'></td></tr>
@@ -47,3 +49,18 @@
           
           
 </div>
+
+<script>
+$(document).ready(function() {
+  $('#kom').hide();
+  $("input[name='komunitas']").change(function(){
+    var id = $(this).val()
+    if (id=='0'){
+      $('#kom').hide();
+    }else{
+      $('#kom').show();
+    }
+    //console.log($(this).val());
+  });
+})
+</script>
