@@ -307,7 +307,7 @@ $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h4 class="section-heading text-uppercase">Artikel / Blog</h4>
+          <h4 class="section-heading text-uppercase">Artikel</h4>
           <h3 class="section-subheading">Kami sajikan artikel untuk anda</h3>
         </div>
       </div>
