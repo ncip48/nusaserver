@@ -1,5 +1,6 @@
 <?php 
 $iden = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_array();
+$banner = $this->db->query("SELECT * FROM banner")->row_array();
 $slider = $this->db->query("SELECT * FROM slide");
 $jumlahslide =  $this->db->query("SELECT count(*) as jumlah FROM slide")->row_array();
 ?>
@@ -72,7 +73,7 @@ $jumlahslide =  $this->db->query("SELECT count(*) as jumlah FROM slide")->row_ar
       </div>
       <div class="row"> 
       <div class="col-lg-12 text-center">
-      <img class="img-fluid" src="<?= base_url() ?>/asset/banner/kotak.png">
+      <img class="img-fluid" src="<?= base_url() ?>/asset/banner/<?= $banner[gambar] ?>">
       </div>
       </div>
     </div>
