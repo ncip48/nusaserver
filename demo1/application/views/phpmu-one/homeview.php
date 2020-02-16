@@ -130,7 +130,7 @@ $jumlahslide =  $this->db->query("SELECT count(*) as jumlah FROM slide")->row_ar
                     <img class='img-fluid' src='".base_url()."asset/foto_berita/".$foto."' alt=''>
                   </a>
                   <div class='portfolio-caption text-left'>
-                    <h4 class='service-heading text-dark mb-0'><a class='nav-link urlproduk' href='".base_url()."berita/detail/$row[judul_seo]'>".$judul."</a></h4>
+                    <h4 class='service-heading text-dark mb-0'><a class='nav-link urlproduk' href='".base_url()."artikel/detail/$row[judul_seo]'>".$judul."</a></h4>
                     <p class='service-heading mb-0 text-muted'>".$isi."...</p>
                   </div>
                 </div>";
