@@ -60,13 +60,31 @@ $jumlahslide =  $this->db->query("SELECT count(*) as jumlah FROM slide")->row_ar
   </div>
 </header>
 
+<!-- Banner -->
+<section class="bg-biru text-white page-section" id="portfolio">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h4 class="section-heading text-uppercase">Harga Khusus</h4>
+          <h3 class="section-subheading">Dapatkan Harga Khusus Untuk Barang ini</h3>
+        
+        </div>
+      </div>
+      <div class="row"> 
+      <div class="col-lg-12 text-center">
+      <img class="img-fluid" src="<?= base_url() ?>/asset/banner/kotak.png">
+      </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Produk -->
   <section class="bg-white page-section" id="fitur">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
           <h4 class="section-heading text-uppercase">Produk Kami</h2>
-          <h3 class="section-subheading text-muted">Beberapa produk kami yang berkualitas</h3>
+          <h3 class="section-subheading text-muted"></h3>
         </div>
       </div>
       <div class="row text-center">
@@ -92,16 +110,18 @@ $jumlahslide =  $this->db->query("SELECT count(*) as jumlah FROM slide")->row_ar
           <figcaption class='info-wrap'>
             <h6 class='title text-dots text-dark mb-0'><a class='nav-link urlproduk' href='".base_url()."produk/detail/".encrypt_url($row[id_produk])."'>".$judul."</a></h6>
             <div class='action-wrap'>
-              <a class='btn btn-primary btn-sm float-right' href='".base_url()."produk/detail/".encrypt_url($row[id_produk])."'>Beli</a>
               <div class='price-wrap h5'>";
               if ($row['diskon']=='0'){
                 echo "<span class='price-new'>Rp ".rupiah($row['harga_konsumen'])."</span>";
               }else{
                 echo "<span class='price-new'>Rp ".rupiah($row['harga_konsumen']-$row['diskon'])."</span>
                      <del class='price-old'>".rupiah($row['harga_konsumen'])."</del>";
-              }
-              echo "</div> <!-- price-wrap.// -->
-            </div> <!-- action-wrap -->
+              }           
+              echo "
+              </div> <!-- price-wrap.// -->
+              <b>Stok $stok</b><br> 
+              <a class='btn btn-primary btn-sm float-right' href='".base_url()."produk/detail/".encrypt_url($row[id_produk])."'>Beli</a>
+              </div> <!-- action-wrap -->
           </figcaption>
         </figure> <!-- card // -->
       </div> <!-- col // -->";

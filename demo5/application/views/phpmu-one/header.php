@@ -27,20 +27,13 @@ echo "<div class='collapse navbar-collapse' id='navbarResponsive'>";
           </li>
           <li class='nav-item'>
             <a class='nav-link js-scroll-trigger' href='<?= base_url()?>produk'>Produk</a>
-          </li>
+          </li>       
           <li class='nav-item'>
-            <a class='nav-link js-scroll-trigger' href='<?= base_url()?>artikel'>Blog</a>
-          </li>
+            <a class='nav-link js-scroll-trigger' href='<?= base_url()?>produk'><i class="fas fa-search"></i></a>
+          </li>  
           <li class='nav-item'>
-            <a class='nav-link js-scroll-trigger' href='<?= base_url()?>about'>Tentang Kami</a>
-          </li>
-          <?php if($this->uri->segment(1)=='' OR $this->uri->segment(1)=='main'){
-          echo "<li class='nav-item'>
-                  <a class='nav-link js-scroll-trigger' href='#contact'>Hubungi Kami</a>
-                </li>";
-          }else{
-          }
-          ?>
+            <a class='nav-link js-scroll-trigger' href='<?= base_url()?>produk'><i class="fas fa-shopping-cart"></i></a>
+          </li>  
         </ul>
       </div>
     </div>
