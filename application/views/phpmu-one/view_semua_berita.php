@@ -12,7 +12,7 @@
                             <div style='height:130px; overflow:hidden'>
                                 <img style='width:100%' src='".base_url()."asset/foto_berita/".$foto."'>
                             </div>
-                            <a href='".base_url()."berita/detail/$row[judul_seo]'>".$row['judul']."</a>
+                            <a href='".base_url()."$row[judul_seo]'>".$row['judul']."</a>
 
                         </div>";
                         if ($no % 3 == 0){
