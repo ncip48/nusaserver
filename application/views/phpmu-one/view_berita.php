@@ -1,3 +1,5 @@
+<div class="container isi">
+<div class="row">
 <?php
           $tanggal = tgl_indo($record['tanggal']);
           echo "<p class='sidebar-title'> $record[judul]</p>
@@ -33,3 +35,5 @@
                     $no++;
                 }
             ?>
+</div>
+</div>
