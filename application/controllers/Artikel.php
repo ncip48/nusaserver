@@ -37,10 +37,10 @@ class Artikel extends CI_Controller {
 		$config['per_page'] = 9; 	
 		if ($hal==''){
 			$dari = 0;
-			$config['base_url'] = base_url();
+			$config['base_url'] = base_url().'page';
 		}else{
 			$dari = $hal;
-			$config['base_url'] = base_url().'page';
+			$config['base_url'] = base_url();
 		}
 
 		if (is_numeric($dari)) {
