@@ -190,6 +190,9 @@ class Mulai extends CI_Controller {
         $identitas = $this->db->query("SELECT * FROM identitas where id_identitas='1'")->row_array();
         $row = $this->db->query("SELECT * FROM rb_konsumen where id_konsumen='".$this->session->id_konsumen."'")->row_array();
         if ($row['jenis_kelamin']=='Laki-laki'){ $panggill = 'Bpk.'; }else{ $panggill = 'Ibuk.'; }
+        
+        
+        
 
         if ($id_produk=='') {
           $error[] = 'Tolong Pilih Paket';
@@ -243,6 +246,16 @@ class Mulai extends CI_Controller {
                   'status'=>$aktif,
                   'bank'=>$bank);
           $this->db->insert('rb_invoice',$data3);
+
+          if ($row[ph]=='0' AND $id_produk=='17'){
+            $this->db->query("UPDATE `rb_konsumen` SET `ph`=1 WHERE id_konsumen='".$this->session->id_konsumen."' AND $row[ph]='0'");
+          }
+          if ($row[pt]=='0' AND $id_produk=='18'){
+            $this->db->query("UPDATE `rb_konsumen` SET `pt`=1 WHERE id_konsumen='".$this->session->id_konsumen."' AND $row[pt]='0'");
+          }
+          if ($row[pb]=='0' AND $id_produk=='19'){
+            $this->db->query("UPDATE `rb_konsumen` SET `pb`=1 WHERE id_konsumen='".$this->session->id_konsumen."' AND $row[pb]='0'");
+          }
 
           if ($pilihandomain=='1'){
             $data4 = array('nama_subdomain'=>$subdomain.".".$tld);
