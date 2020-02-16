@@ -15,7 +15,7 @@
                         
                             <small class='date pull-right'><span class='glyphicon glyphicon-time'></span> $row[hari], $tanggal</small><br>
                             
-                            <h6><a href='".base_url()."artikel/detail/$row[judul_seo]'>".$row['judul']."</a></h6>
+                            <h6><a href='".base_url()."$row[judul_seo]'>".$row['judul']."</a></h6>
                             <p class='my-2'>".$isi." . . .</p>
                         </div>";
                         if ($no % 3 == 0){
