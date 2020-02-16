@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Berita extends CI_Controller {
+class Artikel extends CI_Controller {
+
 	public function index(){
 		$jumlah= $this->model_app->view('berita')->num_rows();
 		$config['base_url'] = base_url().'artikel/index';

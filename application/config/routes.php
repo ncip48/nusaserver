@@ -55,7 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     'login' => 'login',
     'agenda' => 'agenda',
     'auth' => 'auth',
-    'artikel' => 'berita',
+    'artikel' => 'artikel',
     'contact' => 'contact',
     'download' => 'download',
     'gallery' => 'gallery',
@@ -72,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     'daftar' => 'auth/register',
     'login' => 'auth/login',
     'signout' => 'members/keluar',
-    'kebijakan-privasi' => 'berita/kebijakan',
+    'kebijakan-privasi' => 'artikel/kebijakan',
     'survey' => 'main/survey',
 );
 
@@ -82,9 +82,9 @@ $route['translate_uri_dashes'] = FALSE; */
 
 switch ( $_SERVER['HTTP_HOST'] ) {
     case 'blog.nusaserver.com':
-        $route['default_controller'] = "berita";
-        $route['artikel'] = "berita";
-        $route['(:any)'] = 'berita/detail/$1';
+        $route['default_controller'] = "artikel";
+        $route['artikel'] = "artikel";
+        $route['(:any)'] = 'artikel/detail/$1';
     break;
     case 'auth.nusaserver.com':
         $route['default_controller'] = "auth/login";
@@ -97,7 +97,7 @@ switch ( $_SERVER['HTTP_HOST'] ) {
         'login' => 'login',
         'agenda' => 'agenda',
         'auth' => 'auth',
-        'artikel' => 'berita',
+        'artikel' => 'artikel',
         'contact' => 'contact',
         'konfirmasi/kirim' => 'konfirmasi/aksikonfirmasi',
         'main' => 'main',
@@ -110,9 +110,9 @@ switch ( $_SERVER['HTTP_HOST'] ) {
         'daftar/(:any)' => 'auth/register/$1',
         'login' => 'auth/login',
         'signout' => 'members/keluar',
-        'kebijakan-privasi' => 'berita/kebijakan',
+        'kebijakan-privasi' => 'artikel/kebijakan',
         'survey' => 'main/survey',
-        'blog/(:any)' => 'berita/detail/$1',
+        'blog/(:any)' => 'artikel/detail/$1',
         'confirm/(:any)/(:any)' => 'confirm/kode/$1/$2',
         'konfirmasi/(:any)' => 'konfirmasi/kodetrx/$1',
     );
