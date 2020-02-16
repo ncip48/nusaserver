@@ -4,11 +4,12 @@ class Artikel extends CI_Controller {
 
 	public function index(){
 		$jumlah= $this->model_app->view('berita')->num_rows();
-		$config['base_url'] = base_url().'artikel/index';
+		#$config['base_url'] = base_url().'artikel/index';
 		$config['total_rows'] = $jumlah;
 		$config['per_page'] = 9; 	
 		if ($this->uri->segment('3')==''){
 			$dari = 0;
+			$config['base_url'] = base_url().'page';
 		}else{
 			$dari = $this->uri->segment('3');
 		}
