@@ -84,6 +84,7 @@ switch ( $_SERVER['HTTP_HOST'] ) {
     case 'blog.nusaserver.com':
         $route['default_controller'] = "artikel";
         $route['artikel'] = "artikel";
+        $route['page'] = "artikel/index";
         $route['(:any)'] = 'artikel/detail/$1';
     break;
     case 'auth.nusaserver.com':
