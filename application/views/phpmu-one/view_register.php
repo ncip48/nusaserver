@@ -43,7 +43,18 @@
                 <div class="form-group">
                     <input type="password" class="form-control" placeholder="Masukkan Password Kembali" value="" />
                 </div>
-                
+                <?php 
+                if ($this->uri->segment(2)==''){
+                echo "<div class='form-group'>
+                    <input type='text' class='form-control' name='reff' value='' placeholder='Masukkan Kode Refferal jika ada'/>
+                </div>";
+                }else{
+                echo "<div class='form-group'>
+                    <input type='text' class='form-control' value='Refferal : ".$refferal[nama_lengkap]."' disabled/>
+                    <input type='hidden' class='form-control' name='reff' value='".$refferal[kode_refferal]."'/>
+                </div>";
+                }
+                ?>
             </div>
             <div class='col-md-12 login-form-2 panelregister'>
                 <input type="submit" style='border-radius: 1rem;font-weight: 600;color: #0062cc;background-color: #fff;' class="btn btn-white"  value="Register"/><div id='loadingzz'></div>

@@ -39,6 +39,14 @@ class Members extends CI_Controller {
 		$this->template->load('member/template','member/services',$data);
 	}
 
+	function reseller(){
+		cek_session_members();
+		$data['title'] = 'Reseller Anda';
+		#$data['service'] = $this->db->query("SELECT * FROM rb_services a JOIN rb_konsumen b ON a.id_konsumen=b.id_konsumen JOIN rb_produk c ON a.id_produk=c.id_produk WHERE a.id_konsumen='".$this->session->id_konsumen."'")->result_array();
+		$data['reseller'] = $this->db->query("SELECT * FROM rb_reseller WHERE id_konsumen='".$this->session->id_konsumen."'")->row_array();
+		$this->template->load('member/template','member/view_reseller',$data);
+	}
+
 	function domain(){
 		cek_session_members();
 		$data['title'] = 'Domain Anda';

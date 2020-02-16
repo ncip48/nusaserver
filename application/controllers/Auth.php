@@ -39,10 +39,14 @@ class Auth extends CI_Controller {
 		echo json_encode($callback); // konversi varibael $callback menjadi JSON
 	  }	
 
-	public function register(){
+	public function register($kode_reff){
+			$kode_reff = decrypt_url($kode_reff);
 			$data['title'] = 'Formulir Pendaftaran';
 			$data['provinsi'] = $this->ProvinsiModel->view();
 			$data['kota'] = $this->model_app->view_ordering('rb_kota','kota_id','ASC');
+			if ($kode_reff != ''){
+				$data['refferal'] = $this->db->query("SELECT * FROM rb_reseller a JOIN rb_konsumen b ON a.id_konsumen=b.id_konsumen WHERE kode_refferal='".$kode_reff."'")->row_array();
+			}
 			$this->template->load('phpmu-one/template','phpmu-one/view_register',$data);
 			//$this->load->view('phpmu-one/view_register3', $data);
 	}
@@ -57,7 +61,8 @@ class Auth extends CI_Controller {
 	        			  'kota_id'=>$this->input->post('kota'),
 						  'no_hp'=>$this->input->post('j'),
 						  'tanggal_daftar'=>date('Y-m-d H:i:s'),
-						  'kode_konfirmasi' => random_string('alnum', 35));
+						  'kode_konfirmasi' => random_string('alnum', 35),
+						  'refferal' => $this->input->post('reff'));
 			$this->model_app->insert('rb_konsumen',$data);
 			$id = $this->db->insert_id();
 			$this->session->set_userdata(array('id_konsumen_temp'=>$id));
