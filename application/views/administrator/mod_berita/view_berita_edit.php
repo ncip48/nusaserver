@@ -2,7 +2,7 @@
     echo "<div class='col-md-12'>
               <div class='box box-info'>
                 <div class='box-header with-border'>
-                  <h3 class='box-title'>Edit Berita Terpilih</h3>
+                  <h3 class='box-title'>Edit Artikel Terpilih</h3>
                 </div>
               <div class='box-body'>";
               $attributes = array('class'=>'form-horizontal','role'=>'form');
@@ -25,8 +25,8 @@
                     echo "</td></tr>
                     <tr><th scope='row'>Headline</th>               <td>"; if ($rows['headline']=='Y'){ echo "<input type='radio' name='e' value='Y' checked> Ya &nbsp; <input type='radio' name='e' value='N'> Tidak"; }else{ echo "<input type='radio' name='e' value='Y'> Ya &nbsp; <input type='radio' name='e' value='N' checked> Tidak"; } echo "</td></tr>
                     <tr><th scope='row'>Pilihan Redaksi</th>        <td>"; if ($rows['aktif']=='Y'){ echo "<input type='radio' name='f' value='Y' checked> Ya &nbsp; <input type='radio' name='f' value='N'> Tidak"; }else{ echo "<input type='radio' name='f' value='Y'> Ya &nbsp; <input type='radio' name='f' value='N' checked> Tidak"; } echo "</td></tr>
-                    <tr><th scope='row'>Berita Utama</th>           <td>"; if ($rows['utama']=='Y'){ echo "<input type='radio' name='g' value='Y' checked> Ya &nbsp; <input type='radio' name='g' value='N'> Tidak"; }else{ echo "<input type='radio' name='g' value='Y'> Ya &nbsp; <input type='radio' name='g' value='N' checked> Tidak"; } echo "</td></tr>
-                    <tr><th scope='row'>Isi Berita</th>             <td><textarea id='editor1' class='form-control' name='h' style='height:350px' required>$rows[isi_berita]</textarea></td></tr>
+                    <tr><th scope='row'>Artikel Utama</th>           <td>"; if ($rows['utama']=='Y'){ echo "<input type='radio' name='g' value='Y' checked> Ya &nbsp; <input type='radio' name='g' value='N'> Tidak"; }else{ echo "<input type='radio' name='g' value='Y'> Ya &nbsp; <input type='radio' name='g' value='N' checked> Tidak"; } echo "</td></tr>
+                    <tr><th scope='row'>Isi Artikel</th>             <td><textarea id='editor1' class='form-control' name='h' style='height:350px' required>$rows[isi_berita]</textarea></td></tr>
                     <tr><th scope='row'>Ganti Gambar</th>                 <td><input type='file' class='form-control' name='k'>";
                                                                                if ($rows['gambar'] != ''){ echo "<i style='color:red'>Lihat Gambar Saat ini : </i><a target='_BLANK' href='".base_url()."asset/foto_berita/$rows[gambar]'>$rows[gambar]</a>"; } echo "</td></tr>
                     <tr><th scope='row'>Ket. Gambar</th>            <td><input type='text' class='form-control' name='i' value='$rows[keterangan_gambar]'></td></tr>

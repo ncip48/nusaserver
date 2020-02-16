@@ -2,7 +2,7 @@
     echo "<div class='col-md-12'>
               <div class='box box-info'>
                 <div class='box-header with-border'>
-                  <h3 class='box-title'>Tambah Berita Baru ".$this->session->disabled."</h3>
+                  <h3 class='box-title'>Tambah Artikel Baru ".$this->session->disabled."</h3>
                 </div>
               <div class='box-body'>";
               $attributes = array('class'=>'form-horizontal','role'=>'form');
@@ -22,8 +22,8 @@
                     echo "</td></tr>
                     <tr><th scope='row'>Headline</th>               <td><input type='radio' name='e' value='Y'> Ya &nbsp; <input type='radio' name='e' value='N' checked> Tidak</td></tr>
                     <tr><th scope='row'>Pilihan Redaksi</th>        <td><input type='radio' name='f' value='Y'> Ya &nbsp; <input type='radio' name='f' value='N' checked> Tidak</td></tr>
-                    <tr><th scope='row'>Berita Utama</th>           <td><input type='radio' name='g' value='Y'> Ya &nbsp; <input type='radio' name='g' value='N' checked> Tidak</td></tr>
-                    <tr><th scope='row'>Isi Berita</th>             <td><textarea id='editor1' class='form-control' name='h' style='height:350px' required></textarea></td></tr>
+                    <tr><th scope='row'>Artikel Utama</th>           <td><input type='radio' name='g' value='Y'> Ya &nbsp; <input type='radio' name='g' value='N' checked> Tidak</td></tr>
+                    <tr><th scope='row'>Isi Artikel</th>             <td><textarea id='editor1' class='form-control' name='h' style='height:350px' required></textarea></td></tr>
                     <tr><th scope='row'>Gambar</th>                 <td><input type='file' class='form-control' name='k'></td></tr>
                     <tr><th scope='row'>Ket. Gambar</th>            <td><input type='text' class='form-control' name='i'></td></tr>
                     <tr><th scope='row'>Tag</th>                    <td><div class='checkbox-scroll'>";
