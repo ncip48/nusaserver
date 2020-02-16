@@ -41,6 +41,7 @@ class Auth extends CI_Controller {
 
 	public function register($kode_reff){
 			$kode_reff = decrypt_url($kode_reff);
+			$data['cekreff'] = $this->db->query("SELECT * FROM rb_reseller WHERE kode_refferal='".$kode_reff."' AND aktif='1'")->num_rows();
 			$data['title'] = 'Formulir Pendaftaran';
 			$data['provinsi'] = $this->ProvinsiModel->view();
 			$data['kota'] = $this->model_app->view_ordering('rb_kota','kota_id','ASC');
