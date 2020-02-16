@@ -14,7 +14,10 @@
                     <tr><th width='120px' scope='row'>Nama Website</th>   <td><input type='text' class='form-control' name='a' value='$record[nama_website]'></td></tr>
                     <tr><th scope='row'>Email</th>                        <td><input type='email' class='form-control' name='b' value='$record[email]'></td></tr>
                     <tr><th scope='row'>Domain</th>                       <td><input type='url' class='form-control' name='c' value='$record[url]'></td></tr>
-                    <tr><th scope='row'>Sosial Network</th>               <td><input type='text' class='form-control' name='d' value='$record[facebook]'></td></tr>
+                    <tr><th scope='row'>Youtube url</th>               <td><input type='text' class='form-control' name='yt' value='$record[youtube]'></td></tr>
+                    <tr><th scope='row'>Facebook url</th>               <td><input type='text' class='form-control' name='d' value='$record[facebook]'></td></tr>
+                    <tr><th scope='row'>Instagram url</th>               <td><input type='text' class='form-control' name='ig' value='$record[instagram]'></td></tr>
+                    <tr><th scope='row'>Twitter url</th>               <td><input type='text' class='form-control' name='tw' value='$record[twitter]'></td></tr>
                     <tr><th scope='row'>No. Rekening</th>                 <td><input type='text' class='form-control' name='e' value='$record[rekening]'></td></tr>
                     <tr><th scope='row'>No Telpon</th>                    <td><input type='text' class='form-control' name='f' value='$record[no_telp]'></td></tr>
                     <tr><th scope='row'>No Telpon</th>                    <td><input type='text' class='form-control' name='wa' value='$record[no_wa]'></td></tr>
