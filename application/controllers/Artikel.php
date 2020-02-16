@@ -32,13 +32,15 @@ class Artikel extends CI_Controller {
 
 	public function page($hal){
 		$jumlah= $this->model_app->view('berita')->num_rows();
-		$config['base_url'] = base_url().'artikel/index';
+		//$config['base_url'] = base_url().'page';
 		$config['total_rows'] = $jumlah;
 		$config['per_page'] = 9; 	
 		if ($hal==''){
 			$dari = 0;
+			$config['base_url'] = base_url();
 		}else{
 			$dari = $hal;
+			$config['base_url'] = base_url().'page';
 		}
 
 		if (is_numeric($dari)) {
