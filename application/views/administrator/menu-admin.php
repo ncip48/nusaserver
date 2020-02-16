@@ -119,22 +119,22 @@
             </li>
             
             <li class="treeview">
-              <a href="#"><i class="glyphicon glyphicon-pencil"></i> <span>Modul Berita</span><i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class="glyphicon glyphicon-pencil"></i> <span>Modul Artikel</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
               <?php
                 $cek=$this->model_app->umenu_akses("listberita",$this->session->id_session);
                 if($cek==1 OR $this->session->level=='admin'){
-                  echo "<li><a href='".base_url()."administrator/listberita'><i class='fa fa-circle-o'></i> Berita</a></li>";
+                  echo "<li><a href='".base_url()."administrator/listberita'><i class='fa fa-circle-o'></i> Artikel</a></li>";
                 }
 
                 $cek=$this->model_app->umenu_akses("kategoriberita",$this->session->id_session);
                 if($cek==1 OR $this->session->level=='admin'){
-                  echo "<li><a href='".base_url()."administrator/kategoriberita'><i class='fa fa-circle-o'></i> Kategori Berita</a></li>";
+                  echo "<li><a href='".base_url()."administrator/kategoriberita'><i class='fa fa-circle-o'></i> Kategori Artikel</a></li>";
                 }
 
                 $cek=$this->model_app->umenu_akses("tagberita",$this->session->id_session);
                 if($cek==1 OR $this->session->level=='admin'){
-                  echo "<li><a href='".base_url()."administrator/tagberita'><i class='fa fa-circle-o'></i> Tag Berita</a></li>";
+                  echo "<li><a href='".base_url()."administrator/tagberita'><i class='fa fa-circle-o'></i> Tag Artikel</a></li>";
                 }
               ?>
               </ul>
