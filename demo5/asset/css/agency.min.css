@@ -114,7 +114,7 @@ img::-moz-selection {
 }
 
 .bg-biru{
-	background-color: #145ac9;
+	background-color: #145ac9!important;
 }
 
 #mainNav .navbar-toggler {
