@@ -82,9 +82,9 @@ $route['translate_uri_dashes'] = FALSE; */
 
 switch ( $_SERVER['HTTP_HOST'] ) {
     case 'blog.nusaserver.com':
-        $route['default_controller/(:any)'] = "artikel/$1";
-        $route['artikel/(:any)'] = "artikel/$1";
-        $route['page/(:any)'] = "artikel/index/$1";
+        $route['default_controller'] = "artikel";
+        $route['artikel'] = "artikel";
+        $route['page/(:any)'] = "artikel/page/$1";
         $route['(:any)'] = 'artikel/detail/$1';
     break;
     case 'auth.nusaserver.com':
