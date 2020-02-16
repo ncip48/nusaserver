@@ -2,15 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Artikel extends CI_Controller {
 
-	public function index(){
+	public function index($page){
 		$jumlah= $this->model_app->view('berita')->num_rows();
 		$config['base_url'] = base_url().'artikel/index';
 		$config['total_rows'] = $jumlah;
 		$config['per_page'] = 9; 	
-		if ($this->uri->segment('3')==''){
+		if ($page==''){
 			$dari = 0;
 		}else{
-			$dari = $this->uri->segment('3');
+			$dari = $page;
 		}
 
 		if (is_numeric($dari)) {
