@@ -1,6 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Auth extends CI_Controller {
+
+	public function __construct(){
+		parent::__construct();
+		
+		$this->load->model('ProvinsiModel');
+		$this->load->model('KotaModel');
+	}
+
 	function state(){
 		$country_id = $this->input->post('count_id');
 		$data['provinsi'] = $this->model_app->view_where_ordering('rb_state',array('country_id' => $country_id),'state_id','DESC');
@@ -13,9 +21,33 @@ class Auth extends CI_Controller {
 		$this->load->view('phpmu-one/view_city',$data);
 	}
 
-	public function register(){
+	public function listKota(){
+		// Ambil data ID Provinsi yang dikirim via ajax post
+		$id_provinsi = $this->input->post('id_provinsi');
+		
+		$kota = $this->KotaModel->viewByProvinsi($id_provinsi);
+		
+		// Buat variabel untuk menampung tag-tag option nya
+		// Set defaultnya dengan tag option Pilih
+		$lists = "<option value=''>Pilih</option>";
+		
+		foreach($kota as $data){
+		  $lists .= "<option value='".$data->kota_id."'>".$data->nama_kota."</option>"; // Tambahkan tag option ke variabel $lists
+		}
+		
+		$callback = array('list_kota'=>$lists); // Masukan variabel lists tadi ke dalam array $callback dengan index array : list_kota
+		echo json_encode($callback); // konversi varibael $callback menjadi JSON
+	  }	
+
+	public function register($kode_reff){
+			$kode_reff = decrypt_url($kode_reff);
+			$data['cekreff'] = $this->db->query("SELECT * FROM rb_reseller WHERE kode_refferal='".$kode_reff."' AND aktif='1'")->num_rows();
 			$data['title'] = 'Formulir Pendaftaran';
+			$data['provinsi'] = $this->ProvinsiModel->view();
 			$data['kota'] = $this->model_app->view_ordering('rb_kota','kota_id','ASC');
+			if ($kode_reff != ''){
+				$data['refferal'] = $this->db->query("SELECT * FROM rb_reseller a JOIN rb_konsumen b ON a.id_konsumen=b.id_konsumen WHERE kode_refferal='".$kode_reff."'")->row_array();
+			}
 			$this->template->load('phpmu-one/template','phpmu-one/view_register',$data);
 			//$this->load->view('phpmu-one/view_register3', $data);
 	}
@@ -25,11 +57,13 @@ class Auth extends CI_Controller {
 	        			  'password'=>hash("sha512", md5($this->input->post('b'))),
 	        			  'nama_lengkap'=>$this->input->post('c'),
 	        			  'email'=>$this->input->post('d'),
-	        			  'alamat_lengkap'=>$this->input->post('e'),
-	        			  'kota_id'=>$this->input->post('h'),
+						  'alamat_lengkap'=>$this->input->post('e'),
+						  'provinsi_id'=>$this->input->post('provinsi'),
+	        			  'kota_id'=>$this->input->post('kota'),
 						  'no_hp'=>$this->input->post('j'),
 						  'tanggal_daftar'=>date('Y-m-d H:i:s'),
-						  'kode_konfirmasi' => random_string('alnum', 35));
+						  'kode_konfirmasi' => random_string('alnum', 35),
+						  'refferal' => $this->input->post('reff'));
 			$this->model_app->insert('rb_konsumen',$data);
 			$id = $this->db->insert_id();
 			$this->session->set_userdata(array('id_konsumen_temp'=>$id));

@@ -20,6 +20,7 @@ class Main extends CI_Controller {
 		$data['description'] = description();
 		$data['keywords'] = keywords();
 		$data['record'] = $this->db->query("SELECT * FROM rb_produk");
+		$data['berita'] = $this->model_berita->semua_berita(0,3);
 		$this->template->load('phpmu-one/template','phpmu-one/homeview',$data);
 	}
 

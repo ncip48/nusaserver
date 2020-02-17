@@ -1,34 +1,46 @@
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Slide</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Banner Slide Show Semi-Automatis</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Tampil Produk (8)</li>
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Chat WA</li>
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Artikel (3) Random</li>
-<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Banner</li>
-<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Footer Gmaps</li>
-<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Link Sosmed + Terintegrasi</li>
-<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Cek Ongkir & Resi</li>
-<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Testimoni</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Link Chat Whatsapp</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Tampilkan Artikel (3) Random</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Trafict Record Kunjungan Website</li>
+<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Track Record Penjualan</li>
+<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Kolom Banner</li>
+<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Footer Fitur Google Maps</li>
+<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Link Media Sosial</li>
+<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Support Email Bisnis</li>
+<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Support Basic/Power Artikel SEO</li>
+<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Fitur Cek Ongkir & Resi</li>
+<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Kolom Testimoni</li>
 <li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Logo Perijinan</li>
 
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Slide</li>
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Tampil Produk (8)</li>
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Chat WA</li>
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Artikel (3) Random</li>
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Banner</li>
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Footer Gmaps</li>
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Link Sosmed (4) + Terintegrasi</li>
-<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Cek Ongkir & Resi</li>
-<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Testimoni</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Banner Slide Show Semi-Automatis</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Tampilkan Produk (8)</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Link Chat Whatsapp</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Tampilkan Artikel (3) Random</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Trafict Record Kunjungan Website</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Track Record Penjualan</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Kolom Banner</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Footer Fitur Google Maps</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Link Media Sosial</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Support Email Bisnis</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Support Basic Artikel SEO</li>
+<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Fitur Cek Ongkir & Resi</li>
+<li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Kolom Testimoni</li>
 <li class='text-muted'><span class='fa-li'><i class='fas fa-times'></i></span>Logo Perijinan</li>
 
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Slide</li>
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Tampil Produk (8)</li>
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Chat WA</li>
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Artikel (3) Random</li>
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Banner</li>
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Footer Gmaps</li>
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Link Sosmed + Terintegrasi</li>
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Cek Ongkir & Resi</li>
-<li><span class='fa-li'><i class='fas fa-check'></i></span>Testimoni</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Banner Slide Show Semi-Automatis</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Tampilkan Produk (8)</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Link Chat Whatsapp</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Tampilkan Artikel (3) Random</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Trafict Record Kunjungan Website</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Track Record Penjualan</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Kolom Banner</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Footer Fitur Google Maps</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Link Media Sosial</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Support Email Bisnis</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Support Power Artikel SEO</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Fitur Cek Ongkir & Resi</li>
+<li><span class='fa-li'><i class='fas fa-check'></i></span>Kolom Testimoni</li>
 <li><span class='fa-li'><i class='fas fa-check'></i></span>Logo Perijinan</li>
 
 <div class='row justify-content-md-center'>

@@ -17,11 +17,16 @@
                     <input type="text" name='e' class="form-control" placeholder="Alamat" value="" />
                 </div>
                 <div class="form-group">
-                    <select class='form-control' name='h'>
-                        <option value=''>- Pilih Kota -</option>";
-                    <?php foreach ($kota as $rows) {
-                        echo "<option value='$rows[kota_id]'>$rows[nama_kota]</option>";
+                    <select class='form-control' name="provinsi" id="provinsi">
+                        <option value=''>- Pilih Provinsi -</option>";
+                    <?php foreach ($provinsi as $data) {
+                        echo "<option value='".$data->provinsi_id."'>".$data->nama_provinsi."</option>";
                     } ?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="kota" id="kota" class='form-control'>
+                        <option value="">Pilih Kota</option>
                     </select>
                 </div>
             </div>
@@ -38,7 +43,18 @@
                 <div class="form-group">
                     <input type="password" class="form-control" placeholder="Masukkan Password Kembali" value="" />
                 </div>
-                
+                <?php 
+                if ($this->uri->segment(2)==''){
+                echo "<div class='form-group'>
+                    <input type='text' class='form-control' name='reff' value='' placeholder='Masukkan Kode Refferal jika ada'/>
+                </div>";
+                }else{
+                echo "<div class='form-group'>
+                    <input type='text' class='form-control' value='Refferal : ".$refferal[nama_lengkap]."' disabled/>
+                    <input type='hidden' class='form-control' name='reff' value='".$refferal[kode_refferal]."'/>
+                </div>";
+                }
+                ?>
             </div>
             <div class='col-md-12 login-form-2 panelregister'>
                 <input type="submit" style='border-radius: 1rem;font-weight: 600;color: #0062cc;background-color: #fff;' class="btn btn-white"  value="Register"/><div id='loadingzz'></div>
@@ -49,3 +65,36 @@
         </div>
     </div>
 </div>
+
+<script>
+  $(document).ready(function(){ // Ketika halaman sudah siap (sudah selesai di load)
+    // Kita sembunyikan dulu untuk loadingnya
+    $("#loading").hide();
+    
+    $("#provinsi").change(function(){ // Ketika user mengganti atau memilih data provinsi
+      $("#kota").hide(); // Sembunyikan dulu combobox kota nya
+      $("#loading").show(); // Tampilkan loadingnya
+    
+      $.ajax({
+        type: "POST", // Method pengiriman data bisa dengan GET atau POST
+        url: "<?php echo base_url("auth/listKota"); ?>", // Isi dengan url/path file php yang dituju
+        data: {id_provinsi : $("#provinsi").val()}, // data yang akan dikirim ke file yang dituju
+        dataType: "json",
+        beforeSend: function(e) {
+          if(e && e.overrideMimeType) {
+            e.overrideMimeType("application/json;charset=UTF-8");
+          }
+        },
+        success: function(response){ // Ketika proses pengiriman berhasil
+          $("#loading").hide(); // Sembunyikan loadingnya
+          // set isi dari combobox kota
+          // lalu munculkan kembali combobox kotanya
+          $("#kota").html(response.list_kota).show();
+        },
+        error: function (xhr, ajaxOptions, thrownError) { // Ketika ada error
+          alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError); // Munculkan alert error
+        }
+      });
+    });
+  });
+  </script>

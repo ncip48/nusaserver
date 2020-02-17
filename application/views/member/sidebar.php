@@ -1,6 +1,7 @@
 <?php 
     $row = $this->model_app->profile_konsumen($this->session->id_konsumen)->row_array();
     if (trim($row['foto'])==''){ $foto_user = 'users.gif';  }else{ $foto_user = $row['foto'];  }
+    $rescount = $this->db->query("SELECT * FROM rb_reseller WHERE id_konsumen='".$this->session->id_konsumen."'")->num_rows();
 ?>
 <nav id="sidebar">
     <div class="custom-menu">
@@ -26,6 +27,13 @@
         <li>
             <a href="<?= base_url() ?>members/tagihan"><span class="fa fa-file-text mr-3"></span> Tagihan</a>
         </li>
+        <?php 
+        if ($rescount=='1'){
+            echo "<li>
+                <a href='".base_url()."members/reseller'><span class='fa fa-file-groups mr-3'></span> Reseller</a>
+            </li>";
+        }
+        ?>
         <li>
             <a href="<?= base_url() ?>members/editprofile"><span class="fa fa-user-times mr-3"></span> Edit Profile</a>
         </li>
