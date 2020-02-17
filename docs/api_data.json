@@ -15,7 +15,7 @@
     "examples": [
       {
         "title": "Cara penggunaan:",
-        "content": "http://iniherly.com/kabupaten",
+        "content": "http://ncip.nusaserver.com/kabupaten",
         "type": "json"
       }
     ],
@@ -93,7 +93,7 @@
     "examples": [
       {
         "title": "Cara penggunaan:",
-        "content": "http://iniherly.com/provinsi",
+        "content": "http://ncip.nusaserver.com/provinsi",
         "type": "json"
       }
     ],
@@ -143,7 +143,7 @@
     "examples": [
       {
         "title": "Cara penggunaan:",
-        "content": "http://iniherly.com/provinsi/11",
+        "content": "http://ncip.nusaserver.com/provinsi/11",
         "type": "json"
       }
     ],
