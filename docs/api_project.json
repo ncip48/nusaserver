@@ -2,16 +2,26 @@
   "name": "Dokumentasi API Wilayah Indonesia",
   "version": "0.1.0",
   "description": "dokumen api untuk menampilkan provinsi, kabupaten, kecamatan, desa di Indonesia",
-  "apidoc": "0.3.0",
+  "title": "Ncip's API",
+  "url": "http://ncip.nusaserver.com",
+  "header": {
+    "title": "General",
+    "content": "<h2>Selamat datang di API ku hehe</h2>\n<p>Find me on :</p>\n<ul>\n<li><a href=\"https://facebook.com/herly.cp\">Facebook</a></li>\n<li><a href=\"https://instagram.com/herly.devs\">Instagram</a></li>\n<li><a href=\"https://youtube.com/mbahgaming\">Youtube</a></li>\n</ul>\n<blockquote>\n<p><strong>Warning:</strong> Api ini masih tahap pengembangan</p>\n</blockquote>\n<h2>Thanks ^^</h2>\n"
+  },
   "order": [
     "Provinsi",
     "Kabupaten"
   ],
+  "template": {
+    "withCompare": true,
+    "withGenerator": true
+  },
   "sampleUrl": false,
   "defaultVersion": "0.0.0",
+  "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2020-02-18T05:32:16.873Z",
+    "time": "2020-02-18T06:20:51.510Z",
     "url": "http://apidocjs.com",
     "version": "0.20.0"
   }
