@@ -1,22 +1,33 @@
 <?php
-
+defined('BASEPATH') OR exit('No direct script access allowed');
 require APPPATH . '/libraries/REST_Controller.php';
+
 Class Provinsi Extends REST_Controller{
     
     function __construct($config = 'rest') {
         parent::__construct($config);
     }
     
-    // untuk menampilkan data
     function index_get(){
-        $provinsi = $this->uri->segment('2');
-        if ($provinsi == '') {
-            $data = $this->db->get('provinces')->result();
+        $id = $this->uri->segment('2');
+        
+        if ($id === null) {
+            $provinsi = $this->model_api->getProvinsi();
         } else {
-            $this->db->where('provinsi_id', $provinsi);
-            $data = $this->db->get('provinces')->result();
+            $provinsi = $this->model_api->getProvinsi($id);
         }
-        $this->response($data, 200);
+
+        if ($provinsi) {
+            $this->response([
+                'status' => true,
+                'data' => $provinsi
+            ], REST_Controller::HTTP_OK);
+        } else {
+            $this->response([
+                'status' => false,
+                'message' => 'id provinsi tidak ditemukan'
+            ], REST_Controller::HTTP_NOT_FOUND);
+        }
     }
+
 }
-?>

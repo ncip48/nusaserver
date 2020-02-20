@@ -2,33 +2,33 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 require APPPATH . '/libraries/REST_Controller.php';
 
-Class Kecamatan Extends REST_Controller{
+Class Desa Extends REST_Controller{
     
     function __construct($config = 'rest') {
         parent::__construct($config);
     }
 
     function index_get(){
-        $kab = $this->uri->segment('2');
-        $kec = $this->uri->segment('3');
+        $kec = $this->uri->segment('2');
+        $desa = $this->uri->segment('3');
 
-        if ($kab === null && $kec === null) {
-            $kecamatan = $this->model_api->getKecamatan();
-        } elseif ($kec === null) {
-            $kecamatan = $this->model_api->getKecamatan($kab);
+        if ($kec === null && $desa === null) {
+            $desa = $this->model_api->getDesa();
+        } elseif ($desa === null) {
+            $desa = $this->model_api->getDesa($kec);
         } else {
-            $kecamatan = $this->model_api->getKecamatan($kab, $kec);
+            $desa = $this->model_api->getDesa($kec, $desa);
         }
 
-        if ($kecamatan) {
+        if ($desa) {
             $this->response([
                 'status' => true,
-                'data' => $kecamatan
+                'data' => $desa
             ], REST_Controller::HTTP_OK);
         } else {
             $this->response([
                 'status' => false,
-                'message' => 'id kabupaten/kecamatan tidak ditemukan'
+                'message' => 'id kecamatan/desa tidak ditemukan'
             ], REST_Controller::HTTP_NOT_FOUND);
         }
     }

@@ -52,10 +52,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;
-$route['kabupaten/(:num)'] = 'kabupaten/provinsi/$1';
-$route['kabupaten/(:num)/(:num)'] = 'kabupaten/provinsikab/$1/$2';
-$route['kecamatan/(:num)'] = 'kecamatan/kabupaten/$1';
-$route['kecamatan/(:num)/(:num)'] = 'kecamatan/kabupatenkec/$1/$2';
 /*
 | -------------------------------------------------------------------------
 | Sample REST API Routes
