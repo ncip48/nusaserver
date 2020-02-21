@@ -31,6 +31,7 @@ class Welcome extends CI_Controller {
 		$apiPass = "123";
 
 		// API URL
+		//Ganti dengan URL apiwilayah.iniherly.xyz
 		$url = base_url().'provinsi';
 
 		// Create a new cURL resource
