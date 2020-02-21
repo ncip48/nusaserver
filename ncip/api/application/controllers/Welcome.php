@@ -31,7 +31,7 @@ class Welcome extends CI_Controller {
 		$apiPass = "123";
 
 		// API URL
-		$url = 'http://localhost/nusaserver/ncip/api/provinsi';
+		$url = base_url().'provinsi';
 
 		// Create a new cURL resource
 		$ch = curl_init($url);
