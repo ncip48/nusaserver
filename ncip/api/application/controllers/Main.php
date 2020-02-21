@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Main extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,17 +18,25 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
 	public function index()
 	{
+		$this->load->view('halaman_main');
+	}
+
+
+	public function cek()
+	{
+		if($this->input->is_ajax_request()) {
 		//$this->load->helper('url');
 		//$valid_logins = $this->model_api->getValidLogins();
 		//$this->load->view('welcome_message');
 		// API key
-		$apiKey = 'woy';
+		$apiKey = $this->input->post('c');
 
 		// API auth credentials
-		$apiUser = "ncip";
-		$apiPass = "123";
+		$apiUser = $this->input->post('a');
+		$apiPass = $this->input->post('b');
 
 		// API URL
 		//Ganti dengan URL apiwilayah.iniherly.xyz
@@ -45,10 +53,11 @@ class Welcome extends CI_Controller {
 
 		$result = curl_exec($ch);
 		//echo $result;
-		$json = json_decode($result, true);
+		//$json = json_decode($result, true);
+		$this->output->set_output(json_encode($result, true));
 		//echo $json['error'];
 
-		if ($json['status']==false) {
+		/*if ($json['status']==false) {
 			echo $json['error'];
 		} else {
 			echo "<select>";
@@ -56,9 +65,10 @@ class Welcome extends CI_Controller {
 				echo "<option>".$r['nama_provinsi']."</option>";
 			}
 			echo "</select>";
-		}
+		}*/
 
 		// Close cURL resource
 		curl_close($ch);
+		}
 	}
 }
