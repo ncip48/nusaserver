@@ -20,8 +20,44 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->helper('url');
+		//$this->load->helper('url');
+		//$valid_logins = $this->model_api->getValidLogins();
+		//$this->load->view('welcome_message');
+		// API key
+		$apiKey = 'woy';
 
-		$this->load->view('welcome_message');
+		// API auth credentials
+		$apiUser = "ncip";
+		$apiPass = "123";
+
+		// API URL
+		$url = 'http://localhost/nusaserver/ncip/api/provinsi';
+
+		// Create a new cURL resource
+		$ch = curl_init($url);
+
+		curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+		curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array("token: " . $apiKey));
+		curl_setopt($ch, CURLOPT_USERPWD, "$apiUser:$apiPass");
+
+		$result = curl_exec($ch);
+		//echo $result;
+		$json = json_decode($result, true);
+		//echo $json['error'];
+
+		if ($json['status']==false) {
+			echo $json['error'];
+		} else {
+			echo "<select>";
+			foreach ($json['data'] as $r) {
+				echo "<option>".$r['nama_provinsi']."</option>";
+			}
+			echo "</select>";
+		}
+
+		// Close cURL resource
+		curl_close($ch);
 	}
 }

@@ -77,4 +77,9 @@ class Model_api extends CI_model{
         }
     }
 
+    public function getValidLogins()
+    {
+        
+    }
+
 }
