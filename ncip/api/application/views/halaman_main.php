@@ -31,19 +31,19 @@
                 <ul class="navbar-nav ">
                     <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fa fa-facebook">
+                        <i class="fa fa-facebook fa-lg">
                         </i>
                     </a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fa fa-instagram">
+                        <i class="fa fa-instagram fa-lg">
                         </i>
                     </a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fa fa-youtube">
+                        <i class="fa fa-youtube fa-lg">
                         </i>
                     </a>
                     </li>
