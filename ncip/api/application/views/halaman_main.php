@@ -85,8 +85,9 @@
                     <h5> Response JSON </h5>
                     <div id='hasil' class='text-left'></div>
 
-                        <pre class="code-wrap">
+                        <pre class="code-wrap" style='height:340px;'>
                         </pre>
+
                 </div>
             </div>
         </div>
@@ -96,6 +97,7 @@
         <script src="<?php echo base_url(); ?>asset/js/jquery-3.4.1.min.js"></script>
         <script src="<?php echo base_url(); ?>asset/js/popper.min.js"></script>
         <script src="<?php echo base_url(); ?>asset/js/bootstrap.min.js"></script>
+        <script src="<?php echo base_url(); ?>asset/js/jquery.blockUI.js"></script>
         <script src="<?php echo base_url(); ?>asset/js/app.js"></script>
     </body>
 </html>

@@ -27,28 +27,28 @@ $(document).ready(function() {
 //$('.code-wrap2').text(syntaxHighlight(str));
 
     $('#cek').submit(function() {
+        
         $.ajax({
             type: 'POST',
             dataType: "json",
             url: baseurl+"main/cek",
             data: $(this).serialize(),
+            beforeSend: function() {
+                $('.code-wrap').block({ 
+                    message: '<div class="spinner-grow text-warning" role="status"></div>',
+                    timeout:   2000
+                }); 
+            },
             success: function(response) {
-                //console.log(response)
-                //if (response.status==false) {
-                    //$('#hasil').html(response.error);
-                //} else {
-                    //$.each(response.data, function(i, item) {
-                        //console.log(item.nama_provinsi);
-                        //$('#hasil').append(item.nama_provinsi+"<br>");
-                    //});
-                    $('#hasil').html(response);
-                    var formattedData = JSON.stringify(response, null, '\t');
-                    //$('.code-wrap').text(formattedData);
-                    $('.code-wrap').html(syntaxHighlight(formattedData));
-                    //console.log(response.data.nama_provinsi)
+                    setTimeout(function() {
+                        //$('#hasil').html(response);
+                        var formattedData = JSON.stringify(response, null, '\t');
+                        //$('.code-wrap').text(formattedData);
+                        $('.code-wrap').html(syntaxHighlight(formattedData));
+                    }, 2000);
                 //}
             }
-        })
+        });
         return false;
     });
     
