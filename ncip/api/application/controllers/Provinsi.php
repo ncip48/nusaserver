@@ -9,6 +9,7 @@ Class Provinsi Extends REST_Controller{
     }
     
     function index_get(){
+        
         $id = $this->uri->segment('2');
         
         if ($id === null) {

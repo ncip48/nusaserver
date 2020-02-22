@@ -132,3 +132,8 @@
             .boolean { color: blue; }
             .null { color: magenta; }
             .key { color: red; }
+
+            .code-wrap {
+                max-height: 340px;
+                overflow-y: scroll;
+            }
