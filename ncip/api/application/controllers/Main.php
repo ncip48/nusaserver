@@ -54,7 +54,8 @@ class Main extends CI_Controller {
 		$result = curl_exec($ch);
 		//echo $result;
 		//$json = json_decode($result, true);
-		$this->output->set_output(json_encode($result, true));
+		//$this->output->set_output(json_encode($result, true));
+		$this->output->set_output($result);
 		//echo $json['error'];
 
 		/*if ($json['status']==false) {
