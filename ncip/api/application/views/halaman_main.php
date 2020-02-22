@@ -89,13 +89,7 @@
                         <pre class="code-wrap" style='height:340px;'>
                         
                         </pre>
-                        <div class="line-scale-pulse-out">
-                                                                <div></div>
-                                                                <div></div>
-                                                                <div></div>
-                                                                <div></div>
-                                                                <div></div>
-                                                            </div>
+                    
                 </div>
             </div>
         </div>
