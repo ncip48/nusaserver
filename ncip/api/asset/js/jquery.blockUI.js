@@ -127,10 +127,11 @@
 				margin:		0,
 				width:		'30%',
 				top:		'40%',
-				left:		'35%',
+				left:		'50%',
 				textAlign:	'center',
 				color:		'#000',
-				cursor:		'wait'
+				cursor:		'wait',
+				justifyContent: 'center'
 			},
 
 			// minimal style set used when themes are used

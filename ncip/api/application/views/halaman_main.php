@@ -7,6 +7,7 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/fiori.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/main.css">
         <script>var baseurl = '<?php echo base_url() ?>';</script>
         <title>Welcome to Herly Homepage</title>
@@ -86,8 +87,15 @@
                     <div id='hasil' class='text-left'></div>
 
                         <pre class="code-wrap" style='height:340px;'>
+                        
                         </pre>
-
+                        <div class="line-scale-pulse-out">
+                                                                <div></div>
+                                                                <div></div>
+                                                                <div></div>
+                                                                <div></div>
+                                                                <div></div>
+                                                            </div>
                 </div>
             </div>
         </div>

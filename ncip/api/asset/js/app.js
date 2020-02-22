@@ -35,7 +35,7 @@ $(document).ready(function() {
             data: $(this).serialize(),
             beforeSend: function() {
                 $('.code-wrap').block({ 
-                    message: '<div class="spinner-grow text-warning" role="status"></div>',
+                    message: '<div class="loader"><div class="ball-grid-pulse"><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div></div></div>',
                     timeout:   2000
                 }); 
             },
