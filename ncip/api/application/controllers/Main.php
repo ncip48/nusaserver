@@ -24,6 +24,23 @@ class Main extends CI_Controller {
 		$this->load->view('halaman_main');
 	}
 
+	public function cek_user()
+    {
+        $this->load->model('loginmodel');
+        $username = $this->input->post('username');
+        $user = $this->loginmodel->is_valid_num($username);
+        $hitung = $this->loginmodel->hitung_user($username);
+
+        if ($hitung>0) {
+			$result['status'] = true;
+			$result['data'] = $user;
+			$this->output->set_output(json_encode($result, true));
+        } else {
+			$result['status'] = false;
+			$result['message'] = 'API Key belum dibuat';
+			$this->output->set_output(json_encode($result, true));
+        }
+    }
 
 	public function cek()
 	{
@@ -32,11 +49,13 @@ class Main extends CI_Controller {
 		//$valid_logins = $this->model_api->getValidLogins();
 		//$this->load->view('welcome_message');
 		// API key
-		$apiKey = $this->input->post('c');
+		$x = $this->input->post('c');
 
-		// API auth credentials
-		$apiUser = $this->input->post('a');
-		$apiPass = $this->input->post('b');
+		if ($x==''){
+			$apiKey = 'no';
+		} else {
+			$apiKey = $x;
+		}
 
 		// API URL
 		//Ganti dengan URL apiwilayah.iniherly.xyz
@@ -48,8 +67,8 @@ class Main extends CI_Controller {
 		curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
 		curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array("token: " . $apiKey));
-		curl_setopt($ch, CURLOPT_USERPWD, "$apiUser:$apiPass");
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization: " . $apiKey));
+		#curl_setopt($ch, CURLOPT_USERPWD, "$apiUser:$apiPass");
 
 		$result = curl_exec($ch);
 		//echo $result;

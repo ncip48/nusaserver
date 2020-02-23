@@ -51,5 +51,34 @@ $(document).ready(function() {
         });
         return false;
     });
+
+    $('#cekuser').submit(function() {
+        
+        $.ajax({
+            type: 'POST',
+            dataType: "json",
+            url: baseurl+"main/cek_user",
+            data: $(this).serialize(),
+            beforeSend: function() {
+                $('.code-wrap').block({ 
+                    message: '<div class="loader"><div class="ball-grid-pulse"><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div></div></div>',
+                    timeout:   2000
+                }); 
+            },
+            success: function(response) {
+                    setTimeout(function() {
+                        //console.log(response);
+                        //$('#hasil').html(response);
+                        var formattedData = JSON.stringify(response, null, '\t');
+                        //$('.code-wrap').text(formattedData);
+                        $('.code-wrap').html(syntaxHighlight(formattedData));
+
+                        $('#c').val(response.data.key);
+                    }, 2000);
+                //}
+            }
+        });
+        return false;
+    });
     
 });

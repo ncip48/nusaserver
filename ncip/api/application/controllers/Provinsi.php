@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-require APPPATH . '/libraries/REST_Controller.php';
-
-Class Provinsi Extends REST_Controller{
-    
+   
+require APPPATH . 'controllers/Api.php';
+class Provinsi extends Api {
     function __construct($config = 'rest') {
         parent::__construct($config);
+        $this->verify_request();
     }
     
     function index_get(){

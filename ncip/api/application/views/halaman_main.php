@@ -60,30 +60,37 @@
             </div>
             <div class="row">
                 <div class="col-md-6 col-xs-12 my-2">
+                    <form method='post' action='' id='cekuser'>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name='username'>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name='password'>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    <hr>
+                    <h5 class="my-2">Gunakan Info Login sbb:</h5>
+                    <p>
+                        User : ncip48 <br>
+                        Password : xxx <br>
+                        <b> dan </b><br>
+                        User : koplok <br>
+                        Password : yyy <br>
+                    </p>
+                </div>
+                <div class="col-md-6 col-xs-12 my-2">
+                    <h5>API Key :</h5>
                     <form method='post' action='' id='cek'>
                     <div class="form-group">
-                        <label for="a">Username</label>
-                        <input type="text" class="form-control" id="a" name='a'>
-                    </div>
-                    <div class="form-group">
-                        <label for="b">Password</label>
-                        <input type="password" class="form-control" id="b" name='b'>
-                    </div>
-                    <div class="form-group">
-                        <label for="c">API Key</label>
                         <input type="text" class="form-control" id="c" name='c'>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
-                </div>
-                <div class="col-md-6 col-xs-12 my-2">
-                    <h5>Gunakan Info Login sbb:</h5>
-                    <p>
-                        User : ncip <br>
-                        Password : 123 <br>
-                        API Key : akuimuet <br>
-                    </p>
-                    <h5> Response JSON </h5>
+                    <hr>
+                    <h5 class="my-2"> Response JSON </h5>
                     <div id='hasil' class='text-left'></div>
 
                         <pre class="code-wrap" style='height:340px;'>
