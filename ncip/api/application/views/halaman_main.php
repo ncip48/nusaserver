@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/fiori.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/main.css">
         <script>var baseurl = '<?php echo base_url() ?>';</script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <title>Welcome to Herly Homepage</title>
         <style>
             
@@ -17,11 +18,11 @@
         </style>
     </head>
     <body>
-        <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-icon-top navbar-expand-lg navbar-white">
             <div class="container">
                 <a class="navbar-brand" href="#">Herly's Apps</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                Menu <i class='fas fa-bars'></i>
                 </button>
             
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -30,21 +31,21 @@
                 </ul>
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa fa-facebook fa-lg">
-                        </i>
+                    <a class="nav-link" href="https://www.facebook.com/herly.cp" target="_BLANK">
+                        <i class="fab fa-facebook fa-lg fa-fw">
+                        </i> Facebook
                     </a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa fa-instagram fa-lg">
-                        </i>
+                    <a class="nav-link" href="https://www.instagram.com/herly.devs/" target="_BLANK">
+                        <i class="fab fa-instagram fa-lg fa-fw">
+                        </i> Instagram
                     </a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa fa-youtube fa-lg">
-                        </i>
+                    <a class="nav-link" href="https://www.youtube.com/mbahgaming" target="_BLANK">
+                        <i class="fab fa-youtube fa-lg fa-fw">
+                        </i> Youtube
                     </a>
                     </li>
                 </ul>
@@ -55,7 +56,7 @@
         <div class="container isi">
             <div class="row">
                 <div class="col-md-6 col-xs-12 my-2">
-                    <h4>Contoh Get Provinsi, Kabupaten, Kecamatan, Desa dengan JWT</h4><p>
+                    <h4>Contoh API level bertingkat dengan JWT + Codeigniter + REST API Server</h4><p>
                 </div>
             </div>
             <div class="row">
