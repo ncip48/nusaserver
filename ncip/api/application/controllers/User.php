@@ -14,8 +14,9 @@ class User extends REST_Controller {
             // baseurl/?table=nama_table (semua data)
             $this->db->select('user.id_user, user.username, user.password, keys.key, keys.level');
             $this->db->join('keys', 'user.id_user = keys.user_id');
-            $data = $this->db->get('user')->result();
-            $this->response($data, 200);
+            $result['status'] = true;
+			$result['data'] = $this->db->get('user')->result();
+            $this->response($result, 200);
 
     }
 
