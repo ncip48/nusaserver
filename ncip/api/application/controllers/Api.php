@@ -78,15 +78,20 @@ class Api extends REST_Controller {
         try {
             $data = AUTHORIZATION::validateToken($token);
             $level = $this->loginmodel->cek_level($data->id);
-            if ($level->level != $num) {
-                $this->response([
-                    'status' => false,
-                    'message' => 'Maaf, harus upgrade paket ke level '. $num
-                ], REST_Controller::HTTP_UNAUTHORIZED);
-                exit();
-            } else {
+            if ($level->level=='3'){
                 return true;
+            } else if ($level->level=='2' OR $level->level=='1') {
+                if ($level->level != $num) {
+                    $this->response([
+                        'status' => false,
+                        'message' => 'Maaf, harus upgrade paket ke level '. $num
+                    ], REST_Controller::HTTP_UNAUTHORIZED);
+                    exit();
+                } else {
+                    return true;
+                }
             }
+            
         } catch (Exception $e) {
             $this->response([
                 'status' => false,
