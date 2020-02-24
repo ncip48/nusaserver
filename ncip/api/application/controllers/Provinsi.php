@@ -2,7 +2,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
    
 require APPPATH . 'controllers/Api.php';
+
 class Provinsi extends Api {
+
     function __construct($config = 'rest') {
         parent::__construct($config);
         $this->verify_request();

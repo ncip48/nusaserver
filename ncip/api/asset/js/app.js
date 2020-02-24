@@ -26,8 +26,13 @@ $(document).ready(function() {
 
 //$('.code-wrap2').text(syntaxHighlight(str));
 
+    $("input[name='select']").change(function(){
+        var tipe = $(this).val();
+        $('#tipe').val(tipe);
+    });
+
     $('#cek').submit(function() {
-        
+
         $.ajax({
             type: 'POST',
             dataType: "json",
@@ -41,9 +46,7 @@ $(document).ready(function() {
             },
             success: function(response) {
                     setTimeout(function() {
-                        //$('#hasil').html(response);
                         var formattedData = JSON.stringify(response, null, '\t');
-                        //$('.code-wrap').text(formattedData);
                         $('.code-wrap').html(syntaxHighlight(formattedData));
                     }, 2000);
                 //}
@@ -53,11 +56,13 @@ $(document).ready(function() {
     });
 
     $('#cekuser').submit(function() {
+
+        //var username = $('.username').val();
         
         $.ajax({
-            type: 'POST',
+            type: 'post',
             dataType: "json",
-            url: baseurl+"main/cek_user",
+            url: baseurl+"user/login/",
             data: $(this).serialize(),
             beforeSend: function() {
                 $('.code-wrap').block({ 
@@ -67,13 +72,33 @@ $(document).ready(function() {
             },
             success: function(response) {
                     setTimeout(function() {
-                        //console.log(response);
-                        //$('#hasil').html(response);
                         var formattedData = JSON.stringify(response, null, '\t');
-                        //$('.code-wrap').text(formattedData);
                         $('.code-wrap').html(syntaxHighlight(formattedData));
-
                         $('#c').val(response.data.key);
+                    }, 2000);
+                //}
+            }
+        });
+        return false;
+    });
+
+    $('#alluser').click(function() {
+        
+        $.ajax({
+            type: 'get',
+            dataType: "json",
+            url: baseurl+"user",
+            data: $(this).serialize(),
+            beforeSend: function() {
+                $('.code-wrap').block({ 
+                    message: '<div class="loader"><div class="ball-grid-pulse"><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div></div></div>',
+                    timeout:   2000
+                }); 
+            },
+            success: function(response) {
+                    setTimeout(function() {
+                        var formattedData = JSON.stringify(response, null, '\t');
+                        $('.code-wrap').html(syntaxHighlight(formattedData));
                     }, 2000);
                 //}
             }

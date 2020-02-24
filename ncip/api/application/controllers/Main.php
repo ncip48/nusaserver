@@ -24,7 +24,7 @@ class Main extends CI_Controller {
 		$this->load->view('halaman_main');
 	}
 
-	public function cek_user()
+	public function login()
     {
         $this->load->model('loginmodel');
         $username = $this->input->post('username');
@@ -49,6 +49,7 @@ class Main extends CI_Controller {
 		//$valid_logins = $this->model_api->getValidLogins();
 		//$this->load->view('welcome_message');
 		// API key
+		$tipe = $this->input->post('tipe');
 		$x = $this->input->post('c');
 
 		if ($x==''){
@@ -59,7 +60,7 @@ class Main extends CI_Controller {
 
 		// API URL
 		//Ganti dengan URL apiwilayah.iniherly.xyz
-		$url = base_url().'provinsi';
+		$url = base_url().$tipe;
 
 		// Create a new cURL resource
 		$ch = curl_init($url);

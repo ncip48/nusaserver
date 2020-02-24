@@ -1,11 +1,22 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-require APPPATH . '/libraries/REST_Controller.php';
 
-Class Desa Extends REST_Controller{
+#require APPPATH . '/libraries/REST_Controller.php';
+
+#Class Desa Extends REST_Controller{
+    
+    #function __construct($config = 'rest') {
+        #parent::__construct($config);
+    #}
+
+require APPPATH . 'controllers/Api.php';
+
+Class Desa extends Api {
     
     function __construct($config = 'rest') {
         parent::__construct($config);
+        $this->verify_request();
+        $this->cek_level('3');
     }
 
     function index_get(){

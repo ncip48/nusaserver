@@ -29,7 +29,7 @@ class Api extends REST_Controller {
                 $payload['id'] = $dataadmin->id_user;
                 $payload['username'] = $dataadmin->username;
                 $output['token'] = AUTHORIZATION::generateToken($payload);
-                $this->loginmodel->insert_key($id_user);
+                $this->loginmodel->insert_key($dataadmin->id_user, $output['token']);
                 return $this->response($output,REST_Controller::HTTP_OK);
             } else {
                 $this->response([
@@ -66,7 +66,32 @@ class Api extends REST_Controller {
             $this->response([
                 'status' => false,
                 'message' => 'Error Unknown'
-            ], REST_Controller::HTTP_UNAUTHORIZED);
+            ], REST_Controller::HTTP_BAD_REQUEST);
+        }
+    }
+
+    public function cek_level($num)
+    {
+        $this->load->model('loginmodel');
+        $headers = $this->input->request_headers();
+        $token = $headers['Authorization'];
+        try {
+            $data = AUTHORIZATION::validateToken($token);
+            $level = $this->loginmodel->cek_level($data->id);
+            if ($level->level != $num) {
+                $this->response([
+                    'status' => false,
+                    'message' => 'Maaf, harus upgrade paket ke level '. $num
+                ], REST_Controller::HTTP_UNAUTHORIZED);
+                exit();
+            } else {
+                return true;
+            }
+        } catch (Exception $e) {
+            $this->response([
+                'status' => false,
+                'message' => 'Error Unknown'
+            ], REST_Controller::HTTP_BAD_REQUEST);
         }
     }
 
