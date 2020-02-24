@@ -9,6 +9,7 @@ Class Kecamatan extends Api {
         parent::__construct($config);
         $this->verify_request();
         $this->cek_level('2');
+        $this->cek_level('3');
     }   
 
     function index_get(){
