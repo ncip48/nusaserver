@@ -826,6 +826,10 @@
 		-webkit-backface-visibility: hidden;
 	}
 
+	.dropdown-cart-menu-container:hover .dropdown-menu {
+		display:none;
+	}
+
 	.user-menu-container {
 		display: block;
 	}
