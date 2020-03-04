@@ -759,6 +759,7 @@
 	#main-nav-container #header {
 		background: transparent;
 		color: #f9f8f4;
+		box-shadow: 0 0 6px 0 rgba(0,0,0,.06);
 	}
 
 	.input-group {
@@ -807,13 +808,21 @@
 		z-index:1000;
 	}
 
-	#main-nav-container.fixed {
+	#main-nav-container.absolute {
 		position: absolute;
 		top: 0;
 		left: 0;
 		z-index: 999;
 		padding: 0;
-		#padding-top: 45px;
+		-webkit-backface-visibility: hidden;
+	}
+
+	#main-nav-container.fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 999;
+		padding: 0;
 		-webkit-backface-visibility: hidden;
 	}
 
