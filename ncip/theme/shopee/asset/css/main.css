@@ -17,6 +17,12 @@ a {
     color: #6dbcdb;
 }
 
+ul, ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
 #wrapper {
     width: 100%;
     background-color: #fff;
@@ -92,6 +98,30 @@ a {
     text-decoration: none;
 }
 
+#inner-cart {
+	padding-top: 35px;
+	background-color: #fff;
+}
+
+.main-header #inner-header {
+    padding-top: 10px;
+}
+
+.keranjang-name {
+	#margin-left: .9375rem;
+	margin-left: -140px;
+    border-left: .0625rem solid #ee4d2d;
+    color: #ee4d2d;
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    height: 2rem;
+    padding-left: .9375rem;
+    margin-bottom: .0625rem;
+	text-transform: capitalize;
+	margin-top: 7px;
+}
+
+
 /* END HEADER TOP */
 
 .main-header #inner-header {
@@ -153,7 +183,8 @@ a {
     padding: 0 5px;
     vertical-align: top;
     margin-top: -5px;
-    margin-left: -15px;
+	margin-left: -15px;
+	border-radius: 15px;
 }
 
 .btn .badge {
@@ -363,6 +394,40 @@ a {
     width: 90%;
     margin-bottom: 10px;
 }
+
+.main-header .header-inner-right .input-cart-search {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.logo-container-2 {
+	display: block;
+	top: -15px;
+}
+
+.keranjang-name a {
+	display: none;
+}
+
+.main-header .header-inner-right .input-cart-search-2 {
+    width: 100%;
+	margin-bottom: 10px;
+	top: -10px;
+	padding: 0;
+    border: 2px solid #ee4d2d;
+}
+
+.main-header .btn-border-oren {
+	color: #fff;
+	background: #ee4d2d !important;
+	border-radius: 0px;
+	padding: 6px 30px !important;
+}
+
+.main-header .form-control:focus {
+	border-color: white;
+	box-shadow: 0 0 0 0 white;
+} 
 
 .input-group {
     #margin-bottom: 25px;

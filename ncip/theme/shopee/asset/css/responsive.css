@@ -56,9 +56,6 @@
 		display:inline;
 	}
 	
-	#quick-access .quick-search-form .form-group {
-		display:block;
-	}
 
 	.main-header #main-nav-container #main-nav .menu > li>  a {
 		padding:15.5px 25px;
@@ -69,9 +66,6 @@
 		padding-left:25px;
 	}
 	
-	.main-header #quick-access {
-		margin-left:200px;
-	}
 
 	#footer .facebook-likebox iframe{
 		height:300px;
@@ -359,10 +353,6 @@
 		width:100%;
 		margin:0;
 	}
-	
-	#main-nav-container.fixed #quick-access {
-		display:none;
-	}
 
 	.twitter_feed .flex-direction-nav  {
 		margin-left:-84px;
@@ -391,15 +381,6 @@
 		width: 80%;
 		margin-bottom: 10px;
 	}
- 	
- 	#quick-access {
- 		margin-top:-145px;
- 	}
-
- 	.main-header #quick-access {
- 		margin-top:2px;
- 	}
- 	
 
  	#main-nav-container #main-nav .menu li > .mega-menu {
 		width:720px;
@@ -580,7 +561,12 @@
  		position: absolute;
  		top:0;
 		 left:0;
- 	}
+	}
+
+	.input-cart-search-2 {
+		display: none !important;
+	}
+
 
 	.home-banners a {
 		margin-right:auto;
@@ -718,8 +704,45 @@
 	}
 
 	.main-header #inner-header .logo-container {
-		#margin-bottom:0px;
 		display:none;
+	}
+
+	.daleman-logo {
+		display: none;
+	}
+
+	#inner-cart {
+		padding-top: 15px;
+		background-color: #fff;
+	}
+
+	.keranjang-name i {
+		position: absolute;
+		top: 14px;
+	}
+
+	.keranjang-name p {
+		position: absolute;
+		left: 60px;
+    	top: 13px;
+	}
+
+	.keranjang-name a {
+		display: block;
+		color: #ee4d2d !important;
+	}
+
+	.keranjang-name {
+		margin-left: 5px;
+		border-left: 0;
+		color: #ee4d2d;
+		font-size: 1.25rem;
+		line-height: 1.875rem;
+		height: 2rem;
+		padding-left: 0px;
+		margin-bottom: .0625rem;
+		text-transform: capitalize;
+		margin-top: 7px;
 	}
 
 	#header #header-top {
@@ -756,25 +779,8 @@
 		padding-right: 10px;
 	}
 	
-	#quick-access {
-		width:70%;
-		position: static;
-		margin-top:4px;
-	}
-	
 	#inner-header .logo-container {
 		margin-bottom: 80px;
-	}
-
-	#quick-access .quick-search-form {
-		position: absolute;
-		top:-70px;
-		left:50%;
-		margin-left:69.5px;
-	}
-	
-	.main-header #quick-access .quick-search-form {
-		top:5px;
 	}
 
 	#main-nav-container #main-nav {
@@ -1378,10 +1384,6 @@
 	.drop-price {
  		display:none;	
  	}
-
-	#quick-access {
-		width:50%;
-	}
 
 	#category-header {
 		padding:15px 0;
