@@ -118,6 +118,7 @@
                         
                         </pre>
                     
+                        
                 </div>
             </div>
         </div>
@@ -125,6 +126,7 @@
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="<?php echo base_url(); ?>asset/js/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/namamax/jqui-ctcstm@1.0.0/js/jquery-ui-1.9.2.custom.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>asset/js/popper.min.js"></script>
         <script src="<?php echo base_url(); ?>asset/js/bootstrap.min.js"></script>
         <script src="<?php echo base_url(); ?>asset/js/jquery.blockUI.js"></script>
