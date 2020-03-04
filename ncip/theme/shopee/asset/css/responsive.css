@@ -808,7 +808,7 @@
 		z-index:1000;
 	}
 
-	#main-nav-container.absolute {
+	#main-nav-container.fixed {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -817,7 +817,7 @@
 		-webkit-backface-visibility: hidden;
 	}
 
-	#main-nav-container.fixed {
+	#main-nav-container.cart-fixed {
 		position: fixed;
 		top: 0;
 		left: 0;
