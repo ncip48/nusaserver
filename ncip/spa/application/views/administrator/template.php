@@ -27,8 +27,11 @@
     <!-- Vue JS -->
     <script src="<?php echo base_url()?>asset/admin/vue/vue.min.js"></script>
     <script src="<?php echo base_url()?>asset/admin/vue/axios.min.js"></script>
+    <script>var baseurl = '<?php echo base_url() ?>';</script>
     <style type="text/css">
       .checkbox-scroll { border:1px solid #ccc; width:100%; height: 114px; padding-left:8px; overflow-y: scroll; }
+      .btn-full {background-color: transparent;cursor: not-allowed !important;}
+      .btn-outline-primary {color: #6770d2;border-color: #6770d2;}
     </style>
     <script type="text/javascript">
     function nospaces(t){
@@ -132,6 +135,8 @@
     <script src="<?php echo base_url(); ?>asset/js/bootstrap-combobox.js" type="text/javascript"></script>
     <script src="<?php echo base_url()?>asset/admin/vue/app.js"></script>
     <script src="<?php echo base_url()?>asset/admin/vue/pagination.js"></script>
+    <script src="<?php echo base_url(); ?>asset/js/jquery.blockUI.js"></script>
+    <script src="<?php echo base_url(); ?>asset/js/app.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
           $('.combobox').combobox()

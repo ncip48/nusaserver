@@ -52,6 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route = array(
     'default_controller' => 'main',
     'administrator' => 'administrator',
+    'supervisor' => 'supervisor',
+    'staff' => 'staff',
     'auth' => 'auth',
     'main' => 'main'
 );

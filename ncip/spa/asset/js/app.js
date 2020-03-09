@@ -75,7 +75,8 @@ $(document).ready(function() {
                 setTimeout(function() {
                     var data = jQuery.parseJSON(response);
                     $('#tglnow').val(data.tgltuju);
-                    $('#periode').html("<p class='text-center'><a href='#' id='prev'>< Prev Week </a>"+data.tglawal + ' - ' + data.tglakhir + "<a href='#' id='next'> Next Week ></a></p>");
+                    //$('#bulan').html("<p class='text-center'><a href='#' id='prevmo'><<</a><b> Bulan  "+data.getBulan+ "</b> <a href='#' id='nextmo'>>></a></p>");
+                    //$('#periode').html("<p class='text-center'><a href='#' id='prev'>< Prev Week </a>"+data.tglawal + ' - ' + data.tglakhir + "<a href='#' id='next'> Next Week ></a></p>");
                     compute();
                 }, 1000);
             }
@@ -102,7 +103,68 @@ $(document).ready(function() {
                 setTimeout(function() {
                     var data = jQuery.parseJSON(response);
                     $('#tglnow').val(data.tgltuju);
-                    $('#periode').html("<p class='text-center'><a href='#' id='prev'>< Prev Week </a>"+data.tglawal + ' - ' + data.tglakhir + "<a href='#' id='next'> Next Week ></a></p>");
+                    //$('#bulan').html("<p class='text-center'><a href='#' id='prevmo'><<</a><b> Bulan  "+data.getBulan+ "</b> <a href='#' id='nextmo'>>></a></p>");
+                    //$('#periode').html("<p class='text-center'><a href='#' id='prev'>< Prev Week </a>"+data.tglawal + ' - ' + data.tglakhir + "<a href='#' id='next'> Next Week ></a></p>");
+                    compute();
+                }, 1000);
+            }
+        });
+    });
+
+    $("body").delegate("#nextmo", "click", function(){
+        var hari = '30';
+        var tgl = $('#tglnow').val();
+        $.ajax({
+            type: 'POST',
+            url: baseurl+"main/tgl_plus",
+            data: {
+                hari: hari,
+                tgl: tgl
+            },
+            beforeSend: function() {
+                $('.bungkus').block({ 
+                    message: '<div class="loader"><div class="ball-grid-pulse"><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div></div></div>',
+                    timeout:   1000
+                }); 
+            },
+            success: function(response) {
+                //$('#tgl').val('');
+                //$('#tgl').val("");
+                //console.log(response);
+                //$('#hasil').append(response);
+                setTimeout(function() {
+                    var data = jQuery.parseJSON(response);
+                    $('#tglnow').val(data.tgltuju);
+                    //$('#bulan').html("<p class='text-center'><a href='#' id='prevmo'><<</a><b> Bulan  "+data.getBulan+ "</b> <a href='#' id='nextmo'>>></a></p>");
+                    //$('#periode').html("<p class='text-center'><a href='#' id='prev'>< Prev Week </a>"+data.tglawal + ' - ' + data.tglakhir + "<a href='#' id='next'> Next Week ></a></p>");
+                    compute();
+                }, 1000);
+            }
+        });
+    });
+
+    $("body").delegate("#prevmo", "click", function(){
+        var hari = '30';
+        var tgl = $('#tglnow').val();
+        $.ajax({
+            type: 'POST',
+            url: baseurl+"main/tgl_min",
+            data: {
+                hari: hari,
+                tgl: tgl
+            },
+            beforeSend: function() {
+                $('.bungkus').block({ 
+                    message: '<div class="loader"><div class="ball-grid-pulse"><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div><div style="background-color: #fff;"></div></div></div>',
+                    timeout:   1000
+                }); 
+            },
+            success: function(response) {
+                setTimeout(function() {
+                    var data = jQuery.parseJSON(response);
+                    $('#tglnow').val(data.tgltuju);
+                    //$('#bulan').html("<p class='text-center'><a href='#' id='prevmo'><<</a><b> Bulan  "+data.getBulan+ "</b> <a href='#' id='nextmo'>>></a></p>");
+                    //$('#periode').html("<p class='text-center'><a href='#' id='prev'>< Prev Week </a>"+data.tglawal + ' - ' + data.tglakhir + "<a href='#' id='next'> Next Week ></a></p>");
                     compute();
                 }, 1000);
             }
@@ -111,12 +173,14 @@ $(document).ready(function() {
 
     function compute() {
         var first = $('#tglnow').val();
+        var idbook = $('#idbook').val();
         //alert (first);
         $.ajax({
             type: 'POST',
             url: baseurl+"main/validasi_tgl",
             data: {
-                tgl: first
+                tgl: first,
+                idbook: idbook
             },
             success: function(response) {
                 $('#sebelum').hide();
@@ -138,7 +202,8 @@ $(document).ready(function() {
 
     $("body").delegate("#btnjam", "click", function(){
         var value = $(this).val();
-        console.log(value);
+        $('#jambooking').val(value+":00");
+        console.log(value+":00");
     });
     
 });
