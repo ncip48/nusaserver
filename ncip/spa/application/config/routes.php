@@ -55,7 +55,12 @@ $route = array(
     'supervisor' => 'supervisor',
     'staff' => 'staff',
     'auth' => 'auth',
-    'main' => 'main'
+    'main' => 'main',
+    'booking' => 'main/book',
+    'booking/services/(:any)' => 'main/book/$1',
+    'booking/services/(:any)/staff/(:any)' => 'main/book/$1/$2',
+    'booking/services/(:any)/staff/(:any)/date/(:any)' => 'main/book/$1/$2/$3',
+    'booking/services/(:any)/staff/(:any)/date/(:any)/(:any)' => 'main/book/$1/$2/$3/$4'
 );
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

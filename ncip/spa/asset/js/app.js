@@ -200,10 +200,51 @@ $(document).ready(function() {
         });
     }
 
-    $("body").delegate("#btnjam", "click", function(){
-        var value = $(this).val();
-        $('#jambooking').val(value+":00");
-        console.log(value+":00");
-    });
+    $(function(){
+        var replacePage = function(url) {
+            $.ajax({
+                url: url,
+                type: 'get',
+                dataType: 'html',
+                beforeSend: function() {
+                    NProgress.set(0.4);
+                },
+                success: function(data){
+                    setTimeout(function() {
+                        NProgress.done();
+                        var dom = $(data);
+                        var html = dom.filter('.isi').html();
+                        var header = dom.filter('header').html();
+                        $('.isi').html(html);
+                        $('header').html(header);
+                        $('footer').hide();
+                    }, 1000);
+                }
+            });
+        }
     
+        $(document.body).on('click', "a[rel='tab']" ,function(e){
+            history.pushState(null, null, this.href);
+            replacePage(this.href);
+            e.preventDefault();
+        });
+    
+        $(window).bind('ss', function(){
+            replacePage(location.pathname);
+        });
+
+        $("body").delegate("#btnjam", "click", function(e){
+            value = $(this).val();
+            split = value.split(" ");
+            var tgl = split[0];
+            var jam = split[1];
+            var curul = $('#cururl').val();
+            var url = curul + "/date/" + tgl + "/" + jam;
+            $('#jambooking').val(value+":00");
+            history.pushState(null, null, url);
+            replacePage(url);
+            e.preventDefault();
+        });
+    });
+
 });

@@ -21,8 +21,30 @@ class Main extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = 'Aplikasi Demo SPA';
-		//$this->load->view('main');
+		//$this->load->view('template', $data);
+		//$this->load->view('main', $data);
 		$this->template->load('template','main',$data);
+	}
+
+	public function book($services = null,$staff = null,$tgl = null,$jam = null)
+	{
+		$data['title'] = 'Booking SPA';
+		if($services=='' AND $staff == ''AND $tgl =='' AND $jam == ''){
+			$data['step'] = '1';
+			$data['services'] = $this->model_main->getServices();
+		}elseif($staff == ''AND $tgl =='' AND $jam == ''){
+			$data['step'] = '2';
+			$data['staff'] = $this->model_main->getStaff();
+		}elseif($tgl =='' AND $jam == ''){
+			$data['step'] = '3';
+		}else{
+			$data['step'] ='4';
+			$data['services'] = $this->model_main->getServicesID($this->uri->segment(3));
+			$data['staff'] = $this->model_main->getStaffID($this->uri->segment(5));
+		}
+		//$this->load->view('template', $data);
+		//$this->load->view('book', $data);
+		$this->template->load('template','book',$data);
 	}
 
 	public function tgl_plus(){

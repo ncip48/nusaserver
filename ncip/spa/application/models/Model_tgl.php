@@ -85,7 +85,7 @@ class Model_tgl extends CI_Model{
                                     $btnjam = "<td><button id='btnjam' class='btn btn-full btn-sm' value='".$tgl." ".date("H:i",$i)."'>".date("H:i",$i)."</button></td>";
                                 }
                             }else{
-                                $btnjam = "<td><button id='btnjam' class='btn btn-outline-primary btn-sm' value='".$tgl." ".date("H:i",$i)."'>".date("H:i",$i)."</button></td>";
+                                $btnjam = "<td><button id='btnjam' class='genric-btn primary-border circle' value='".$tgl." ".date("H:i",$i)."'>".date("H:i",$i)."</button></td>";
                             }
                             echo $btnjam;
                         }

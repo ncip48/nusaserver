@@ -22,5 +22,22 @@ class Model_main extends CI_Model{
         return $this->db->get('rb_toko')->row_array();
     }
 
+    function getServices(){
+        return $this->db->get('rb_services')->result_array();
+    }
+
+    function getServicesID($id){
+        $this->db->where("id_services='".$id."'");
+        return $this->db->get('rb_services')->row_array();
+    }
+
+    function getStaff(){
+        return $this->db->get('rb_karyawan')->result_array();
+    }
+
+    function getStaffID($id){
+        $this->db->where("id_karyawan='".$id."'");
+        return $this->db->get('rb_karyawan')->row_array();
+    }
     
 }
