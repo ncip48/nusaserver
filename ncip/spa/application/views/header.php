@@ -10,7 +10,7 @@
                     <div class='row align-items-center no-gutters'>
                         <div class='col-xl-2 col-lg-2'>
                             <div class='logo-img'>
-                                <a href='index.html'>
+                                <a rel='tab' href='<?= base_url() ?>'>
                                     <img src='<?= base_url() ?>asset/montana/img/logo.png' alt=''>
                                 </a>
                             </div>
@@ -19,7 +19,7 @@
                             <div class='main-menu  d-none d-lg-block'>
                                 <nav>
                                     <ul id='navigation'>
-                                        <li><a class='active' href='index.html'>home</a></li>
+                                        <li><a rel='tab' class='active' href='<?= base_url() ?>'>home</a></li>
                                         <li><a href='rooms.html'>rooms</a></li>
                                         <li><a href='about.html'>About</a></li>
                                         <li><a href='#'>blog <i class='ti-angle-down'></i></a>

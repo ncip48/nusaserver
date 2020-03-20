@@ -6,59 +6,17 @@
 	#echo "<div id='content'>";
 #}
 ?>
-<div class='slider_area'>
-        <div class='slider_active owl-carousel'>
-            <div class='single_slider d-flex align-items-center justify-content-center slider_bg_1'>
-                <div class='container'>
-                    <div class='row'>
-                        <div class='col-xl-12'>
-                            <div class='slider_text text-center'>
-                                <h3>Montana Resort</h3>
-                                <p>Unlock to enjoy the view of Martine</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class='single_slider  d-flex align-items-center justify-content-center slider_bg_2'>
-                <div class='container'>
-                    <div class='row'>
-                        <div class='col-xl-12'>
-                            <div class='slider_text text-center'>
-                                <h3>Life is Beautiful</h3>
-                                <p>Unlock to enjoy the view of Martine</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class='single_slider d-flex align-items-center justify-content-center slider_bg_1'>
-                <div class='container'>
-                    <div class='row'>
-                        <div class='col-xl-12'>
-                            <div class='slider_text text-center'>
-                                <h3>Montana Resort</h3>
-                                <p>Unlock to enjoy the view of Martine</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class='single_slider  d-flex align-items-center justify-content-center slider_bg_2'>
-                <div class='container'>
-                    <div class='row'>
-                        <div class='col-xl-12'>
-                            <div class='slider_text text-center'>
-                                <h3>Life is Beautiful</h3>
-                                <p>Unlock to enjoy the view of Martine</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="jumbotron">
+    <div class="container">
+        <div class="intro-text">
+            <div class="col-md-12 col-xs-12">
+            <h2 class="jumbotron-heading">Simple Booking APP</h2>
+            <p class="jumbotron-paragraf">Book with simple click</p> 
+            <p><a class="btn btn-jumbotron btn-primary btn-lg active" href="<?php echo base_url(); ?>booking" role="button">Booking!</a></p> 
             </div>
         </div>
     </div>
-    <!-- slider_area_end -->
+</div>
 
     <!-- about_area_start -->
     <div class='about_area'>

@@ -25,6 +25,16 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>asset/montana/css/slicknav.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>asset/montana/css/style.css">
         <script>var baseurl = '<?php echo base_url() ?>';</script>
+        
+        <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    </head>
+    <body>
+        <?php include 'header.php' ?>
+        <div class='isi'>
+        <?php echo $contents; ?>
+        </div>
+        <?php include 'footer.php' ?>
+
         <script src="<?php echo base_url(); ?>asset/montana/js/vendor/modernizr-3.5.0.min.js"></script>
         <script src="<?php echo base_url(); ?>asset/montana/js/vendor/jquery-1.12.4.min.js"></script>
         <!-- <script src="<?php echo base_url(); ?>asset/js/jquery-3.4.1.min.js"></script> -->
@@ -48,13 +58,5 @@
         <script src="<?php echo base_url(); ?>asset/montana/js/gijgo.min.js"></script>
         <script src="<?php echo base_url(); ?>asset/js/app.js"></script>
         <script src="<?php echo base_url(); ?>asset/montana/js/main.js"></script>
-        <!-- <link rel="stylesheet" href="css/responsive.css"> -->
-    </head>
-    <body>
-        <?php include 'header.php' ?>
-        <div class='isi'>
-        <?php echo $contents; ?>
-        </div>
-        <?php include 'footer.php' ?>
     </body>
 </html>
